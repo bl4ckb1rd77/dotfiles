@@ -12,6 +12,7 @@ function getmenu() {
 result=$(getmenu | wofi -I --show dmenu --prompt "Screenshot")
 case $result in
 	"󰹑 screenshot desktop")
+		sleep 1
 		grimblast --notify save screen ${dir}/$file
 		;;
 	"󰲎 screenshot area")
