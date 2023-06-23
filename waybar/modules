@@ -1,0 +1,150 @@
+{
+  "tray": {
+    "icon-size": 14,
+    "spacing": 2,
+  },
+  "clock": {
+	  "interval": 1,
+    "format": "<span color='#a6e3a1'> </span>{:%H:%M:%S}",
+    "format-alt": "<span color='#a6e3a1'> </span>{:%d.%m.%y}",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "<span color='#a6e3a1'> </span> {usage}%",
+    "max-length": 10,
+    "on-click": "kitty -e bashtop",
+  },
+  "memory": {
+    "interval": 1,
+    "format": "<span color='#a6e3a1'> </span>{}%",
+    "max-length": 10,
+  },
+  "disk": {
+	  "interval": 60,
+	  "format": "<span color='#a6e3a1'></span> {free} "
+	},
+	"backlight": {
+    "format": "<span color='#a6e3a1'>{icon}</span> {percent}%",
+    "format-icons": ["󱩎","󱩏","󱩐","󱩑","󱩒","󱩓","󱩔","󱩕","󱩖","󰛨"],
+    "interval": 2,
+    "align": 0,
+    "rotate": 0,
+    "smooth-scrolling-threshold": 1,
+    },
+  "battery": {
+    "bat": "BAT0",
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "<span color='#a6e3a1'>{icon}</span>  {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "idle_inhibitor": {
+    "format": "<span color='#a6e3a1'>{icon} </span>",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "pulseaudio": {
+    "scroll-step": 5.0,
+    "format": "<span color='#a6e3a1'>{icon}</span> {volume}%",
+    "format-muted": "<span color='#f38ba8'>󰖁</span>",
+    "format-icons": {
+      "default": ["", "", "󰕾"]
+    },
+    "on-click": "pamixer -t",
+    "on-scroll-up": "pamixer -i 5",
+    "on-scroll-down": "pamixer -d 5",
+	  "on-click-right": "exec pavucontrol",
+    "tooltip-format" : "Volume {volume}%",
+  },
+  "custom/mpdvol": {
+    "format": "<span color='#a6e3a1'> </span>{}%",
+    "format-alt": "<span color='#a6e3a1'>󰝛 </span>",
+    "interval": 1,
+    "exec": "~/.config/hypr/scripts/mpdvolume",
+    "on-scroll-up": "~/.config/hypr/scripts/mpdvolume up",
+    "on-scroll-down": "~/.config/hypr/scripts/mpdvolume down",
+    "on-click": "~/.config/hypr/scripts/mpdvolume toggle",
+    "exec-if": "~/.config/hypr/scripts/mpdvolume state",
+  },
+  "custom/updater": {
+    "format": "<span color='#a6e3a1'></span> {}",
+    "exec": "checkupdates | wc -l",
+    "interval": 60,
+    "on-click": "kitty --class update -T update -e paru -Syu && notify-send 'The system has been updated' "
+  },
+  "custom/power": {
+    "format": "<span color='#a6e3a1'></span>",
+    "tooltip": false,
+    "on-click": "wlogout"
+  },
+  "custom/touchpad": {
+    "format": "<span color='#a6e3a1'>{} </span>",
+    "interval": 1,
+    "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/touchpad",
+    "exec": "~/.config/hypr/scripts/touchpad -get",
+  },
+  "mpd": {
+    "format": "<span color='#a6e3a1'></span> {stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+    "format-disconnected": "<span color='#a6e3a1'></span> Disconnected",
+    "format-stopped": "<span color='#a6e3a1'></span> {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped",
+    "interval": 10,
+    "on-click": "playerctl play-pause",
+    "consume-icons": {
+        "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+        "off": "<span color=\"#957f7f\"></span> ", // Icon grayed out when "random" is off
+        "on": " "
+    },
+    "repeat-icons": {
+        "on": " "
+    },
+    "single-icons": {
+        "on": "1 "
+    },
+    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "wlr/workspaces": {
+ 	  "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "sort-by-number": true,
+    "active-only": false,
+    "all-outputs": false,
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "󰭹",
+      "6": "",
+      "7": "",
+      "8": "󰝚",
+      "9": "󰓓",
+    },
+    "persistent_workspaces": {
+      "1": "eDP-1",
+      "2": "eDP-1",
+      "3": "eDP-1",
+      "4": "ePD-1",
+      "5": "ePD-1",
+      "6": "ePD-1",
+      "7": "ePD-1",
+      "8": "ePD-1",
+      "9": "ePD-1",
+    }
+  },
+},

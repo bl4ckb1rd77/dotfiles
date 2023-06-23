@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DIR=$HOME/Bilder/wallpapers/
+PICS=($(ls ${DIR}))
+RANDOMPICS=${PICS[ $RANDOM % ${#PICS[@]} ]}
+
+swww img -t grow --transition-duration 2 --sync ${DIR}${RANDOMPICS}
+notify-send "${RANDOMPICS}"

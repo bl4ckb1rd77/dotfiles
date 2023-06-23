@@ -1,0 +1,6 @@
+show=dmenu
+allow_images=true
+columns=2
+width=1500
+height=800
+image_size=255
