@@ -56,7 +56,7 @@ window#waybar {
 #workspaces button.persistent {
   margin: 0;
   padding: 0px;
-  color: #4C566A;
+  color: #5E81AC;
   background: rgba(0,0,0,0);
 }
 
@@ -67,7 +67,7 @@ window#waybar {
   border-radius: inherit;
   margin: 0;
   padding: 0px;
-  color: #5E81AC;
+  color: #83b5e0;
   background: rgba(0,0,0,0)00;
 }
 
