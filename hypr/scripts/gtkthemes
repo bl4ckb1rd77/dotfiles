@@ -5,7 +5,7 @@
 THEME='Nordic'
 ICONS='Nordzy-cyan-dark'
 FONT='NotoSans Nerd Font 10'
-CURSOR='Vimix-white-cursors'
+CURSOR='Nordzy-cursors-white'
 
 SCHEMA='gsettings set org.gnome.desktop.interface'
 
