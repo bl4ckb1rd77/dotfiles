@@ -4,16 +4,19 @@ mpd_host = "127.0.0.1"
 mpd_port = "6600"
 playlist_shorten_total_times = "yes"
 follow_now_playing_lyrics = "yes"
-locked_screen_width_part = "60"
 external_editor = "nvim"
 message_delay_time = 1
 autocenter_mode = "no"
 centered_cursor = "no"
 ignore_leading_the = "no"
 allow_for_physical_item_deletion = "no"
-
-# Scripts #
-# execute_on_song_change = "~/.ncmpcpp/notify.sh"
+lyrics_fetchers = genius
+lyrics_directory = "~/.lyrics/"
+fetch_lyrics_for_current_song_in_background = "yes"
+store_lyrics_in_song_dir = "yes"
+startup_slave_screen = "lyrics"
+startup_slave_screen_focus = no
+locked_screen_width_part = 65 
 
 ### Appearance ###
 colors_enabled = "yes"
