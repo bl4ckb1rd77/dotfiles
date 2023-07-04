@@ -31,3 +31,4 @@ menus/applications-merged
 autostart
 remmina
 waybar/modules.backup
+libvirt/qemu/networks
