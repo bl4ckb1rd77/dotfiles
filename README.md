@@ -10,6 +10,9 @@
 * **Theme**: Nordic
 * **Icons**: Nordzy-cyan-dark
 
+#### changelog:
+* **2023-07-05**: updated waybar config, window rule for virt-manager
+* **2023-06-28**: updated ncmpcpp config incl. dynamic kitty setup for second window with cava
 ---
 
 ![Screenshot](screenshot.png "Screenshot")
