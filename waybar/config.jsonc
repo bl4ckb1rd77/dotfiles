@@ -1,5 +1,5 @@
 {
-  "include": ["$HOME/.config/waybar/modules"],
+  "include": ["$HOME/.config/waybar/modules.jsonc"],
   "layer": "top",
   "position": "top",
   "height": 20,
