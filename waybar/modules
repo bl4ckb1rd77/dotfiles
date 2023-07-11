@@ -133,8 +133,8 @@
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
   "wlr/workspaces": {
- 	  "on-scroll-up": "hyprctl dispatch workspace r+1",
-    "on-scroll-down": "hyprctl dispatch workspace r-1",
+ 	  "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
     "sort-by-number": true,
     "active-only": false,
     "all-outputs": false,

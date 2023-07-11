@@ -34,3 +34,4 @@ waybar/modules.backup
 libvirt/qemu/networks
 libvirt/storage/images.xml
 libvirt/storage/isos.xml
+pupgui
