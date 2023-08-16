@@ -36,3 +36,5 @@ libvirt/storage/images.xml
 libvirt/storage/isos.xml
 pupgui
 freerdp/known_hosts2
+Nextcloud/logs/20230802_1127_nextcloud.log.0
+Nextcloud/nextcloud.cfg
