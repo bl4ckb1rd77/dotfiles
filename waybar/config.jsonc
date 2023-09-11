@@ -5,7 +5,7 @@
   "height": 20,
   "margin": 0,
   "spacing": 5,
-  "modules-left": ["wlr/workspaces","mpd"],
+  "modules-left": ["hyprland/workspaces","mpd"],
   "modules-center": ["clock","idle_inhibitor"],
   "modules-right": ["pulseaudio","custom/mpdvol","cpu","memory","disk","backlight","custom/touchpad","custom/updater","battery","tray","custom/power"],
 }

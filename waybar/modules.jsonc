@@ -132,7 +132,7 @@
     "tooltip-format": "MPD (connected)",
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
  	  "on-scroll-up": "hyprctl dispatch workspace r-1",
     "on-scroll-down": "hyprctl dispatch workspace r+1",
     "sort-by-number": true,
@@ -151,7 +151,7 @@
 //      "8": "",
 //      "9": "",
         "default": "",
-        "focused": "",
+        "active": "",
     },
 //    "persistent_workspaces": {
 //      "1": ["eDP-1"],

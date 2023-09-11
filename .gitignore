@@ -38,3 +38,7 @@ pupgui
 freerdp/known_hosts2
 Nextcloud/logs/20230802_1127_nextcloud.log.0
 Nextcloud/nextcloud.cfg
+cava/shaders/bar_spectrum.frag
+cava/shaders/northern_lights.frag
+cava/shaders/pass_through.vert
+cef_user_data/Dictionaries
