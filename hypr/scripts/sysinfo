@@ -1,8 +1,7 @@
 #!/bin/bash
-mdv -b 2 -t 696.6153 ~/.config/hypr/cheatsheet.md 
+neofetch 
 # hide the cursor and wait for user input
 tput civis
 read -n 1
-
 # give the cursor back
 tput cnorm

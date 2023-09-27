@@ -1,57 +1,59 @@
 
 ### Start Programs
-SUPER + Enter               * Open Terminal
+SUPER + Enter               * __open Terminal__
 
-SUPER + Shift + Enter       * Open Floating Terminal
+SUPER + Shift + Enter       * __open Floating Terminal__
 
-ALT   + b                   * Open Chrome
+ALT   + b                   * __open Chrome__
 
-ALT   + w                   * Open Whatsapp
+ALT   + w                   * __open Whatsapp__
 
-ALT   + e                   * Open Nemo
+ALT   + e                   * __open Nemo__
 
-SUPER + v                   * start WebCam Video
+SUPER + v                   * __start WebCam Video__
 
 ### System Shortcuts
-SUPER + h                   * this Help
+SUPER + h                   * __this Help__
 
-SUPER + r                   * AppLauncher
+SUPER + i                   * __system info__
 
-SUPER + p                   * Powermenu (shutdown, reboot ...)
+SUPER + r                   * __AppLauncher__
 
-SUPER + l                   * Lock Screen
+SUPER + p                   * __Powermenu__ (shutdown, reboot ...)
 
-SUPER + s                   * Screenshot Menu
+SUPER + l                   * __Lock Screen__
 
-SUPER + w                   * Wallpaper Menu
+SUPER + s                   * __Screenshot Menu__
 
-SUPER + b                   * next random Wallpaper
+SUPER + w                   * __Wallpaper Menu__
+
+SUPER + b                   * __next random Wallpaper__
 
 ### Handle Windows
-SUPER + q                   * Kill Active Window
+SUPER + q                   * __Kill Active Window__
 
-SUPER + M                   * Exit Hyperland
+SUPER + M                   * __Exit Hyperland__
 
-SUPER + f                   * switch Floating
+SUPER + f                   * __switch Floating__
 
-SUPER + J                   * switch Split (dwindl)
+SUPER + J                   * __switch Split (dwindl)__
 
-SUPER + left                * previous Workspace
+SUPER + left                * __previous Workspace__
 
-SUPER + right               * next Workspace
+SUPER + right               * __next Workspace__
 
-SUPER + [1..9]              * switch to Workspace
+SUPER + [1..9]              * __switch to Workspace__
 
-ALT   + [1..9]              * Send active Window to Workspace
+ALT   + [1..9]              * __send active Window to Workspace__
 
-SUPER + ALT + arrows        * Move Focus of Window
+SUPER + ALT + arrows        * __move Focus of Window__
 
 ### Resize Window
-ALT   + h,l                 * Horizontal Resize
+ALT   + h,l                 * __Horizontal Resize__
 
-ALT   + j,k                 * Vertical Resize
+ALT   + j,k                 * __Vertical Resize__
 
 ### Media
-SUPER + ALT + left,right    * previous / next Track
+SUPER + ALT + left,right    * __previous / next Track__
 
-SUPER + ALT + Enter         * toggle play/pause
+SUPER + ALT + Enter         * __toggle play/pause__
