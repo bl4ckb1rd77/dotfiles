@@ -10,6 +10,8 @@ ALT   + w                   * __open Whatsapp__
 
 ALT   + e                   * __open Nemo__
 
+ALT   + m                   * __Media Player__
+
 SUPER + v                   * __start WebCam Video__
 
 ### System Shortcuts
