@@ -46,17 +46,21 @@ window#waybar {
   color: #D8DEE9;
 }
 
+#workspaces button.persistent {
+  margin: 0;
+  padding: 0px;
+  color: #d8dee9;
+  background: rgba(0,0,0,0);
+}
+
+#workspaces button.empty {
+  color: #5E81AC;
+}
+
 #workspaces button.active {
   margin: 0;
   padding: 0px;
   color: #EBCB8B;
-  background: rgba(0,0,0,0);
-}
-
-#workspaces button.persistent {
-  margin: 0;
-  padding: 0px;
-  color: #5E81AC;
   background: rgba(0,0,0,0);
 }
 
