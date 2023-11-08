@@ -1,4 +1,3 @@
-
 ### Start Programs
 SUPER + Enter               * __open Terminal__
 
@@ -56,6 +55,11 @@ ALT   + h,l                 * __Horizontal Resize__
 ALT   + j,k                 * __Vertical Resize__
 
 ### Media
-SUPER + ALT + left,right    * __previous / next Track__
+SUPER + CRTL + left,right   * __previous / next Track__
 
-SUPER + ALT + Enter         * __toggle play/pause__
+SUPER + CRTL + Enter        * __toggle play/pause__
+
+SUPER + CRTL + up, down     * __volume up/down__
+
+SUPER + c                   * __copy current sing info__ "Hört gerade"
+
