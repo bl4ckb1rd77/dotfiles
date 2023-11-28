@@ -33,7 +33,7 @@ display_bitrate = "no"
 display_remaining_time = "no"
 
 # Progress bar #
-progressbar_look = ■▶ 
+progressbar_look = => 
 progressbar_color = "black"
 progressbar_elapsed_color = "blue"
 
