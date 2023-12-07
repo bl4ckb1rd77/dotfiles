@@ -10,7 +10,7 @@ autocenter_mode = "no"
 centered_cursor = "no"
 ignore_leading_the = "no"
 allow_for_physical_item_deletion = "no"
-lyrics_fetchers = azlyrics, genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
+lyrics_fetchers = genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
 lyrics_directory = "~/.lyrics/"
 fetch_lyrics_for_current_song_in_background = "yes"
 store_lyrics_in_song_dir = "no"
@@ -33,25 +33,33 @@ display_bitrate = "no"
 display_remaining_time = "no"
 
 # Progress bar #
-progressbar_look = => 
-progressbar_color = "black"
-progressbar_elapsed_color = "blue"
+progressbar_look = "─┄┄" 
+progressbar_color = "blue"
+progressbar_elapsed_color = "green"
 
 # Song status #
-now_playing_prefix = "$b"
-now_playing_suffix = "$/b"
-song_status_format = "$b$5%t$/b {$8by} $b$6%a$8$/b"
+# now_playing_prefix = "$b"
+# now_playing_suffix = "$/b"
+now_playing_prefix                                  = "$b$2$7 "
+now_playing_suffix                                  = "$/b$8"
+current_item_prefix                                 = "$b$7$/b$3 "
+current_item_suffix                                 = "$8"
+
+song_status_format = "$b$3%t$/b {$8by} $b$4%a$8$/b"
 
 # Header #
-alternative_header_second_line_format =
+# alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+# alternative_header_second_line_format =
+alternative_header_first_line_format                = "$b$5$/b $b$8{%t}|{%f}$/b $/b"
+alternative_header_second_line_format               = "{$b{$4 %a$9}{ - $7  %b$9}{ ($2%y$9)}}|{%D}"
 
 # Song list #
 song_list_format = "{$8%a ⠂ }{%t}$R{%l}"
 
 # Playlist #
 #song_columns_list_format = "(45)[red]{t} (30)[yellow]{a} (25)[cyan]{b}"
-song_columns_list_format = "(50)[cyan]{ar} (50)[magenta]{t}"
+song_columns_list_format = "(40)[white]{ar} (40)[yellow]{t} (20)[white]{l}"
 
 # Colors #
 # main_window_highlight_color = "magenta"
-main_window_color = "blue"
+main_window_color = "white"
