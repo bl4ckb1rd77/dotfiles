@@ -58,7 +58,7 @@ song_list_format = "{$8%a ⠂ }{%t}$R{%l}"
 
 # Playlist #
 #song_columns_list_format = "(45)[red]{t} (30)[yellow]{a} (25)[cyan]{b}"
-song_columns_list_format = "(40)[white]{ar} (40)[yellow]{t} (20)[white]{l}"
+song_columns_list_format = "(40)[white]{a} (40)[yellow]{t} (20)[white]{lr}"
 
 # Colors #
 # main_window_highlight_color = "magenta"
