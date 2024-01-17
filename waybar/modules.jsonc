@@ -108,6 +108,13 @@
     "on-click": "~/.config/hypr/scripts/touchpad",
     "exec": "~/.config/hypr/scripts/touchpad -get",
   },
+  "systemd-failed-units": {
+    "hide-on-ok": false,
+    "format": "✗ {nr_failed_system}/{nr_failed_user}",
+    "format-ok": "✓",
+    "system": true,
+    "user": true
+  },
   "mpd": {
     "format": "<span color='#a6e3a1'></span> {stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
     "format-disconnected": "<span color='#a6e3a1'></span> Disconnected",

@@ -37,9 +37,18 @@ window#waybar {
   margin-left: 10px;
 }
 
+#systemd-failed-units {
+  color: #BF616A;
+}
+
+#systemd-failed-units.ok {
+  color: #EBCB8B;
+}
+
 #custom-power {
   margin-right: 10px;
 }
+
 #workspaces button {
   margin: 0;
   padding: 0px;
