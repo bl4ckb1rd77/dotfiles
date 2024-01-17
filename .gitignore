@@ -49,3 +49,4 @@ goverlay/initial_values
 keepassxc
 balena-etcher
 youtube-tui
+systemd/user/multi-user.target.wants
