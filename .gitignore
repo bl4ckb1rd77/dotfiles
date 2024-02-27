@@ -51,3 +51,8 @@ balena-etcher
 youtube-tui
 systemd/user/multi-user.target.wants
 google-chrome-beta
+systemd/user/default.target.wants/onedrive.service
+onedrive/refresh_token
+onedrive/items.sqlite3-wal
+onedrive/items.sqlite3-shm
+onedrive/items.sqlite3
