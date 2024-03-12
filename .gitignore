@@ -56,3 +56,4 @@ onedrive/refresh_token
 onedrive/items.sqlite3-wal
 onedrive/items.sqlite3-shm
 onedrive/items.sqlite3
+cef_user_data/WidevineCdm
