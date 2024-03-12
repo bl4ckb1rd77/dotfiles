@@ -1,0 +1,12 @@
+#!/bin/bash
+case "$1" in
+  toggle)
+    echo "pause" | netcat -W 1 -U /run/user/1000/ncspot/ncspot.sock
+    ;;
+  next )
+    echo "next" | netcat -W 1 -U /run/user/1000/ncspot/ncspot.sock
+    ;;
+  previous)
+    echo "previous" | netcat -W 1 -U /run/user/1000/ncspot/ncspot.sock
+    ;;
+esac

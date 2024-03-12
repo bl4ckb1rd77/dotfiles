@@ -1,0 +1,27 @@
+# vim: ft=cfg
+default_keybindings = true
+use_nerdfont = true
+notify = true
+gapless = true
+flip_status_indicators=true
+shuffle = true
+repeat = 'playlist'
+library_tabs = [ "tracks", "albums", "artists", "playlists" ]
+
+[theme]
+background = "#2E3440"
+primary = "#D8DEE9"
+secondary = "#4C566A"
+title = "#8FBCBB"
+playing = "#8FBCBB"
+playing_selected = "#4C566A"
+playing_bg = "#4C566A"
+highlight = "#EBCB8B"
+highlight_bg = "#4C566A"
+error = "#BF616A"
+error_bg = "#2E3440"
+statusbar = "#D8DEE9"
+statusbar_progress = "#A3BE8C"
+statusbar_bg = "#2E3440"
+cmdline = "#CBFFDE"
+cmdline_bg = "#434C5E"
