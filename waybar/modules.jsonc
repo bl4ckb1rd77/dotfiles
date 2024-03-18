@@ -115,6 +115,14 @@
     "system": true,
     "user": true
   },
+  "custom/ncspot": {
+    "format": "<span color='#a6e3a1'></span> {}",
+    "interval": 1,
+    "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/ncspot toggle",
+    "exec": "~/.config/hypr/scripts/ncspot info",
+    "exec-if": "~/.config/hypr/scripts/ncspot state",
+  },
   "mpd": {
     "format": "<span color='#a6e3a1'></span> {stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
     "format-disconnected": "<span color='#a6e3a1'></span> Disconnected",

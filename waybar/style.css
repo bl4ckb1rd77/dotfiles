@@ -29,10 +29,12 @@ window#waybar {
 #custom-touchpad,
 #custom-mpdvol,
 #custom-power,
+#custom-ncspot,
 #mpd {
 	color: #D8DEE9;
 }
 
+#custom-ncspot,
 #mpd {
   margin-left: 10px;
 }
