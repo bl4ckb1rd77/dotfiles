@@ -8,7 +8,7 @@ alias kssh='kitten ssh'
 alias rr='reboot-required'
 alias nv='nvim'
 alias webcam='mpv /dev/video0'
-alias ncmpcpp='ncmpcpp -s playlist -S browser'
+# alias ncmpcpp='ncmpcpp -s playlist -S browser'
 # alias clear='clear; ufetch'
 
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
