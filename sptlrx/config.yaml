@@ -1,0 +1,52 @@
+cookie: ""
+player: mpris
+host: lyricsapi.vercel.app
+ignoreErrors: true
+timerInterval: 200
+updateInterval: 2000
+
+### Style settings ###
+style:
+  hAlignment: center
+  before:
+    background: ""
+    foreground: "#4C566A"
+    bold: true
+    italic: false
+    underline: false
+    strikethrough: false
+    blink: false
+    faint: false
+  current:
+    background: ""
+    foreground: "#D8DEE9"
+    bold: true
+    italic: false
+    underline: false
+    strikethrough: false
+    blink: false
+    faint: false
+  after:
+    background: ""
+    foreground: "#81A1C1"
+    bold: false
+    italic: false
+    underline: false
+    strikethrough: false
+    blink: false
+    faint: false
+
+### Pipe settings ###
+pipe:
+  # Maximum line length. 0 - unlimited.
+  length: 0
+  # How to handle overflowing strings. Possible values: word, none, ellipsis.
+  overflow: word
+
+### MPRIS settings ###
+mpris:
+  # Whitelist of MPRIS players. First available is used if empty.
+  players: [ncspot]
+
+#local:
+#  folder: "~/.lyrics"

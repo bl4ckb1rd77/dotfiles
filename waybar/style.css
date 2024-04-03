@@ -31,12 +31,11 @@ window#waybar {
 #custom-power,
 #custom-ncspot,
 #cava,
-#mpd {
+#mpris {
 	color: #D8DEE9;
 }
 
-#custom-ncspot,
-#mpd {
+#mpris {
   margin-left: 10px;
 }
 
