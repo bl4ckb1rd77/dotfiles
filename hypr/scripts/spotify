@@ -1,5 +1,5 @@
 #!/bin/bash
-kitty -T ncmpcpp -o allow_remote_control=socket-only --listen-on unix:/tmp/mkitty -e ncspot &
+kitty -T ncmpcpp -o font_size=14 -o allow_remote_control=socket-only --listen-on unix:/tmp/mkitty -e ncspot &
 sleep 1 
 kitty @ --to unix:/tmp/mkitty launch sptlrx
 kitty @ --to unix:/tmp/mkitty resize-window -m 'title:^sptlrx' -i -30                           
