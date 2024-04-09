@@ -11,7 +11,7 @@ alias webcam='mpv /dev/video0'
 # alias ncmpcpp='ncmpcpp -s playlist -S browser'
 # alias clear='clear; ufetch'
 
-#[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 source $ZSH/oh-my-zsh.sh
 # ufetch
