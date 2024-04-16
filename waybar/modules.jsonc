@@ -118,7 +118,8 @@
   "mpris": {
     "format": "<span color='#a6e3a1'></span> {status_icon} {dynamic}",
     "dynamic-order": ["title", "artist"],
-    "dynamic-len": 50,
+    "title-len": 25,
+    "artist-len": 25,
     "interval": 1,
     "player": "ncspot",
     "status-icons": {
