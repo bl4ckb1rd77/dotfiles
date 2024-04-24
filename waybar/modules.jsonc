@@ -1,12 +1,11 @@
 {
   "tray": {
     "icon-size": 14,
-    "spacing": 2,
+    "spacing": 2
   },
   "clock": {
 	  "interval": 1,
-    "format": "<span color='#a6e3a1'> </span>{:%H:%M:%S}",
-    "format-alt": "<span color='#a6e3a1'> </span>{:%d.%m.%y}",
+    "format": "<span color='#a6e3a1'> </span>{:%a %d.%m.%Y - %H:%M:%S}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "mode": "month",
@@ -19,24 +18,24 @@
         "weeks":    "<span color='#eb8bcd'><b>{}</b></span>",
         "weekdays": "<span color='#ebcb8b'><b>{}</b></span>",
         "today":    "<span color='#ebcb8b'><b><u>{}</u></b></span>"
-      },
+      }
     },
     "actions": {
       "on-click-right": "mode",
       "on-scroll-up": "shift_down",
       "on-scroll-down": "shift_up"
-    },
+    }
   },
   "cpu": {
     "interval": 1,
     "format": "<span color='#a6e3a1'> </span> {usage}%",
     "max-length": 10,
-    "on-click": "kitty -e bashtop",
+    "on-click": "kitty -e bashtop"
   },
   "memory": {
     "interval": 1,
     "format": "<span color='#a6e3a1'> </span>{}%",
-    "max-length": 10,
+    "max-length": 10
   },
   "disk": {
 	  "interval": 60,
@@ -48,7 +47,7 @@
     "interval": 2,
     "align": 0,
     "rotate": 0,
-    "smooth-scrolling-threshold": 1,
+    "smooth-scrolling-threshold": 1
     },
   "battery": {
     "bat": "BAT0",
@@ -78,7 +77,7 @@
     "on-scroll-up": "pamixer -i 5",
     "on-scroll-down": "pamixer -d 5",
 	  "on-click-right": "exec pavucontrol",
-    "tooltip-format" : "Volume {volume}%",
+    "tooltip-format" : "Volume {volume}%"
   },
   "custom/mpdvol": {
     "format": "<span color='#a6e3a1'> </span>{}%",
@@ -88,7 +87,7 @@
     "on-scroll-up": "~/.config/hypr/scripts/mpdvolume up",
     "on-scroll-down": "~/.config/hypr/scripts/mpdvolume down",
     "on-click": "~/.config/hypr/scripts/mpdvolume toggle",
-    "exec-if": "~/.config/hypr/scripts/mpdvolume state",
+    "exec-if": "~/.config/hypr/scripts/mpdvolume state"
   },
   "custom/updater": {
     "format": "<span color='#a6e3a1'></span> {}",
