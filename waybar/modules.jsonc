@@ -38,13 +38,13 @@
     "max-length": 10
   },
   "disk": {
-	  "interval": 30,
-	  "format": "<span color='#81a1c1'></span> {percentage_free}%",
+	  "interval": 1,
+	  "format": "<span color='#81a1c1'></span> {free}",
     "path": "/"
 	},
   "disk#home": {
-	  "interval": 10,
-	  "format": "<span color='#81a1c1'>󰉌</span> {percentage_free}%",
+	  "interval": 1,
+	  "format": "<span color='#81a1c1'>󰉌</span> {free}",
     "path": "/home",
     "on-click": "nemo /home/ahoefer"
   },
