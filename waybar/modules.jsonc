@@ -76,7 +76,7 @@
   "pulseaudio": {
     "scroll-step": 5.0,
     "format": "<span color='#ebcb8b'>{icon}</span> {volume}%",
-    "format-muted": "<span color='#bf616a'>󰖁</span>",
+    "format-muted": "<span color='#bf616a'>󰖁 mute</span>",
     "format-icons": {
       "default": ["", "", "󰕾"]
     },
@@ -88,7 +88,7 @@
   },
   "custom/mpdvol": {
     "format": "<span color='#ebcb8b'> </span>{}%",
-    "format-alt": "<span color='#ebcb8b'>󰝛 </span>",
+    "format-alt": "<span color='#bf616a'>󰝛 </span>",
     "interval": 1,
     "exec": "~/.config/hypr/scripts/mpdvolume",
     "on-scroll-up": "~/.config/hypr/scripts/mpdvolume up",
@@ -97,7 +97,7 @@
     "exec-if": "~/.config/hypr/scripts/mpdvolume state"
   },
   "custom/updater": {
-    "format": "<span color='#ebcb8b'></span> {}",
+    "format": "<span color='#8fbcbb'></span> {}",
     "exec": "~/.config/hypr/scripts/updater",
     "interval": 60,
     "on-click": "kitty --class update -T update -e paru -Syu && notify-send 'The system has been updated' "
@@ -108,7 +108,7 @@
     "on-click": "wlogout"
   },
   "custom/touchpad": {
-    "format": "<span color='#81a1c1'>{} </span>",
+    "format": "<span color='#8fbcbb'>{} </span>",
     "interval": 1,
     "tooltip": false,
     "on-click": "~/.config/hypr/scripts/touchpad",
@@ -133,14 +133,6 @@
       "playing": " ",
       "stopped": " "
     }
-  },
-  "custom/ncspot": {
-    "format": "<span color='#ebcb8b'></span> {}",
-    "interval": 1,
-    "tooltip": false,
-    "on-click": "~/.config/hypr/scripts/ncspot toggle",
-    "exec": "~/.config/hypr/scripts/ncspot info",
-    "exec-if": "~/.config/hypr/scripts/ncspot state"
   },
   "cava": {
     "cava_config": "/home/ahoefer/.config/cava/config",
