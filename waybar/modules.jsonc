@@ -5,7 +5,7 @@
   },
   "clock": {
 	  "interval": 1,
-    "format": "<span color='#a6e3a1'> </span>{:%a %d.%m.%Y - %H:%M:%S}",
+    "format": "<span color='#ebcb8b'> </span>{:%a %d.%m.%Y - %H:%M:%S}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "mode": "month",
@@ -28,21 +28,28 @@
   },
   "cpu": {
     "interval": 1,
-    "format": "<span color='#a6e3a1'> </span> {usage}%",
+    "format": "<span color='#ebcb8b'> </span>{usage}%",
     "max-length": 10,
     "on-click": "kitty -e bashtop"
   },
   "memory": {
     "interval": 1,
-    "format": "<span color='#a6e3a1'> </span>{}%",
+    "format": "<span color='#ebcb8b'> </span>{}%",
     "max-length": 10
   },
   "disk": {
-	  "interval": 60,
-	  "format": "<span color='#a6e3a1'></span> {free} "
+	  "interval": 30,
+	  "format": "<span color='#81a1c1'></span> {percentage_free}%",
+    "path": "/"
 	},
+  "disk#home": {
+	  "interval": 10,
+	  "format": "<span color='#81a1c1'>󰉌</span> {percentage_free}%",
+    "path": "/home",
+    "on-click": "nemo /home/ahoefer"
+  },
 	"backlight": {
-    "format": "<span color='#a6e3a1'>{icon}</span> {percent}%",
+    "format": "<span color='#8fbcbb'>{icon}</span> {percent}%",
     "format-icons": ["󱩎","󱩏","󱩐","󱩑","󱩒","󱩓","󱩔","󱩕","󱩖","󰛨"],
     "interval": 2,
     "align": 0,
@@ -56,11 +63,11 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "<span color='#a6e3a1'>{icon}</span>  {capacity}%",
+    "format": "<span color='#ebcb8b'>{icon}</span>  {capacity}%",
     "format-icons": ["", "", "", "", ""]
   },
   "idle_inhibitor": {
-    "format": "<span color='#a6e3a1'>{icon} </span>",
+    "format": "<span color='#81a1c1'>{icon} </span>",
     "format-icons": {
       "activated": "",
       "deactivated": ""
@@ -68,8 +75,8 @@
   },
   "pulseaudio": {
     "scroll-step": 5.0,
-    "format": "<span color='#a6e3a1'>{icon}</span> {volume}%",
-    "format-muted": "<span color='#f38ba8'>󰖁</span>",
+    "format": "<span color='#ebcb8b'>{icon}</span> {volume}%",
+    "format-muted": "<span color='#bf616a'>󰖁</span>",
     "format-icons": {
       "default": ["", "", "󰕾"]
     },
@@ -80,8 +87,8 @@
     "tooltip-format" : "Volume {volume}%"
   },
   "custom/mpdvol": {
-    "format": "<span color='#a6e3a1'> </span>{}%",
-    "format-alt": "<span color='#a6e3a1'>󰝛 </span>",
+    "format": "<span color='#ebcb8b'> </span>{}%",
+    "format-alt": "<span color='#ebcb8b'>󰝛 </span>",
     "interval": 1,
     "exec": "~/.config/hypr/scripts/mpdvolume",
     "on-scroll-up": "~/.config/hypr/scripts/mpdvolume up",
@@ -90,18 +97,18 @@
     "exec-if": "~/.config/hypr/scripts/mpdvolume state"
   },
   "custom/updater": {
-    "format": "<span color='#a6e3a1'></span> {}",
+    "format": "<span color='#ebcb8b'></span> {}",
     "exec": "~/.config/hypr/scripts/updater",
     "interval": 60,
     "on-click": "kitty --class update -T update -e paru -Syu && notify-send 'The system has been updated' "
   },
   "custom/power": {
-    "format": "<span color='#a6e3a1'></span>",
+    "format": "<span color='#ebcb8b'></span>",
     "tooltip": false,
     "on-click": "wlogout"
   },
   "custom/touchpad": {
-    "format": "<span color='#a6e3a1'>{} </span>",
+    "format": "<span color='#81a1c1'>{} </span>",
     "interval": 1,
     "tooltip": false,
     "on-click": "~/.config/hypr/scripts/touchpad",
@@ -115,7 +122,7 @@
     "user": true
   },
   "mpris": {
-    "format": "<span color='#a6e3a1'></span> {status_icon} {dynamic}",
+    "format": "<span color='#ebcb8b'></span> {status_icon} {dynamic}",
     "dynamic-order": ["title", "artist"],
     "title-len": 25,
     "artist-len": 25,
@@ -128,7 +135,7 @@
     }
   },
   "custom/ncspot": {
-    "format": "<span color='#a6e3a1'></span> {}",
+    "format": "<span color='#ebcb8b'></span> {}",
     "interval": 1,
     "tooltip": false,
     "on-click": "~/.config/hypr/scripts/ncspot toggle",
