@@ -1,0 +1,4 @@
+#!/bin/bash
+installed=$(file /boot/vmlinuz* | awk '{ print $9 }')
+current=$(uname -r)
+[[ "$installed" == "$current" ]] && echo "󰶕 " || echo "󱄌 "

@@ -27,6 +27,7 @@ window#waybar {
 #tray,
 #backlight,
 #custom-updater,
+#custom-rebootrequired,
 #custom-touchpad,
 #custom-mpdvol,
 #custom-power,
@@ -36,7 +37,8 @@ window#waybar {
 	color: #D8DEE9;
 }
 
-#mpris {
+#mpris,
+#cava {
   margin-left: 10px;
 }
 

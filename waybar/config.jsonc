@@ -7,5 +7,5 @@
   "spacing": 5,
   "modules-left": ["hyprland/workspaces","mpris", "cava"],
   "modules-center": ["clock","idle_inhibitor"],
-  "modules-right": ["pulseaudio","custom/mpdvol","cpu","memory","disk","disk#home","backlight","custom/touchpad","custom/updater","systemd-failed-units","battery","tray","custom/power"],
+  "modules-right": ["pulseaudio","custom/mpdvol","cpu","memory","disk","disk#home","backlight","custom/touchpad","custom/updater","systemd-failed-units","custom/rebootrequired","battery","tray","custom/power"],
 }

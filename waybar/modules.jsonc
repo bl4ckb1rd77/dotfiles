@@ -102,6 +102,11 @@
     "interval": 60,
     "on-click": "kitty --class update -T update -e paru -Syu && notify-send 'The system has been updated' "
   },
+  "custom/rebootrequired": {
+    "format": "<span color='#8fbcbb'>{}</span>",
+    "exec": "~/.config/hypr/scripts/reboot-required-kernel",
+    "interval": 60
+  },
   "custom/power": {
     "format": "<span color='#ebcb8b'></span>",
     "tooltip": false,
@@ -116,8 +121,8 @@
   },
   "systemd-failed-units": {
     "hide-on-ok": false,
-    "format": "✗ {nr_failed_system}/{nr_failed_user}",
-    "format-ok": "✓",
+    "format": " {nr_failed_system}/{nr_failed_user}",
+    "format-ok": " <span color='#D8DEE9'>✓</span>",
     "system": true,
     "user": true
   },
