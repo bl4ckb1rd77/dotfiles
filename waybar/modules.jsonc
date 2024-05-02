@@ -22,6 +22,11 @@
     "on-click": "~/.config/hypr/scripts/spotify",
     "tooltip-format": "Spotiy"
   },
+  "custom/launcher-nvim": {
+    "format": " ",
+    "on-click": "kitty -e nvim &",
+    "tooltip-format": "nvim"
+  },
   "tray": {
     "icon-size": 14,
     "spacing": 2
