@@ -3,12 +3,12 @@
     "format": " "
   },
   "custom/launcher-terminal": {
-    "format": " ",
+    "format": " ",
     "on-click": "kitty",
     "tooltip-format": "Terminal"
   },
   "custom/launcher-chrome": {
-    "format": " ",
+    "format": "󰊯 ",
     "on-click": "google-chrome-stable",
     "tooltip-format": "Chrome"
   },
@@ -18,7 +18,7 @@
     "tooltip-format": "Whatsapp"
   },
   "custom/launcher-spotify": {
-    "format": "󰓇 ",
+    "format": " ",
     "on-click": "~/.config/hypr/scripts/spotify",
     "tooltip-format": "Spotiy"
   },
@@ -38,7 +38,7 @@
       "format": {
         "months":   "<span color='#d8dee9'><b>{}</b></span>",
         "days":     "<span><b>{}</b></span>",
-        "weeks":    "<span color='#eb8bcd'><b>{}</b></span>",
+        "weeks":    "<span color='#81a1c1'><b>{}</b></span>",
         "weekdays": "<span color='#ebcb8b'><b>{}</b></span>",
         "today":    "<span color='#ebcb8b'><b><u>{}</u></b></span>"
       }
