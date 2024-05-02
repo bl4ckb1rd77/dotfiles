@@ -5,7 +5,7 @@
   "height": 20,
   "margin": 0,
   "spacing": 5,
-  "modules-left": ["hyprland/workspaces","mpris", "cava"],
+  "modules-left": ["hyprland/workspaces","custom/spacer","custom/launcher-terminal","custom/launcher-chrome","custom/launcher-spotify","custom/launcher-whatsapp","custom/spacer","mpris", "cava"],
   "modules-center": ["clock","idle_inhibitor"],
   "modules-right": ["pulseaudio","custom/mpdvol","cpu","memory","disk","disk#home","backlight","custom/touchpad","custom/updater","systemd-failed-units","custom/rebootrequired","battery","tray","custom/power"],
 }

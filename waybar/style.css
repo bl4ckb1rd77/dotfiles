@@ -33,6 +33,9 @@ window#waybar {
 #custom-power,
 #custom-ncspot,
 #cava,
+#custom-launcher-terminal,
+#custom-launcher-chrome,
+#custom-launcher-whatsapp,
 #mpris {
 	color: #D8DEE9;
 }

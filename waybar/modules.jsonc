@@ -1,4 +1,27 @@
 {
+  "custom/spacer": {
+    "format": " "
+  },
+  "custom/launcher-terminal": {
+    "format": " ",
+    "on-click": "kitty",
+    "tooltip-format": "Terminal"
+  },
+  "custom/launcher-chrome": {
+    "format": " ",
+    "on-click": "google-chrome-stable",
+    "tooltip-format": "Chrome"
+  },
+  "custom/launcher-whatsapp": {
+    "format": "󰖣 ",
+    "on-click": "~/.config/hypr/scripts/whatsapp",
+    "tooltip-format": "Whatsapp"
+  },
+  "custom/launcher-spotify": {
+    "format": "󰓇 ",
+    "on-click": "~/.config/hypr/scripts/spotify",
+    "tooltip-format": "Spotiy"
+  },
   "tray": {
     "icon-size": 14,
     "spacing": 2
