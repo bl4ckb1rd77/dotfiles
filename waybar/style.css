@@ -60,7 +60,8 @@ window#waybar.bottom {
   color: #EBCB8B;
 }
 
-#custom-power {
+#custom-power,
+#battery {
   margin-right: 10px;
 }
 
