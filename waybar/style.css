@@ -5,17 +5,18 @@
   font-weight: 900;
 }
 
-window#waybar {
+window#waybar.top {
     background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #389964;
     border-radius: 0px;
     color: rgb(220, 220, 220);
 }
 
-#window {
-    background:rgba(0,0,0,.25);
-    padding: 0px 0px;
-    margin: 0px;
+window#waybar.bottom {
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 1px solid #389964;
     border-radius: 0px;
+    color: rgb(220, 220, 220);
 }
 
 #clock,
@@ -34,11 +35,14 @@ window#waybar {
 #custom-power,
 #custom-ncspot,
 #cava,
+#hyprland-window,
+#custom-startmenu,
 #custom-launcher-terminal,
 #custom-launcher-chrome,
 #custom-launcher-spotify,
 #custom-launcher-nvim,
 #custom-launcher-whatsapp,
+#custom-launcher-nemo,
 #mpris {
 	color: #D8DEE9;
 }

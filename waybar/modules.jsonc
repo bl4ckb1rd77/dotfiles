@@ -1,6 +1,8 @@
 {
-  "custom/spacer": {
-    "format": " "
+  "custom/startmenu": {
+    "format": "󰣇 Start",
+    "tooltip": 0,
+    "on-click": "~/.config/hypr/scripts/menu"
   },
   "custom/launcher-terminal": {
     "format": " ",
@@ -20,12 +22,27 @@
   "custom/launcher-spotify": {
     "format": " ",
     "on-click": "~/.config/hypr/scripts/spotify",
-    "tooltip-format": "Spotiy"
+    "tooltip-format": "Spotify"
   },
   "custom/launcher-nvim": {
     "format": " ",
     "on-click": "kitty -e nvim &",
     "tooltip-format": "nvim"
+  },
+  "custom/launcher-nemo": {
+    "format": " ",
+    "on-click": "nemo",
+    "tooltip-format": "Nemo"
+  },
+  "hyprland/window": {
+    "format": "<span color='#ebcb8b'>󱂬 </span> {}",
+    "max-length": 100,
+    "icon-size": 16,
+    "rewrite": {
+      "(.*) - Google Chrome": "󰊯 $1",
+      "^vim(.*)": " $1",
+      "^nvim": " "
+    }
   },
   "tray": {
     "icon-size": 14,
