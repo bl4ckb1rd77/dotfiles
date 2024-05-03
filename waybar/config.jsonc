@@ -18,7 +18,7 @@
   "height": 20,
   "margin": 0,
   "spacing": 5,
-  "modules-left": ["custom/launcher-terminal","custom/launcher-nemo","custom/launcher-chrome","custom/launcher-nvim","custom/launcher-spotify","custom/launcher-whatsapp"],
+  "modules-left": ["custom/launcher-terminal","custom/launcher-nemo","custom/launcher-chrome","custom/launcher-nvim","custom/launcher-spotify","custom/launcher-whatsapp","custom/launcher-calc"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["tray","clock","custom/power"]
 }]

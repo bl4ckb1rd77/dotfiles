@@ -1,38 +1,44 @@
 {
   "custom/startmenu": {
     "format": "󰣇 Start",
-    "tooltip": 0,
+    "tooltip": false,
     "on-click": "~/.config/hypr/scripts/menu"
   },
   "custom/launcher-terminal": {
     "format": " ",
     "on-click": "kitty",
-    "tooltip-format": "Terminal"
+    "tooltip": false
   },
   "custom/launcher-chrome": {
     "format": "󰊯 ",
     "on-click": "google-chrome-stable",
-    "tooltip-format": "Chrome"
+    "tooltip": false
   },
   "custom/launcher-whatsapp": {
     "format": "󰖣 ",
     "on-click": "~/.config/hypr/scripts/whatsapp",
-    "tooltip-format": "Whatsapp"
+    "tooltip": false
   },
   "custom/launcher-spotify": {
     "format": " ",
     "on-click": "~/.config/hypr/scripts/spotify",
-    "tooltip-format": "Spotify"
+    "tooltip": false
   },
   "custom/launcher-nvim": {
     "format": " ",
     "on-click": "kitty -e nvim &",
-    "tooltip-format": "nvim"
+    "tooltip": false
   },
   "custom/launcher-nemo": {
     "format": " ",
     "on-click": "nemo",
-    "tooltip-format": "Nemo"
+    "on-click-right": "kitty -e ranger",
+    "tooltip": false
+  },
+  "custom/launcher-calc": {
+    "format": " ",
+    "on-click": "galculator",
+    "tooltip": false
   },
   "hyprland/window": {
     "format": "<span color='#ebcb8b'>󱂬 </span> {}",
@@ -96,6 +102,7 @@
 	"backlight": {
     "format": "<span color='#8fbcbb'>{icon}</span> {percent}%",
     "format-icons": ["󱩎","󱩏","󱩐","󱩑","󱩒","󱩓","󱩔","󱩕","󱩖","󰛨"],
+    "tooltip": false,
     "interval": 2,
     "align": 0,
     "rotate": 0,
@@ -145,7 +152,8 @@
     "format": "<span color='#8fbcbb'></span> {}",
     "exec": "~/.config/hypr/scripts/updater",
     "interval": 60,
-    "on-click": "kitty --class update -T update -e paru -Syu && notify-send 'The system has been updated' "
+    "on-click": "kitty --class update -T update -e paru -Syu && notify-send 'The system has been updated' ",
+    "on-click-right": "pamac-manager"
   },
   "custom/rebootrequired": {
     "format": "<span color='#8fbcbb'>{}</span>",
