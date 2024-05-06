@@ -35,7 +35,6 @@ window#waybar.bottom {
 #custom-ncspot,
 #cava,
 #hyprland-window,
-#custom-startmenu,
 #custom-launcher-terminal,
 #custom-launcher-chrome,
 #custom-launcher-spotify,
@@ -46,6 +45,20 @@ window#waybar.bottom {
 #mpris {
 	color: #D8DEE9;
   margin-left: 4px;
+}
+
+#custom-startmenu {
+  padding-left: 4px;
+  padding-right: 0px;
+  margin-left: 6px;
+  background: #d8dee9;
+  color: #2E3440;
+  border-radius: 2px;
+}
+
+#custom-startmenu:hover {
+  background: #83b5e0;
+  color: #2E3440;
 }
 
 #mpris,

@@ -1,6 +1,6 @@
 {
   "custom/startmenu": {
-    "format": "󰣇 Start",
+    "format": "󰣇 ",
     "tooltip": false,
     "on-click": "~/.config/hypr/scripts/menu"
   },
