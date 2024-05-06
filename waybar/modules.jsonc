@@ -52,7 +52,7 @@
   },
   "tray": {
     "icon-size": 14,
-    "spacing": 2
+    "spacing": 4
   },
   "clock": {
 	  "interval": 1,
