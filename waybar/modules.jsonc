@@ -152,6 +152,7 @@
     "format": "<span color='#8fbcbb'></span> {}",
     "exec": "~/.config/hypr/scripts/updater",
     "interval": 60,
+    "tooltip": false,
     "on-click": "kitty --class update -T update -e paru -Syu && notify-send 'The system has been updated' ",
     "on-click-right": "pamac-manager"
   },
