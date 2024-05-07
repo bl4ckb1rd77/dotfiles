@@ -44,7 +44,7 @@
     "format": "<span color='#ebcb8b'>󱂬 </span> {}",
     "max-length": 100,
     "icon-size": 16,
-    "rewrite": {
+  "rewrite": {
       "(.*) - Google Chrome": "󰊯 $1",
       "^vim(.*)": " $1",
       "^nvim": " "

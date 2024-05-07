@@ -44,30 +44,27 @@ window#waybar.bottom {
 #custom-launcher-calc,
 #mpris {
   color: #D8DEE9;
-  margin-left: 4px;
-}
-
-#custom-launcher-terminal {
-  margin-left: 6px;
-}
-
-#custom-startmenu {
-  padding-left: 4px;
-  padding-right: 0px;
-  margin-left: 6px;
-  background: #d8dee9;
-  color: #2E3440;
-  border-radius: 2px;
-}
-
-#custom-startmenu:hover {
-  background: #83b5e0;
-  color: #2E3440;
+  margin-left: 4px;  
 }
 
 #mpris,
-#cava {
+#cava,
+#custom-startmenu {
   margin-left: 10px;
+}
+
+/* damn icons */
+#custom-launcher-nemo { margin-left: 6px; }
+
+#custom-launcher-terminal:hover,
+#custom-launcher-chrome:hover,
+#custom-launcher-spotify:hover,
+#custom-launcher-nvim:hover,
+#custom-launcher-whatsapp:hover,
+#custom-launcher-nemo:hover,
+#custom-launcher-calc:hover,
+#custom-startmenu:hover {
+  color: #83b5e0;
 }
 
 #systemd-failed-units {
