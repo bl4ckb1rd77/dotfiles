@@ -18,7 +18,7 @@
   "height": 20,
   "margin": 0,
   "spacing": 5,
-  "modules-left": ["mpris","cava","custom/mpdvol"],
+  "modules-left": ["cava","custom/mpdvol","custom/ncspot"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["custom/touchpad","idle_inhibitor","custom/updater","systemd-failed-units","custom/rebootrequired","tray","clock","custom/power"]
 }]

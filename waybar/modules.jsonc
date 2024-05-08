@@ -181,7 +181,7 @@
     "user": true
   },
   "mpris": {
-    "format": "<span color='#ebcb8b'></span> {status_icon} {dynamic}",
+    "format": "{status_icon} {dynamic}",
     "dynamic-order": ["title", "artist"],
     "title-len": 25,
     "artist-len": 25,
@@ -192,6 +192,14 @@
       "playing": " ",
       "stopped": " "
     }
+  },
+  "custom/ncspot": {
+    "format": "{}",
+    "interval": 1,
+    "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/ncspot toggle",
+    "exec": "~/.config/hypr/scripts/ncspot info",
+    "exec-if": "~/.config/hypr/scripts/ncspot state"
   },
   "cava": {
     "cava_config": "/home/ahoefer/.config/cava/config",

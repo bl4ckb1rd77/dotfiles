@@ -2,7 +2,7 @@
   font-family: ShureTechMono Nerd Font;
   /* font-family: JetBrainsMono Nerd Font; */
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 window#waybar {
@@ -42,12 +42,12 @@ window#waybar.bottom {
 #custom-launcher-whatsapp,
 #custom-launcher-nemo,
 #custom-launcher-calc,
+#custom-ncspot,
 #mpris {
   color: #D8DEE9;
   margin-left: 4px;  
 }
 
-#mpris,
 #cava,
 #custom-startmenu {
   margin-left: 10px;
