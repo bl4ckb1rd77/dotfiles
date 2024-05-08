@@ -1,44 +1,60 @@
 {
   "custom/startmenu": {
-    "format": "󰣇 ",
-    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": [" "],
+    "tooltip": true,
+    "tooltip-format": "Startmenü",
     "on-click": "~/.config/hypr/scripts/menu"
   },
   "custom/launcher-terminal": {
-    "format": " ",
+    "format": "{icon}",
+    "format-icons": [" "],
     "on-click": "kitty",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Terminal Kitty"
   },
   "custom/launcher-chrome": {
-    "format": "󰊯 ",
+    "format": "{icon}",
+    "format-icons": ["󰊯 "],
     "on-click": "google-chrome-stable",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Google Chrome"
   },
   "custom/launcher-whatsapp": {
-    "format": "󰖣 ",
+    "format": "{icon}",
+    "format-icons": ["󰖣 "],
     "on-click": "~/.config/hypr/scripts/whatsapp",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Whatsapp (nchat)"
   },
   "custom/launcher-spotify": {
-    "format": " ",
+    "format": "{icon}",
+    "format-icons": [" "],
     "on-click": "~/.config/hypr/scripts/spotify",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Spotify (ncspot)"
   },
   "custom/launcher-nvim": {
-    "format": " ",
+    "format": "{icon}",
+    "format-icons": [" "],
     "on-click": "kitty -e nvim &",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "NeoVim NvChad"
   },
   "custom/launcher-nemo": {
-    "format": " ",
+    "format": "{icon}",
+    "format-icons": [" "],
     "on-click": "nemo",
     "on-click-right": "kitty -e ranger",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Nemo / Ranger"
   },
   "custom/launcher-calc": {
-    "format": " ",
+    "format": "{icon}",
+    "format-icons": [" "],
     "on-click": "galculator",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Galculator"
   },
   "hyprland/window": {
     "format": "<span color='#ebcb8b'>󱂬 </span> {}",

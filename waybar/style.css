@@ -1,8 +1,19 @@
 * {
   font-family: ShureTechMono Nerd Font;
   /* font-family: JetBrainsMono Nerd Font; */
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
+}
+
+tooltip {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #389964;
+  border-radius: 3px;
+  color: #d8dee9;
+}
+
+tooltip label {
+  color: #d8dee9;
 }
 
 window#waybar {
