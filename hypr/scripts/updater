@@ -1,5 +1,5 @@
 #!/bin/bash
-updates=$(checkupdates | wc -l)
+updates=$(checkupdates -n | wc -l)
 if [ $updates -gt 0 ]; then
   echo "$updates"
 else

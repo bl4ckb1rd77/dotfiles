@@ -1,0 +1,13 @@
+#!/bin/bash
+interface=$(ip a | grep ' UP ' | awk '{print $2}' | tr -d ':')
+localip=$(ifconfig ${interface} | sed -En 's/127.0.0.1//;s/.inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'| tr -d ' ')
+wanip=$(curl -s https://ifconfig.co)
+
+for i in $(ip a | grep tun | grep state | awk '{print $2}' | tr -d ":")
+do
+  tunips+="\r$i:\t$(ifconfig $i | sed -En 's/127.0.0.1//;s/.inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'| tr -d ' ')"
+done
+
+#echo -e "LOCAL:\t${localip}\nWAN:\t${wanip}\n${tunips}"
+#echo "{\"text\": \"󰩟 \", \"tooltip\": \"LOCAL:\t${localip}\rWAN:\t${wanip}\r${tunips}\"}"
+echo "{\"text\": \"LOCAL:\t${localip}\rWAN:\t${wanip}${tunips}\"}"

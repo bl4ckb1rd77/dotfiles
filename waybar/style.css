@@ -2,7 +2,7 @@
   font-family: ShureTechMono Nerd Font;
   /* font-family: JetBrainsMono Nerd Font; */
   font-size: 16px;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 tooltip {
@@ -54,6 +54,7 @@ window#waybar.bottom {
 #custom-launcher-nemo,
 #custom-launcher-calc,
 #custom-ncspot,
+#custom-ipinfo,
 #mpris {
   color: #D8DEE9;
   margin-left: 4px;  

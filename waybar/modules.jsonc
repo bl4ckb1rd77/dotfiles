@@ -56,6 +56,16 @@
     "tooltip": true,
     "tooltip-format": "Galculator"
   },
+  "custom/ipinfo": {
+    "format": "<span color='#ebcb8b'>{icon}</span>",
+    "format-icons": ["󰩟 "],
+    "tooltip": true,
+    "tooltip-format": "{}",
+ 	  "interval": 10,
+    "exec": "~/.config/hypr/scripts/myips 2> /dev/null",
+    "escape": true,
+    "return-type": "json"
+ },
   "hyprland/window": {
     "format": "<span color='#ebcb8b'>󱂬 </span> {}",
     "max-length": 100,
