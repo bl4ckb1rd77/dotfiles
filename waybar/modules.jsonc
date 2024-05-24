@@ -68,7 +68,7 @@
  },
   "hyprland/window": {
     "format": "<span color='#ebcb8b'>󱂬 </span> {}",
-    "max-length": 100,
+    "max-length": 60,
     "icon-size": 16,
   "rewrite": {
       "(.*) - Google Chrome": "󰊯 $1",
