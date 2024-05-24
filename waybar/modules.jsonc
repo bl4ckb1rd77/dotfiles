@@ -141,7 +141,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "<span color='#ebcb8b'>{icon}</span>  {capacity}%",
+    "format": "<span color='#ebcb8b'>{icon}</span> {capacity}%",
     "format-icons": ["", "", "", "", ""]
   },
   "idle_inhibitor": {
