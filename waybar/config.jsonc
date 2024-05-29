@@ -6,7 +6,7 @@
   "height": 20,
   "margin": 0,
   "spacing": 5,
-  "modules-left": ["custom/startmenu","custom/launcher-terminal","custom/launcher-nemo","custom/launcher-chrome","custom/launcher-nvim","custom/launcher-spotify","custom/launcher-whatsapp","custom/launcher-calc"],
+  "modules-left": ["pulseaudio","cpu","memory","disk","disk#home","backlight","battery"],
   "modules-center": ["hyprland/window"],
   "modules-right": ["custom/touchpad","idle_inhibitor","custom/updater","systemd-failed-units","custom/rebootrequired","custom/ipinfo","tray","clock","custom/power"]
 },
@@ -18,7 +18,7 @@
   "height": 20,
   "margin": 0,
   "spacing": 5,
-  "modules-left": ["custom/mpdvol","mpris"],
+  "modules-left": ["custom/startmenu","custom/launcher-terminal","custom/launcher-nemo","custom/launcher-chrome","custom/launcher-nvim","custom/launcher-spotify","custom/launcher-whatsapp","custom/launcher-calc"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["pulseaudio","cpu","memory","disk","disk#home","backlight","battery"]
+  "modules-right": ["custom/mpdvol","mpris"]
 }]
