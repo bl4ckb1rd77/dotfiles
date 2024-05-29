@@ -62,7 +62,8 @@ window#waybar.bottom {
 }
 
 #cava,
-#custom-startmenu {
+#custom-startmenu,
+#pulseaudio {
   margin-left: 10px;
 }
 

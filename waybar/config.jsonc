@@ -20,5 +20,5 @@
   "spacing": 5,
   "modules-left": ["custom/startmenu","custom/launcher-terminal","custom/launcher-nemo","custom/launcher-chrome","custom/launcher-nvim","custom/launcher-spotify","custom/launcher-whatsapp","custom/launcher-calc"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["custom/mpdvol","mpris"]
+  "modules-right": ["custom/mpdvol","mpris","cava"]
 }]

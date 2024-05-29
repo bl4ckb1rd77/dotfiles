@@ -228,7 +228,6 @@
     "exec-if": "~/.config/hypr/scripts/ncspot state"
   },
   "cava": {
-    "cava_config": "/home/ahoefer/.config/cava/config",
     "framerate": 30,
     "autosens": 0,
     "sensitivity": 80,
