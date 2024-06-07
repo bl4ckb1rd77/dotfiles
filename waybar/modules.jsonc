@@ -12,7 +12,10 @@
     "format": "{icon}",
     "tooltip-format": "{title}",
     "on-click": "activate",
-    "on-click-middle": "close"
+    "on-click-middle": "close",
+    "app_ids-mapping": {
+      "floatkitty": "kitty"
+    }
   },
 
   "mpris": {

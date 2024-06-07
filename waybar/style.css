@@ -87,6 +87,10 @@ window#waybar {
   border-radius: 15px;
 }
 
+#taskbar.empty {
+  background: @blank;
+  color: @blank;
+}
 /* ---- music bubble ---- */
 #mpris {
   background-color: @background;
