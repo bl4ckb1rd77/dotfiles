@@ -10,18 +10,18 @@ window {
 	margin: 5px;
 	border-radius: 0px;
 	border: none;
-	background-color: #3B4252;
-	color: white;
+	background-color: #292e39;
+	color: #eceff4;
 }
 
 #inner-box {
-	background-color: #383C4A;
+	background-color: #3B4252;
 }
 
 #outer-box {
 	margin: 2px;
 	padding: 10px;
-	background-color: #383C4A;
+	background-color: #2e3440;
 }
 
 #scroll {
@@ -30,11 +30,12 @@ window {
 
 #text {
 	padding: 4px;
-	color: white;
+	color: #eceff4;
 }
 
 #entry:nth-child(even){
-	background-color: #404552;
+	background-color: #434C5E;
+  
 }
 
 #entry:selected {
