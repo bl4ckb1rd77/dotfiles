@@ -1,9 +1,12 @@
 # vim: ft=cfg
+initial_screen = "queue"
 default_keybindings = true
 use_nerdfont = true
 notify = true
 gapless = true
 flip_status_indicators=true
+volnorm = true
+cover_max_scale = 1.2
 shuffle = true
 repeat = 'playlist'
 library_tabs = [ "tracks", "albums", "artists", "playlists" ]

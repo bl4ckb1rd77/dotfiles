@@ -1,38 +1,14 @@
 #!/bin/bash
-if [ -S /run/user/1000/ncspot/ncspot.sock ]
-then
-  case "$1" in
-    toggle)
-      echo "pause" | netcat -W 1 -U /run/user/1000/ncspot/ncspot.sock
-      ;;
-    next )
-      echo "next" | netcat -W 1 -U /run/user/1000/ncspot/ncspot.sock
-      ;;
-    previous)
-      echo "previous" | netcat -W 1 -U /run/user/1000/ncspot/ncspot.sock
-      ;;
-    state)
-      exit 0
-      ;;
-    info)
-      ncspot_info=$(nc -W 1 -U /run/user/1000/ncspot/ncspot.sock);
-      current_artist=$(echo $ncspot_info | jq '.playable.artists[0]')
-      current_title=$(echo $ncspot_info | jq '.playable.title')
-      ncspot_state=$(nc -W 1 -U /run/user/1000/ncspot/ncspot.sock | jq -c '.mode' | awk -F'{' '{print $2}' | tr -d : | tr -d '\"');
-      case $ncspot_state in
-        Paused)
-          echo "󰏥 $current_artist - $current_title"
-          ;;
-        Playing)
-          echo " $current_artist - $current_title"
-          ;;
-        *)
-          echo " "
-          ;;
-      esac
-   ;;
-  esac
-else
-  exit 1
-fi
- 
+hyprctl dispatch focusmonitor 0
+sleep 0.4
+kitty -T sptlrx -o font_size=14 -e sptlrx &
+sleep 0.4
+hyprctl dispatch focuswindow title:sptlrx
+sleep 0.4
+hyprctl dispatch movetoworkspace 8
+sleep 0.4
+hyprctl dispatch movecursortocorner 0
+sleep 0.4
+kitty -T spotify -o font_size=14 -e ncspot &
+sleep 0.4
+hyprctl dispatch splitratio +0.3

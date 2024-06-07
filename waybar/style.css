@@ -1,11 +1,21 @@
+/* ---- Color Definitions ---- */
+
+@define-color barbackground rgba(236, 239, 244, 0.1);
+@define-color background #2e3e44;
+@define-color blank rgba(0, 0, 0, 0);
+@define-color textcolor #eceff4;
+@define-color buttonbackground #616e87;
+@define-color activebackground #5e81ac;
+@define-color emptybackground #616e87;
+@define-color hoverbackground #ebcb8b;
+@define-color urgentbackground #bf616a;
+
 * {
-  /* font-family: "NotoMono Nerd Font Propo"; */
-  /* font-family: ShureTechMono Nerd Font Propo; */
   font-family: JetBrainsMono Nerd Font Propo;
-  font-size: 14px;
-  /* font-weight: 600; */
+  font-size: 13px;
 }
 
+/* ---- Toolti ---- */
 tooltip {
   background: rgba(0, 0, 0, 0.5);
   border: 1px solid #389964;
@@ -17,108 +27,228 @@ tooltip label {
   color: #d8dee9;
 }
 
+/* ---- waybar ---- */
 window#waybar {
-    background: rgba(0, 0, 0, 0.3);
+    background: @barbackground;
     border-radius: 0px;
     color: rgb(220, 220, 220);
-}
-window#waybar.top {
-    border-bottom: 1px solid #389964;
-}
-
-window#waybar.bottom {
-    border-top: 1px solid #389964;
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
-#clock,
-#cpu,
-#memory,
-#disk,
-#disk.home,
-#battery,
-#pulseaudio,
-#tray,
-#backlight,
-#custom-updater,
-#custom-rebootrequired,
-#custom-touchpad,
-#custom-mpdvol,
-#custom-power,
-#custom-ncspot,
-#cava,
-#hyprland-window,
-#custom-launcher-terminal,
-#custom-launcher-chrome,
-#custom-launcher-spotify,
-#custom-launcher-nvim,
-#custom-launcher-whatsapp,
-#custom-launcher-nemo,
-#custom-launcher-calc,
-#custom-ncspot,
-#custom-ipinfo,
-#mpris {
-  color: #D8DEE9;
-  margin-left: 4px;  
+/* ---- Startmenu ---- */
+#custom-startmenu {
+  background-color: @background;
+  color: @textcolor;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 0px 10px 1px 10px;
+  margin: 3px 10px 3px 10px;
+  opacity:0.8;
 }
 
-#cava,
-#custom-startmenu,
-#pulseaudio {
-  margin-left: 10px;
-}
-
-/* damn icons */
-#custom-launcher-nemo { margin-left: 6px; }
-
-#custom-launcher-terminal:hover,
-#custom-launcher-chrome:hover,
-#custom-launcher-spotify:hover,
-#custom-launcher-nvim:hover,
-#custom-launcher-whatsapp:hover,
-#custom-launcher-nemo:hover,
-#custom-launcher-calc:hover,
 #custom-startmenu:hover {
-  color: #83b5e0;
+  background-color: @hoverbackground;
+  color: @textcolor;
+  border-radius: 15px;
+  opacity:0.8;
 }
 
-#systemd-failed-units {
-  color: #BF616A;
+/* ---- Taskbar ---- */
+#taskbar {
+  background-color: @background; 
+  margin: 3px 0px 3px 0px;
+  padding:0px;
+  border-radius: 15px;
+  font-weight: normal;
+  font-style: normal;
+  opacity:0.8;
+  border:3px solid @blank;
 }
 
-#systemd-failed-units.ok {
-  color: #EBCB8B;
+#taskbar button {
+  padding: 0px 5px;
+  margin: 0px 2px 0px 2px;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
 }
 
-#custom-power,
-#battery {
-  margin-right: 10px;
+#taskbar button.active {
+  color: @textcolor;
+  background-color: @activebackground;
+  padding: 0px 14px 0px 12px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 15px;
+}
+
+#taskbar button:hover {
+  color: @textcolor;
+  background: @hoverbackground;
+  border-radius: 15px;
+}
+
+/* ---- music bubble ---- */
+#mpris {
+  background-color: @background;
+  color: @textcolor;
+  border-radius: 15px;
+  padding: 0px 10px 1px 10px;
+  margin: 3px 0px 3px 10px;
+  opacity:0.8;
+}
+
+#custom-mpdvol {
+  background-color: @background;
+  color: @textcolor;
+  border-radius: 15px;
+  padding: 0px 10px 1px 10px;
+  margin: 3px 0px 3px 10px;
+  opacity:0.8;
+}
+
+/* ---- Workspaces ---- */
+#workspaces {
+  background: @background;
+  color: @textcolor;
+  margin: 5px 1px 6px 1px;
+  padding: 0px 1px;
+  border-radius: 15px;
+  border: 0px;
+  font-weight: bold;
+  font-style: normal;
+  opacity: 1.0;
 }
 
 #workspaces button {
-  margin: 0px 2px 0px 2px;
-  padding: 0px;
-  color: #D8DEE9;
+  color: @textcolor;
+  background-color: @buttonbackground;
+  padding: 0px 5px;
+  margin: 4px 3px;
+  border-radius: 15px;
+  border: 0px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.7;
 }
 
 #workspaces button.persistent {
-  color: #d8dee9;
-  background: rgba(0,0,0,0);
+  color: @textcolor;
+  background-color: @emptybackground;
 }
 
 #workspaces button.empty {
-  color: #5E81AC;
+  color: @textcolor;
+  background-color: @emptybackground;
+  opacity: 0.4;
+}
+
+#workspaces button.urgent {
+  color: @textcolor;
+  background-color: @urgentbackground;
+  opacity: 0.4;
 }
 
 #workspaces button.active {
-  color: #EBCB8B;
-  background: rgba(0,0,0,0);
+  color: @textcolor;
+  background-color: @activebackground;
+  border-radius: 15px;
+  min-width: 40px;
+  transition: all 0.3s ease-in-out;
+  opacity:1.0;
 }
 
 #workspaces button:hover {
-  transition: none;
-  box-shadow: inherit;
-  text-shadow: inherit;
-  border-radius: inherit;
-  color: #83b5e0;
-  background: rgba(0,0,0,0);
+  color: @textcolor;
+  background: @hoverbackground;
+  border-radius: 15px;
+  opacity:0.7;
 }
+
+/* ---- bat vol bubble ---- */
+#pulseaudio {
+  background-color: @background;
+  color: @textcolor;
+  border-radius: 15px 0px 0px 15px;
+  margin: 3px 0px 3px 0px;
+  padding: 0px 5px 1px 12px;
+  opacity:0.8;
+}
+
+#cpu, #memory {
+  background-color: @background;
+  color: @textcolor;
+  border-radius: 0px;
+  margin: 3px 0px 3px 0px;
+  padding: 0px 5px 1px 5px;
+  opacity:0.8;
+}
+
+#battery {
+  background-color: @background;
+  color: @textcolor;
+  border-radius: 0px 15px 15px 0px;
+  margin: 3px 0px 3px 0px;
+  padding: 0px 10px 1px 5px;
+  opacity:0.8;
+}
+/* ---- custom bubble ---- */
+
+#custom-touchpad {
+  background-color: @background;
+  color: @textcolor;
+  border-radius: 15px 0px 0px 15px;
+  margin: 3px 0px 3px 10px;
+  padding: 0px 5px 1px 12px;
+  opacity:0.8;
+}
+
+#idle_inhibitor,
+#custom-updater,
+#custom-rebootrequired,
+#custom-ipinfo {
+  background-color: @background;
+  color: @textcolor;
+  border-radius: 0px;
+  margin: 3px 0px 3px 0px;
+  padding: 0px 5px 1px 5px;
+  opacity:0.8;
+}
+
+#systemd-failed-units {
+  background-color: @urgentbackground;
+  color: @textcolor;
+  border-radius: 0px 15px 15px 0px;
+  margin: 3px 0px 3px 0px;
+  padding: 0px 10px 1px 5px;
+  opacity:0.8;
+}
+
+#systemd-failed-units.ok {
+  background-color: @background;
+}
+
+/* ---- Tray ---- */
+#tray {
+    margin: 0px 0px 0px 10px;
+    padding: 0px 15px 0px 0px;
+    color: @textcolor;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* ---- Clock ---- */
+#clock {
+  background-color: @background;
+  color: @textcolor;
+  border-radius: 15px;
+  padding: 0px 10px 1px 10px;
+  margin: 3px 10px 3px 0px;
+  opacity:0.8;
+  border:3px solid @background;
+}
+
