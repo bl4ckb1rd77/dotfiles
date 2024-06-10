@@ -3,7 +3,7 @@
 }
 
 window {
-  background-color: #81a1c1;
+  background-color: #92e39;
   border-radius: 5px;
 }
 
@@ -16,7 +16,7 @@ window {
 }
 
 #outer-box {
-  background: url("/home/ahoefer/.config/wofi/header_apps.png");
+  background: url("/home/ahoefer/.config/wofi/header_wallpaper.png");
   border-radius: 5px;
   margin: 2px;
   padding: 10px;

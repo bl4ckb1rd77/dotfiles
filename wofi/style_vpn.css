@@ -1,10 +1,9 @@
 * {
-  font-family: "Hack", monospace;
+	font-family: "Hack", monospace;
 }
 
 window {
-  /* background-color: #3B4252; */
-  background-color: #92e39;
+  background-color: #81a1c1;
   border-radius: 5px;
 }
 
@@ -17,6 +16,7 @@ window {
 }
 
 #outer-box {
+  background: url("/home/ahoefer/.config/wofi/header_vpn.png");
   border-radius: 5px;
   margin: 2px;
   padding: 10px;
@@ -24,26 +24,28 @@ window {
 }
 
 #inner-box {
+  margin-top: 160px;
   background-color: #3B4252;
 }
 
 #scroll {
-  margin: 5px;
+	margin: 5px;
 }
 
 #text {
-  padding: 4px;
-  color: #eceff4;
+	padding: 4px;
+	color: #eceff4;
 }
 
 #entry:nth-child(even){
-  background-color: #434C5E;
+	background-color: #434C5E;
+  
 }
 
 #entry:selected {
-  background-color: #4C566A;
+	background-color: #4C566A;
 }
 
 #text:selected {
-  background: transparent;
+	background: transparent;
 }

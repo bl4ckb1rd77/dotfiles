@@ -14,7 +14,7 @@ wofi_cmd() {
         options_with_icons+=("${icons[$i]} ${options[$i]}")
     done
 
-    chosen_option=$(printf "%s\n" "${options_with_icons[@]}" | wofi --dmenu -c $HOME/.config/wofi/configpower -s $HOME/.config/wofi/power_style.css -i -p " $USER@$host" | awk '{print $1}')
+    chosen_option=$(printf "%s\n" "${options_with_icons[@]}" | wofi --dmenu -c $HOME/.config/wofi/config_power -s $HOME/.config/wofi/style_power.css -i -p " $USER@$host" | awk '{print $1}')
   # Execute Command
   case $chosen_option in
       "")

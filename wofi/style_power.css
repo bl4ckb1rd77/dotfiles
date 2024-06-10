@@ -1,5 +1,5 @@
 * {
-  font-family: "Hack", monospace;
+	font-family: "Hack", monospace;
 }
 
 window {
@@ -16,7 +16,7 @@ window {
 }
 
 #outer-box {
-  background: url("/home/ahoefer/.config/wofi/header_apps.png");
+  background: url("/home/ahoefer/.config/wofi/header_power.png");
   border-radius: 5px;
   margin: 2px;
   padding: 10px;
@@ -29,22 +29,23 @@ window {
 }
 
 #scroll {
-  margin: 5px;
+	margin: 5px;
 }
 
 #text {
-  padding: 4px;
-  color: #eceff4;
+	padding: 4px;
+	color: #eceff4;
+	font-size: 18px;
 }
 
 #entry:nth-child(even){
-  background-color: #434C5E;
+	background-color: #434C5E;
 }
 
 #entry:selected {
-  background-color: #4C566A;
+	background-color: #4C566A;
 }
 
 #text:selected {
-  background: transparent;
+	background: transparent;
 }

@@ -1,5 +1,5 @@
 show=dmenu
 allow_images=true
-width=700
-height=380
+width=640
+height=600
 image_size=32
