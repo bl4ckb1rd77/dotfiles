@@ -1,0 +1,10 @@
+#!/bin/bash
+monitorID=$(hyprctl activeworkspace | grep monitorID | awk -F':' '{print $2}' | tr -d ' ')
+monitorName=$(hyprctl monitors | grep "ID ${monitorID}" | awk '{print $2}')
+if [ "$monitorName" == "eDP-1" ]; then
+  fontsize="14"
+else
+  fontsize="10"
+fi
+kitty -o font_size=${fontsize} "$@" &
+~                                                                                       

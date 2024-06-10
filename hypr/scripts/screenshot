@@ -9,7 +9,7 @@ function getmenu() {
   echo "󰲎 screenshot area"
 }
 
-result=$(getmenu | wofi -I --show dmenu --prompt "Screenshot")
+result=$(getmenu | wofi -I --show dmenu -c $HOME/.config/wofi/config -s $HOME/.config/wofi/style_screenshot.css --prompt "Screenshot")
 case $result in
 	"󰹑 screenshot desktop")
 		sleep 1
