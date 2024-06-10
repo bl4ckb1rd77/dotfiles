@@ -14,7 +14,8 @@
     "on-click": "activate",
     "on-click-middle": "close",
     "app_ids-mapping": {
-      "floatkitty": "kitty"
+      "floatkitty": "kitty",
+      "update": "kitty"
     }
   },
 

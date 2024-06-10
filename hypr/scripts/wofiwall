@@ -10,7 +10,7 @@ function getpics() {
   done
 }
 
-wallpaper=$(getpics | wofi -I -c $HOME/.config/wofi/configwall)
+wallpaper=$(getpics | wofi -I -c $HOME/.config/wofi/configwall -s $HOME/.config/wofi/stylewall.css)
 walltoset=$(echo "$wallpaper" | awk -F':' '{print $2}')
 
 swww img -t grow --transition-duration 2 ${walltoset} & disown

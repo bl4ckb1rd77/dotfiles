@@ -1,6 +1,5 @@
 #!/bin/bash
-neofetch 
-reboot-required
+ufetch 
 # hide the cursor and wait for user input
 tput civis
 read -n 1

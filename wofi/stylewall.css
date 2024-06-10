@@ -17,7 +17,6 @@ window {
 }
 
 #outer-box {
-  background: url("/home/ahoefer/.config/wofi/wofiback.png");
   border-radius: 5px;
   margin: 2px;
   padding: 10px;

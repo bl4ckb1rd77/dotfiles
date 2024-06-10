@@ -103,7 +103,7 @@ run_dmenu_mode() {
     if [ ${#} -gt 0 ]; then
         selected=$(connection_list | "${@}")
     else
-        selected=$(connection_list | wofi --dmenu -i -p VPN)
+        selected=$(connection_list | wofi -s $HOME/.config/wofi/stylevpn.css -c $HOME/.config/wofi/configvpn --dmenu -i -p VPN)
     fi
     if [ -z "${selected}" ]; then
         exit
