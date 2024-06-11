@@ -5,7 +5,7 @@ kitty -T sptlrx -o font_size=14 -e sptlrx &
 sleep 0.4
 hyprctl dispatch focuswindow title:sptlrx
 sleep 0.4
-hyprctl dispatch movetoworkspace 5
+hyprctl dispatch movetoworkspace 9
 sleep 0.4
 hyprctl dispatch movecursortocorner 0
 sleep 0.4

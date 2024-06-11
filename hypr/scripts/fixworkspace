@@ -1,0 +1,10 @@
+#!/bin/bash
+sleep 5
+monitors=$(hyprctl monitors | grep Monitor | awk '{print $2}')
+for i in $monitors; do
+  if [ "$i" == "DP-4" ] || [ "$i" == "DP-1" ] || [ "$i" == "HDMI-A-1" ]; then
+    monitorID=$(hyprctl monitors | grep $i | awk '{print $4}' | awk -F')' '{print $1}')
+    hyprctl dispatch focusmonitor ${monitorID}
+    hyprctl dispatch focusworkspaceoncurrentmonitor 10
+  fi
+done 
