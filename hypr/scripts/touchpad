@@ -8,6 +8,10 @@ fi
 
 export STATUS_FILE="$XDG_RUNTIME_DIR/touchpad.status"
 
+if [ ! -f "$STATUS_FILE" ]; then
+  touch $STATUS_FILE
+fi
+
 enable_touchpad() {
   printf "true" > "$STATUS_FILE"
   notify-send -u normal "Enabling Touchpad"
