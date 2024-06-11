@@ -91,6 +91,7 @@ window#waybar {
   background: @blank;
   color: @blank;
 }
+
 /* ---- music bubble ---- */
 #mpris {
   background-color: @background;
