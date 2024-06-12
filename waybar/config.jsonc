@@ -6,7 +6,7 @@
   "height": 20,
   "margin": 0,
   "spacing": 0,
-  "modules-left": ["custom/startmenu", "wlr/taskbar","mpris","custom/mpdvol"],
+  "modules-left": ["custom/startmenu", "mpris","custom/mpdvol"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["pulseaudio","cpu", "memory", "battery", "custom/touchpad","idle_inhibitor","custom/rebootrequired","custom/ipinfo","custom/updater","systemd-failed-units","tray","clock"]
+  "modules-right": ["pulseaudio","cpu", "memory", "battery", "custom/touchpad","idle_inhibitor","custom/rebootrequired","custom/ipinfo","custom/updater","systemd-failed-units","tray","clock", "custom/notification"]
 }

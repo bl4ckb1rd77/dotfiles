@@ -20,7 +20,7 @@
   },
 
   "mpris": {
-    "format": "{status_icon}",
+    "format": "{status_icon} {dynamic}",
     "dynamic-order": ["title", "artist"],
     "title-len": 25,
     "artist-len": 25,
@@ -161,7 +161,7 @@
     "exec": "~/.config/hypr/scripts/updater",
     "interval": 60,
     "tooltip": false,
-    "on-click": "kitty --class update -T update -e paru -Syu && notify-send 'The system has been updated' ",
+    "on-click": "$HOME/.config/hypr/scripts/kittywrapper --class update -T update -e paru -Syu && notify-send 'The system has been updated' ",
     "on-click-right": "pamac-manager"
   },
 
@@ -200,6 +200,27 @@
       "on-scroll-up": "shift_down",
       "on-scroll-down": "shift_up"
     }
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 
 }

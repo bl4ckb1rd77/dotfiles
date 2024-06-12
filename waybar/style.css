@@ -98,7 +98,7 @@ window#waybar {
   color: @textcolor;
   border-radius: 15px;
   padding: 0px 10px 1px 10px;
-  margin: 3px 0px 3px 10px;
+  margin: 3px 0px 3px 0px;
   opacity:0.8;
 }
 
@@ -257,3 +257,12 @@ window#waybar {
   border:3px solid @background;
 }
 
+#custom-notification {
+  background-color: @background;
+  color: @textcolor;
+  border-radius: 15px;
+  padding: 0px 10px 1px 10px;
+  margin: 3px 10px 3px 0px;
+  opacity:0.8;
+  border:3px solid @background;
+}
