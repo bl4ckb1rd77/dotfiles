@@ -26,7 +26,6 @@
     "artist-len": 25,
     "interval": 1,
     "player": "ncspot",
-    "on-click-right": "hyprmixer",
     "status-icons": {
       "paused": "",
       "playing": "",

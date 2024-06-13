@@ -72,11 +72,11 @@
         "actions": [ 
           {
             "label": "󰹑 screenshot desktop",
-            "command": "swaync-client -cp; bash -c 'grimblast --notify save screen /home/ahoefer/Bilder/Screenshots/Screenshot_$(date +%Y-%m-%d-%H-%M-%S)_${RANDOM}.png'"
+            "command": "bash -c 'swaync-client -cp && grimblast --notify save screen /home/ahoefer/Bilder/Screenshots/Screenshot_$(date +%Y-%m-%d-%H-%M-%S)_${RANDOM}.png'"
           },
           {
             "label": "󰲎 screenshot area",
-            "command": "swaync-client -cp; bash -c 'grimblast --notify save area /home/ahoefer/Bilder/Screenshots/Screenshot_$(date +%Y-%m-%d-%H-%M-%S)_${RANDOM}.png'"
+            "command": "bash -c 'swaync-client -cp && grimblast --notify save area /home/ahoefer/Bilder/Screenshots/Screenshot_$(date +%Y-%m-%d-%H-%M-%S)_${RANDOM}.png'"
           }
         ]
       },
@@ -90,7 +90,7 @@
           },
           {
             "label": " Lock",
-            "command": "swaync-client -cp; hyprlock"
+            "command": "bash -c 'swaync-client -cp && hyprlock'"
           },
           {
             "label": " Logout",

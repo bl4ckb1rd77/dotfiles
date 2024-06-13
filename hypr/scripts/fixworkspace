@@ -1,5 +1,6 @@
 #!/bin/bash
-sleep 5
+sleep 10
+notify-send "hypr" "fixworkspace: starting..."
 monitors=$(hyprctl monitors | grep Monitor | awk '{print $2}')
 for i in $monitors; do
   if [ "$i" == "DP-4" ] || [ "$i" == "DP-1" ] || [ "$i" == "HDMI-A-1" ]; then
@@ -7,4 +8,5 @@ for i in $monitors; do
     hyprctl dispatch focusmonitor ${monitorID}
     hyprctl dispatch focusworkspaceoncurrentmonitor 10
   fi
-done 
+done
+notify-send "hypr" "fixworkspace: end..."
