@@ -4,7 +4,7 @@ CONFIG="$HOME/.config/wofi/config"
 STYLE="$HOME/.config/wofi/style.css"
 
 if [[ ! $(pidof wofi) ]]; then
-	wofi --show drun --prompt 'Search...' --conf ${CONFIG} --style ${STYLE}
+  wofi --show drun --prompt 'Search...' --conf ${CONFIG} --style ${STYLE} --location 1 --xoffset 8px --yoffset 8px
 else
-	pkill wofi
+  pkill wofi
 fi
