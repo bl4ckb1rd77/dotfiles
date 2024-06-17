@@ -1,10 +1,9 @@
 #!/bin/bash
 
-CONFIG="$HOME/.config/wofi/config"
-STYLE="$HOME/.config/wofi/style.css"
+CONFIG="$HOME/.config/rofi/menu.rasi"
 
-if [[ ! $(pidof wofi) ]]; then
-  wofi --show drun --prompt 'Search...' --conf ${CONFIG} --style ${STYLE} --location 1 --xoffset 8px --yoffset 8px
+if [[ ! $(pidof rofi) ]]; then
+  rofi -show drun -config ${CONFIG} -icon-theme ${ICON_THEME}
 else
-  pkill wofi
+  pkill rofi
 fi

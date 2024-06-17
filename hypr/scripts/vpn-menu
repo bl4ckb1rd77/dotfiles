@@ -103,7 +103,8 @@ run_dmenu_mode() {
     if [ ${#} -gt 0 ]; then
         selected=$(connection_list | "${@}")
     else
-        selected=$(connection_list | wofi -s $HOME/.config/wofi/style_vpn.css -c $HOME/.config/wofi/config_vpn --dmenu -i -p VPN)
+#        selected=$(connection_list | wofi -s $HOME/.config/wofi/style_vpn.css -c $HOME/.config/wofi/config_vpn --dmenu -i -p VPN)
+        selected=$(connection_list | rofi -dmenu -config $HOME/.config/rofi/clipboard.rasi -i -p VPN)
     fi
     if [ -z "${selected}" ]; then
         exit
