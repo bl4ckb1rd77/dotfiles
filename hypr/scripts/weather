@@ -1,0 +1,44 @@
+#!/bin/bash
+###
+### weather script for waybar and hyprlock
+###    version: 1.0
+###
+
+## vars
+cache_dir="$HOME/.cache"
+cache_file="$cache_dir/wttr_cache.txt"
+weather=""
+
+if [ ! -f "$cache_file" ]; then
+	mkdir -p "$(dirname "$cache_file")"
+  touch "$cache_file"
+fi
+
+last_modified=$(stat -c %Y "$cache_file")
+current_date=$(date +%s)
+time_diff=$((current_date - last_modified))
+expiry_time=600
+cached_data=$(<"$cache_file")
+
+## functions
+get_city () {
+  if [ ! -f $cache_dir/ip_cache.txt ]; then $HOME/.config/hypr/scripts/location; fi
+  city=$(cat $cache_dir/ip_cache.txt | awk -F',' '{print $2}' | tr -d ' ')
+}
+
+get_weather () {
+  get_city
+  response=$(curl -s wttr.in/${city}\?format=%c+%C+%t 2>/dev/null)
+  weather=$response
+  echo "$weather" >"$cache_file"
+}
+
+## main
+if [ $time_diff -gt $expiry_time ] || [ -z "$cached_data" ]; then
+  get_weather
+else
+  weather=$cached_data
+fi
+
+echo "$weather"
+exit 0
