@@ -15,7 +15,8 @@
     "on-click-middle": "close",
     "app_ids-mapping": {
       "floatkitty": "kitty",
-      "update": "kitty"
+      "update": "kitty",
+      "main-dropterm": "kitty"
     }
   },
 
