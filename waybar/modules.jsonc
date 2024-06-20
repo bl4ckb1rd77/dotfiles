@@ -23,8 +23,8 @@
   "mpris": {
     "format": "{status_icon} {dynamic}",
     "dynamic-order": ["title", "artist"],
-    "title-len": 35,
-    "artist-len": 35,
+    "title-len": 15,
+    "artist-len": 15,
     "interval": 1,
     "player": "ncspot",
     "status-icons": {
