@@ -27,6 +27,10 @@ source = auto
 ; source = auto
 
 [output]
+; method = sdl_glsl
+; fragment_shader = northern_lights.frag
+channels = mono
+waveform = 0
 
 [color]
 ; background = black
