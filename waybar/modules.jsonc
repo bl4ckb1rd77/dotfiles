@@ -92,7 +92,7 @@
     "interval": 1,
     "format": " {usage}%",
     "max-length": 10,
-    "on-click": "kitty -e bashtop"
+    "on-click": "kitty -e btop"
   },
 
   "memory": {
