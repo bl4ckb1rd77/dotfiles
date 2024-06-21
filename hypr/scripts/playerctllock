@@ -53,7 +53,7 @@ case "$1" in
 	if [ -z "$title" ]; then
 		echo ""
 	else
-		echo "${title:0:28}" # Limit the output to 50 characters
+		echo "${title:0:28} ||" # Limit the output to 50 characters
 	fi
 	;;
 --arturl)

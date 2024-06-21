@@ -4,10 +4,10 @@ plugins = ["scratchpads"]
 term_classed = "kitty --class"
 
 [scratchpads.term]
-animation = "fromTop"
+animation = "fromBottom"
 command = "[term_classed] main-dropterm"
 class = "main-dropterm"
-size = "90% 50%"
-position = "5% 45px"
+size = "98% 40%"
+position = "1% 58%"
 unfocus = "hide"
 max_size = "1920px 100%"
