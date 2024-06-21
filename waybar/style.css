@@ -198,6 +198,7 @@ window#waybar {
 }
 /* ---- custom bubble ---- */
 
+#idle_inhibitor,
 #custom-touchpad {
   background-color: @background;
   color: @textcolor;
@@ -207,7 +208,6 @@ window#waybar {
   opacity:0.8;
 }
 
-#idle_inhibitor,
 #custom-updater,
 #custom-rebootrequired,
 #custom-ipinfo {
@@ -270,4 +270,19 @@ window#waybar {
   margin: 5px 10px 3px 0px;
   opacity:0.8;
   border:0px solid @background;
+}
+
+#clock.time {
+  margin: 0px 0px 60px 30px;
+  background: transparent;
+  color: alpha(@textcolor, 0.7);
+  font-family: Cantarell ExtraBold;
+  font-size: 120px;
+}
+#clock.date {
+  margin: 0px 0px 30px 50px;
+  background: transparent;
+  color: alpha(@textcolor, 0.7);
+  font-family: Cantarell ExtraBold;
+  font-size: 40px;
 }
