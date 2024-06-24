@@ -5,7 +5,7 @@
     "format-icons": ["Apps"],
     "tooltip": true,
     "tooltip-format": "Startmenü",
-    "on-click": "~/.config/hypr/scripts/menu"
+    "on-click": "~/.config/hypr/scripts/menu",
   },
 
   "wlr/taskbar": {
@@ -13,14 +13,13 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
+    "icon-size": 14,
     "app_ids-mapping": {
       "floatkitty": "kitty",
       "update": "kitty",
-      "main-dropterm": "kitty"
+      "main-dropterm": "kitty",
     },
-    "ignore-list": [
-      "kitty"
-    ]
+    //    "ignore-list": ["kitty"],
   },
 
   "mpris": {
@@ -33,8 +32,8 @@
     "status-icons": {
       "paused": "",
       "playing": "",
-      "stopped": ""
-    }
+      "stopped": "",
+    },
   },
 
   "custom/mpdvol": {
@@ -45,13 +44,13 @@
     "on-scroll-up": "~/.config/hypr/scripts/mpdvolume up",
     "on-scroll-down": "~/.config/hypr/scripts/mpdvolume down",
     "on-click": "~/.config/hypr/scripts/mpdvolume toggle",
-    "exec-if": "~/.config/hypr/scripts/mpdvolume state"
+    "exec-if": "~/.config/hypr/scripts/mpdvolume state",
   },
 
-// ---- Middle ----
+  // ---- Middle ----
 
   "hyprland/workspaces": {
- 	  "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
     "on-scroll-down": "hyprctl dispatch workspace r+1",
     "sort-by-number": true,
     "active-only": true,
@@ -76,29 +75,29 @@
       "15": "6",
       "16": "7",
       "17": "8",
-      "18": "9"
+      "18": "9",
     },
     "persistent-workspaces": {
       "eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9],
       "HDMI-A-1": [10, 11, 12, 13, 14, 15, 16, 17, 18],
       "DP-1": [10, 11, 12, 13, 14, 15, 16, 17, 18],
-      "DP-4": [10, 11, 12, 13, 14, 15, 16, 17, 18]
-    }       
+      "DP-4": [10, 11, 12, 13, 14, 15, 16, 17, 18],
+    },
   },
 
-// ---- Right ----
+  // ---- Right ----
 
   "cpu": {
     "interval": 1,
     "format": " {usage}%",
     "max-length": 10,
-    "on-click": "kitty -e btop"
+    "on-click": "kitty -e btop",
   },
 
   "memory": {
     "interval": 1,
     "format": " {}%",
-    "max-length": 10
+    "max-length": 10,
   },
 
   "pulseaudio": {
@@ -106,13 +105,13 @@
     "format": "{icon} {volume}%",
     "format-muted": "󰖁 mute",
     "format-icons": {
-      "default": ["", "", "󰕾"]
+      "default": ["", "", "󰕾"],
     },
     "on-click": "pamixer -t",
     "on-scroll-up": "pamixer -i 5",
     "on-scroll-down": "pamixer -d 5",
-	  "on-click-right": "exec pavucontrol",
-    "tooltip-format" : "Volume {volume}%"
+    "on-click-right": "exec pavucontrol",
+    "tooltip-format": "Volume {volume}%",
   },
 
   "battery": {
@@ -120,10 +119,10 @@
     "states": {
       "good": 95,
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "{icon} {capacity}%",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": ["", "", "", "", ""],
   },
 
   "custom/touchpad": {
@@ -131,32 +130,32 @@
     "interval": 1,
     "tooltip": false,
     "on-click": "~/.config/hypr/scripts/touchpad",
-    "exec": "~/.config/hypr/scripts/touchpad -get"
+    "exec": "~/.config/hypr/scripts/touchpad -get",
   },
 
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
       "activated": "",
-      "deactivated": ""
-    }
+      "deactivated": "",
+    },
   },
 
   "custom/rebootrequired": {
     "format": "{}",
     "exec": "~/.config/hypr/scripts/reboot-required-kernel",
-    "interval": 60
+    "interval": 60,
   },
-  
+
   "custom/ipinfo": {
     "format": "{icon}",
     "format-icons": ["󰩟"],
     "tooltip": true,
     "tooltip-format": "{}",
- 	  "interval": 10,
+    "interval": 10,
     "exec": "~/.config/hypr/scripts/myips 2> /dev/null",
     "escape": true,
-    "return-type": "json"
+    "return-type": "json",
   },
 
   "custom/updater": {
@@ -165,7 +164,7 @@
     "interval": 60,
     "tooltip": false,
     "on-click": "$HOME/.config/hypr/scripts/kittywrapper --class update -T update -e paru -Syu && notify-send 'The system has been updated' ",
-    "on-click-right": "pamac-manager"
+    "on-click-right": "pamac-manager",
   },
 
   "systemd-failed-units": {
@@ -173,16 +172,16 @@
     "format": " {nr_failed_system}/{nr_failed_user}",
     "format-ok": " ✓",
     "system": true,
-    "user": true
+    "user": true,
   },
 
   "tray": {
     "icon-size": 14,
-    "spacing": 4
+    "spacing": 4,
   },
 
   "clock": {
-	  "interval": 1,
+    "interval": 1,
     "format": " {:%H:%M:%S}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -191,18 +190,18 @@
       "mode-mon-col": 3,
       "weeks-pos": "left",
       "format": {
-        "months":   "<span color='#d8dee9'><b>{}</b></span>",
-        "days":     "<span><b>{}</b></span>",
-        "weeks":    "<span color='#81a1c1'><b>{}</b></span>",
+        "months": "<span color='#d8dee9'><b>{}</b></span>",
+        "days": "<span><b>{}</b></span>",
+        "weeks": "<span color='#81a1c1'><b>{}</b></span>",
         "weekdays": "<span color='#ebcb8b'><b>{}</b></span>",
-        "today":    "<span color='#ebcb8b'><b><u>{}</u></b></span>"
-      }
+        "today": "<span color='#ebcb8b'><b><u>{}</u></b></span>",
+      },
     },
     "actions": {
       "on-click-right": "mode",
       "on-scroll-up": "shift_down",
-      "on-scroll-down": "shift_up"
-    }
+      "on-scroll-down": "shift_up",
+    },
   },
 
   "custom/notification": {
@@ -216,14 +215,13 @@
       "inhibited-notification": "",
       "inhibited-none": "",
       "dnd-inhibited-notification": "",
-      "dnd-inhibited-none": ""
+      "dnd-inhibited-none": "",
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  }
-
+    "escape": true,
+  },
 }
