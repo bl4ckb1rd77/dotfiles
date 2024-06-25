@@ -26,7 +26,7 @@ window {
   border:                      2px solid;
   border-radius:               15px;
   border-color:                @selected;
-  background-color:            @background;
+  background-color:            @background2;
   cursor:                      "default";
 }
 
@@ -123,16 +123,16 @@ element {
   cursor:                      pointer;
 }
 element normal.normal {
-  background-color:            @background;
+  background-color:            transparent;
   text-color:                  @foreground;
 }
 element alternate.normal {
-  background-color:            @background;
+  background-color:            transparent;
   text-color:                  @foreground;
 }
 element selected.normal {
   background-color:            @selected;
-  text-color:                  @background;
+  text-color:                  transparent;
 }
 element-icon {
   background-color:            transparent;
@@ -155,11 +155,11 @@ error-message {
   border:                      2px solid;
   border-radius:               12px;
   border-color:                @selected;
-  background-color:            @background;
+  background-color:            @background2;
   text-color:                  @foreground;
 }
 textbox {
-  background-color:            @background;
+  background-color:            @background2;
   text-color:                  @foreground;
   vertical-align:              0.5;
   horizontal-align:            0.0;

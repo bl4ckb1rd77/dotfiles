@@ -9,7 +9,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "dmenu";
+  modi:                       "dmenu";
   show-icons:                 false;
 }
 
@@ -62,7 +62,7 @@ window {
     border-radius:               0px;
     border-color:                @border-colour;
     cursor:                      "default";
-    background-color:            @background-colour;
+    background-color:            @background2;
 }
 
 /*****----- Main Box -----*****/
@@ -181,7 +181,7 @@ element {
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            var(normal-background);
+    background-color:            transparent;
     text-color:                  var(normal-foreground);
 }
 element normal.urgent {
@@ -205,7 +205,7 @@ element selected.active {
     text-color:                  var(selected-active-foreground);
 }
 element alternate.normal {
-    background-color:            var(alternate-normal-background);
+    background-color:            transparent;
     text-color:                  var(alternate-normal-foreground);
 }
 element alternate.urgent {

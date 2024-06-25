@@ -39,7 +39,7 @@ window {
     border-radius:               15px;
     border-color:                @selected;
     cursor:                      "default";
-    background-color:            @background;
+    background-color:            @background2;
 }
 
 /*****----- Main Box -----*****/
@@ -80,14 +80,14 @@ textbox-prompt-colon {
     padding:                     12px 18px 12px 16px;
     border-radius:               15px;
     background-color:            @urgent;
-    text-color:                  @background;
+    text-color:                  @background2;
 }
 prompt {
     enabled:                     true;
     padding:                     12px;
     border-radius:               100%;
     background-color:            @active;
-    text-color:                  @background;
+    text-color:                  @background2;
 }
 
 /*****----- Message -----*****/
@@ -115,7 +115,7 @@ error-message {
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
-    background-color:            @background;
+    background-color:            @background2;
     text-color:                  @foreground;
 }
 

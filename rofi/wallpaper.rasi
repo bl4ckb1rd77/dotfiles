@@ -21,7 +21,7 @@ window {
   border:                      2px;
   border-radius:               15px;
   border-color:                @selected;
-  background-color:            @background;
+  background-color:            @background2;
 }
 
 //----- Main Box -----//
@@ -29,7 +29,7 @@ window {
 mainbox {
   enabled:                     true;
   children:                    [ "listview" ];
-  background-color:            @background;
+  background-color:            @background2;
 }
 
 //----- Listview -----//
