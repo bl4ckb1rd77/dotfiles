@@ -132,7 +132,7 @@ element alternate.normal {
 }
 element selected.normal {
   background-color:            @selected;
-  text-color:                  transparent;
+  text-color:                  @foreground;
 }
 element-icon {
   background-color:            transparent;
