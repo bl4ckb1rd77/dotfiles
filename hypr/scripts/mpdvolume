@@ -1,26 +1,32 @@
 #!/bin/bash
 
+playerid=""
+
 if [ $# -gt 0 ]; then
+
+  playerid=$(wpctl status | grep -i $2 | grep -v 'ahoefer\|active' | awk '{print $1}')
   case $1 in
-    "up")
-      wpctl set-volume $(wpctl status | grep -i ncspot | grep -v 'ahoefer\|active' | awk '{print $1}') 0.05+
-      ;;
-    "down")
-      wpctl set-volume $(wpctl status | grep -i ncspot | grep -v 'ahoefer\|active' | awk '{print $1}') 0.05-
-      ;;
-    "toggle")
-      wpctl set-mute $(wpctl status | grep -i ncspot | grep -v 'ahoefer\|active' | awk '{print $1}') toggle
-      ;;
-    "state")
-      if [ $(wpctl status | grep -i ncspot | grep -v 'ahoefer\|active' | awk '{print $1}' | wc -l) -eq 0 ]; then
-        exit 1
-      fi
-      exit 0
-      ;;
+  "up")
+    wpctl set-volume ${playerid} 0.05+
+    ;;
+  "down")
+    wpctl set-volume ${playerid} 0.05-
+    ;;
+  "toggle")
+    wpctl set-mute ${playerid} toggle
+    ;;
+  "state")
+    if [ -z ${playerid} ]; then
+      exit 1
+    fi
+    exit 0
+    ;;
+  "volume")
+    VOLUME=$(wpctl get-volume ${playerid})
+    VOLUME=$(echo "$VOLUME" | awk -F':' '{print $2}' | tr -d ' ' | awk -F'.' '{print $2}')
+    echo $VOLUME
+    ;;
   esac
-else
-  VOLUME=$(wpctl get-volume $(wpctl status | grep -i ncspot | grep -v 'ahoefer\|active' | awk '{print $1}'))
-  VOLUME=$(echo "$VOLUME" | awk -F':' '{print $2}' | tr -d ' ' | awk -F'.' '{print $2}')
-  echo $VOLUME
 fi
-  
+
+exit 0

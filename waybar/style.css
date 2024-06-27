@@ -42,6 +42,7 @@ window#waybar {
   background-color: @background;
   color: @textcolor;
   font-weight: bold;
+  border: 2px solid @activebackground;
   border-radius: 8px;
   padding: 0px 10px 1px 10px;
   margin: 5px 10px 3px 10px;
@@ -55,58 +56,32 @@ window#waybar {
   opacity: 0.8;
 }
 
-/* ---- Taskbar ---- */
-#taskbar {
+/* ---- weather ---- */
+#custom-weather {
   background-color: @background;
-  margin: 5px 0px 3px 0px;
-  padding: 0px;
+  color: @textcolor;
+  border: 2px solid @activebackground;
   border-radius: 8px;
-  font-weight: normal;
-  font-style: normal;
+  padding: 0px 10px 1px 10px;
+  margin: 5px 10px 3px 0px;
   opacity: 0.8;
-  border: 0px solid @blank;
-}
-
-#taskbar button {
-  background-color: @buttonbackground;
-  padding: 0px 3px 0px 5px;
-  margin: 5px 3px 5px 3px;
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-}
-
-#taskbar button.active {
-  color: @textcolor;
-  background-color: @activebackground;
-  padding: 0px 12px 0px 14px;
-  transition: all 0.3s ease-in-out;
-  border-radius: 8px;
-}
-
-#taskbar button:hover {
-  color: @textcolor;
-  background: @hoverbackground;
-  border-radius: 8px;
-}
-
-#taskbar.empty {
-  background: @blank;
-  color: @blank;
 }
 
 /* ---- music bubble ---- */
 #mpris {
   background-color: @background;
   color: @textcolor;
+  border: 2px solid @activebackground;
   border-radius: 8px;
   padding: 0px 10px 1px 10px;
-  margin: 5px 0px 3px 10px;
+  margin: 5px 0px 3px 0px;
   opacity: 0.8;
 }
 
 #custom-mpdvol {
   background-color: @background;
   color: @textcolor;
+  border: 2px solid @activebackground;
   border-radius: 8px;
   padding: 0px 10px 1px 10px;
   margin: 5px 0px 3px 10px;
@@ -119,8 +94,8 @@ window#waybar {
   color: @textcolor;
   margin: 5px 1px 5px 1px;
   padding: 0px 1px;
+  border: 2px solid @activebackground;
   border-radius: 8px;
-  border: 0px;
   font-weight: bold;
   font-style: normal;
   opacity: 0.8;
@@ -174,6 +149,9 @@ window#waybar {
 #pulseaudio {
   background-color: @background;
   color: @textcolor;
+  border-top: 2px solid @activebackground;
+  border-left: 2px solid @activebackground;
+  border-bottom: 2px solid @activebackground;
   border-radius: 8px 0px 0px 8px;
   margin: 5px 0px 3px 0px;
   padding: 0px 5px 1px 12px;
@@ -184,6 +162,8 @@ window#waybar {
 #memory {
   background-color: @background;
   color: @textcolor;
+  border-top: 2px solid @activebackground;
+  border-bottom: 2px solid @activebackground;
   border-radius: 0px;
   margin: 5px 0px 3px 0px;
   padding: 0px 5px 1px 5px;
@@ -193,6 +173,9 @@ window#waybar {
 #battery {
   background-color: @background;
   color: @textcolor;
+  border-top: 2px solid @activebackground;
+  border-bottom: 2px solid @activebackground;
+  border-right: 2px solid @activebackground;
   border-radius: 0px 8px 8px 0px;
   margin: 5px 0px 3px 0px;
   padding: 0px 10px 1px 5px;
@@ -204,6 +187,9 @@ window#waybar {
 #custom-touchpad {
   background-color: @background;
   color: @textcolor;
+  border-top: 2px solid @activebackground;
+  border-left: 2px solid @activebackground;
+  border-bottom: 2px solid @activebackground;
   border-radius: 8px 0px 0px 8px;
   margin: 5px 0px 3px 10px;
   padding: 0px 5px 1px 12px;
@@ -215,6 +201,8 @@ window#waybar {
 #custom-ipinfo {
   background-color: @background;
   color: @textcolor;
+  border-top: 2px solid @activebackground;
+  border-bottom: 2px solid @activebackground;
   border-radius: 0px;
   margin: 5px 0px 3px 0px;
   padding: 0px 5px 1px 5px;
@@ -224,6 +212,9 @@ window#waybar {
 #systemd-failed-units {
   background-color: @urgentbackground;
   color: @textcolor;
+  border-top: 2px solid @activebackground;
+  border-bottom: 2px solid @activebackground;
+  border-right: 2px solid @activebackground;
   border-radius: 0px 8px 8px 0px;
   margin: 5px 0px 3px 0px;
   padding: 0px 10px 1px 5px;
@@ -238,11 +229,11 @@ window#waybar {
 #tray {
   background-color: @background;
   color: @textcolor;
+  border: 2px solid @activebackground;
   border-radius: 8px;
   padding: 0px 10px 1px 10px;
   margin: 5px 10px 3px 10px;
   opacity: 0.8;
-  border: 0px solid @background;
 }
 
 #tray > .passive {
@@ -257,21 +248,21 @@ window#waybar {
 #clock {
   background-color: @background;
   color: @textcolor;
+  border: 2px solid @activebackground;
   border-radius: 8px;
   padding: 0px 10px 1px 10px;
   margin: 5px 10px 3px 0px;
   opacity: 0.8;
-  border: 0px solid @background;
 }
 
 #custom-notification {
   background-color: @background;
   color: @textcolor;
+  border: 2px solid @activebackground;
   border-radius: 8px;
   padding: 0px 10px 1px 10px;
   margin: 5px 10px 3px 0px;
   opacity: 0.8;
-  border: 0px solid @background;
 }
 
 #clock.time {
@@ -280,6 +271,7 @@ window#waybar {
   color: alpha(@textcolor, 0.7);
   font-family: Cantarell ExtraBold;
   font-size: 120px;
+  border: 0px solid @blank;
 }
 
 #clock.date {
@@ -288,4 +280,5 @@ window#waybar {
   color: alpha(@textcolor, 0.7);
   font-family: Cantarell ExtraBold;
   font-size: 40px;
+  border: 0px solid @blank;
 }

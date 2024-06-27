@@ -6,44 +6,49 @@ cache_file="$cache_dir/albumart.txt"
 albumurl="/tmp/.albumart.png"
 cached_data=""
 
-help () {
+help() {
 	echo "Usage: $0 --title | --arturl | --artist | --length | --album | --source | --status"
 	exit 1
 }
 
 if [ $# -eq 0 ]; then
-  help
+	help
 fi
 
 # Function to get metadata using playerctl
 get_metadata() {
 	key=$1
-	playerctl -p ncspot metadata --format "{{ $key }}" 2>/dev/null
+	playerctl -p spotify_player metadata --format "{{ $key }}" 2>/dev/null
 }
 
-get_art () {
-  if [ -f $cache_file ]; then cached_data=$(<"$cache_file"); fi
+get_art() {
+	if [ -f $cache_file ]; then cached_data=$(<"$cache_file"); fi
 	url=$(get_metadata "mpris:artUrl")
-  echo $url > $cache_file
-  if [ "$cached_data" != "$url" ]; then
-    wget -O $albumurl.tmp "$url"
-    convert $albumurl.tmp $albumurl
-  fi
+	echo $url >$cache_file
+	if [ "$cached_data" != "$url" ]; then
+		wget -O $albumurl.tmp "$url"
+		convert $albumurl.tmp $albumurl
+	fi
 
 }
 
 # Function to determine the source and return an icon and text
 get_source_info() {
 	trackid=$(get_metadata "mpris:trackid")
-	if [[ "$trackid" == *"firefox"* ]]; then
+	case $trackid in
+	*firefox*)
 		echo -e "󰈹 Firefox"
-	elif [[ "$trackid" == *"spotify"* ]]; then
+		;;
+	*spotify* | */*)
 		echo -e " Spotify"
-	elif [[ "$trackid" == *"chromium"* ]]; then
+		;;
+	*chromium*)
 		echo -e " Chrome"
-	else
+		;;
+	*)
 		echo ""
-	fi
+		;;
+	esac
 }
 
 # Parse the argument
@@ -57,8 +62,8 @@ case "$1" in
 	fi
 	;;
 --arturl)
-  get_art
-  echo "$albumurl"
+	get_art
+	echo "$albumurl"
 	;;
 --artist)
 	artist=$(get_metadata "xesam:artist")
@@ -78,7 +83,7 @@ case "$1" in
 	fi
 	;;
 --status)
-	status=$(playerctl -p ncspot status 2>/dev/null)
+	status=$(playerctl -p spotify_player status 2>/dev/null)
 	if [[ $status == "Playing" ]]; then
 		echo " "
 	elif [[ $status == "Paused" ]]; then
@@ -92,7 +97,7 @@ case "$1" in
 	if [[ -n $album ]]; then
 		echo "$album"
 	else
-		status=$(playerctl -p ncspot status 2>/dev/null)
+		status=$(playerctl -p spotify_player status 2>/dev/null)
 		if [[ -n $status ]]; then
 			echo "Not album"
 		else
@@ -105,6 +110,6 @@ case "$1" in
 	;;
 *)
 	echo "Invalid option: $1"
-  help
-  ;;
+	help
+	;;
 esac

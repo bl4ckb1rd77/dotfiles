@@ -8,27 +8,20 @@
     "on-click": "~/.config/hypr/scripts/menu",
   },
 
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "icon-size": 14,
-    "app_ids-mapping": {
-      "floatkitty": "kitty",
-      "update": "kitty",
-      "main-dropterm": "kitty",
-    },
-    //    "ignore-list": ["kitty"],
+  "custom/weather": {
+    "format": "{}",
+    "tooltip": false,
+    "exec": "$HOME/.config/hypr/scripts/weather",
+    "interval": 10,
   },
 
   "mpris": {
     "format": "{status_icon} {dynamic}",
     "dynamic-order": ["title", "artist"],
-    "title-len": 15,
-    "artist-len": 15,
+    "title-len": 25,
+    "artist-len": 25,
     "interval": 1,
-    "player": "ncspot",
+    "player": "spotify_player",
     "status-icons": {
       "paused": "",
       "playing": "",
@@ -40,11 +33,11 @@
     "format": " {}%",
     "format-alt": "󰝛",
     "interval": 1,
-    "exec": "~/.config/hypr/scripts/mpdvolume",
-    "on-scroll-up": "~/.config/hypr/scripts/mpdvolume up",
-    "on-scroll-down": "~/.config/hypr/scripts/mpdvolume down",
-    "on-click": "~/.config/hypr/scripts/mpdvolume toggle",
-    "exec-if": "~/.config/hypr/scripts/mpdvolume state",
+    "exec": "~/.config/hypr/scripts/mpdvolume volume spotify-player",
+    "on-scroll-up": "~/.config/hypr/scripts/mpdvolume up spotify-player",
+    "on-scroll-down": "~/.config/hypr/scripts/mpdvolume down spotify-player",
+    "on-click": "~/.config/hypr/scripts/mpdvolume toggle spotify-player",
+    "exec-if": "~/.config/hypr/scripts/mpdvolume state spotify-player",
   },
 
   // ---- Middle ----
