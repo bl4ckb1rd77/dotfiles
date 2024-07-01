@@ -1,48 +1,41 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "positionX": "right",
-  "positionY": "top",
-  "control-center-margin-top": 10,
-  "control-center-margin-bottom": 0,
-  "control-center-margin-right": 10,
-  "control-center-margin-left": 0,
-  "notification-icon-size": 64,
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 200,
-  "timeout": 10,
+  "cssPriority": "user",
+  "image-visibility": "when-available",
+  "keyboard-shortcut": true,
+  "relative-timestamps": true,
+  "timeout": 5,
   "timeout-low": 5,
   "timeout-critical": 0,
-  "fit-to-screen": false,
-  "control-center-width": 420,
-  "control-center-height": 960, 
-  "notification-window-width": 500,
-  "keyboard-shortcuts": true,
-  "image-visibility": "when-available",
-  "transition-time": 200,
-  "hide-on-clear": false,
-  "hide-on-action": true,
   "script-fail-notify": true,
-  "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    }
-  },
-  "notification-visibility": {
-    "example-name": {
-      "state": "muted",
-      "urgency": "Low",
-      "app-name": "Spotify"
-    }
-  },
+  "transition-time": 200,
+  "layer-shell": true,
+  "layer": "overlay",
+  "control-center-layer": "overlay",
+  "positionX": "right",
+  "positionY": "top",
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+  "notification-icon-size": 64,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 400,
+  "notification-window-width": 400,
+  "control-center-positionX": "right",
+  "control-center-positionY": "top",
+  "control-center-margin-top": 6,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-left": 0,
+  "control-center-margin-right": 10,
+  "control-center-width": 400,
+  "control-center-exclusive-zone": true,
+  "fit-to-screen": true,
+  "hide-on-action": true,
+  "hide-on-clear": false,
   "widgets": [
-    "menubar#label",
-    "buttons-grid",
-    "mpris",
-    "volume",
     "title",
     "dnd",
-    "notifications"
+    "notifications",
+    "mpris"
   ],
   "widget-config": {
     "title": {
@@ -53,75 +46,10 @@
     "dnd": {
       "text": "Do Not Disturb"
     },
-    "label": {
-      "max-lines": 1,
-      "text": "Controll Center"
-    },
     "mpris": {
       "image-size": 96,
-      "image-radius": 12
-    },
-    "volume": {
-      "label": "",
-        "show-per-app": true
-    },
-    "menubar#label": {
-      "menu#screenshot-buttons": {
-        "label": "󰹑", 
-        "position": "left",
-        "actions": [ 
-          {
-            "label": "󰹑 screenshot desktop",
-            "command": "bash -c 'swaync-client -cp && grimblast --notify save screen /home/ahoefer/Bilder/Screenshots/Screenshot_$(date +%Y-%m-%d-%H-%M-%S)_${RANDOM}.png'"
-          },
-          {
-            "label": "󰲎 screenshot area",
-            "command": "bash -c 'swaync-client -cp && grimblast --notify save area /home/ahoefer/Bilder/Screenshots/Screenshot_$(date +%Y-%m-%d-%H-%M-%S)_${RANDOM}.png'"
-          }
-        ]
-      },
-      "menu#power-buttons": {
-        "label": "", 
-        "position": "right",
-        "actions": [ 
-          {
-            "label": " Reboot",
-            "command": "systemctl reboot"
-          },
-          {
-            "label": " Lock",
-            "command": "bash -c 'swaync-client -cp && hyprlock'"
-          },
-          {
-            "label": " Logout",
-            "command": "hyprctl dispatch exit 0"
-          },
-          {
-            "label": " Shut down",
-            "command": "systemctl poweroff"
-          }
-        ]
-      }
-    },
-    "buttons-grid": {
-      "actions": [
-        {
-          "label": " ",
-          "command": "pamixer -t"
-        },
-        {
-          "label": " ",
-          "command": "nm-connection-editor"
-        },
-        {
-          "label": "󰂯",
-          "command": "blueman-manager"
-        },
-        {
-          "label": "󰏘",
-          "command": "nwg-look"
-        }
-      ]
+      "image-radius": 12,
+      "blur": true
     }
   }
 }
