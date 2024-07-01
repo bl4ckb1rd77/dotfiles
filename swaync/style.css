@@ -168,6 +168,7 @@
   border-radius: 8px;
   border: 2px solid @noti-bg-hover;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
+  opacity: 0.8;
 }
 
 .control-center-list {
