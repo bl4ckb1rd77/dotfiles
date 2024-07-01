@@ -14,7 +14,9 @@
       "mpris",
       "custom/mpdvol",
     ],
-    "modules-center": ["hyprland/workspaces"],
+    "modules-center": [
+      "hyprland/workspaces"
+    ],
     "modules-right": [
       "pulseaudio",
       "cpu",

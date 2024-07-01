@@ -7,4 +7,3 @@ else
   fontsize="10"
 fi
 kitty -o font_size=${fontsize} "$@" &
-~                                                                                       

@@ -53,10 +53,10 @@
             "type": "shell",
             "key": "│   Shell  │"
         },
-        {
-            "type": "terminal",
-            "key": "│   Term   │"
-        },
+        // {
+        //     "type": "terminal",
+        //     "key": "│   Term   │"
+        // },
         {
             "type": "theme",
             "key": "│ 󰉼  Theme  │"

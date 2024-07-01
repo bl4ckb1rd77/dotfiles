@@ -5,14 +5,16 @@
     "format-icons": ["Apps"],
     "tooltip": true,
     "tooltip-format": "Startmenü",
-    "on-click": "~/.config/hypr/scripts/menu",
+    "on-click": "$HOME/.config/hypr/scripts/menu",
   },
 
   "custom/weather": {
     "format": "{}",
-    "tooltip": false,
-    "exec": "$HOME/.config/hypr/scripts/weather",
+    "tooltip": true,
+    "exec": "python3 -u $HOME/.config/hypr/scripts/get_weather.py waybar",
     "interval": 10,
+    "escape": true,
+    "return-type": "json",
   },
 
   "mpris": {
@@ -33,11 +35,11 @@
     "format": " {}%",
     "format-alt": "󰝛",
     "interval": 1,
-    "exec": "~/.config/hypr/scripts/mpdvolume volume spotify-player",
-    "on-scroll-up": "~/.config/hypr/scripts/mpdvolume up spotify-player",
-    "on-scroll-down": "~/.config/hypr/scripts/mpdvolume down spotify-player",
-    "on-click": "~/.config/hypr/scripts/mpdvolume toggle spotify-player",
-    "exec-if": "~/.config/hypr/scripts/mpdvolume state spotify-player",
+    "exec": "$HOME/.config/hypr/scripts/mpdvolume volume spotify-player",
+    "on-scroll-up": "$HOME/.config/hypr/scripts/mpdvolume up spotify-player",
+    "on-scroll-down": "$HOME/.config/hypr/scripts/mpdvolume down spotify-player",
+    "on-click": "$HOME/.config/hypr/scripts/mpdvolume toggle spotify-player",
+    "exec-if": "$HOME/.config/hypr/scripts/mpdvolume state spotify-player",
   },
 
   // ---- Middle ----
@@ -122,8 +124,8 @@
     "format": "{}",
     "interval": 1,
     "tooltip": false,
-    "on-click": "~/.config/hypr/scripts/touchpad",
-    "exec": "~/.config/hypr/scripts/touchpad -get",
+    "on-click": "$HOME/.config/hypr/scripts/touchpad",
+    "exec": "$HOME/.config/hypr/scripts/touchpad -get",
   },
 
   "idle_inhibitor": {
@@ -134,29 +136,23 @@
     },
   },
 
-  "custom/rebootrequired": {
-    "format": "{}",
-    "exec": "~/.config/hypr/scripts/reboot-required-kernel",
-    "interval": 60,
-  },
-
   "custom/ipinfo": {
     "format": "{icon}",
     "format-icons": ["󰩟"],
     "tooltip": true,
     "tooltip-format": "{}",
     "interval": 10,
-    "exec": "~/.config/hypr/scripts/myips 2> /dev/null",
+    "exec": "$HOME/.config/hypr/scripts/get_weather.py ip 2> /dev/null",
     "escape": true,
     "return-type": "json",
   },
 
   "custom/updater": {
     "format": " {}",
-    "exec": "~/.config/hypr/scripts/updater",
+    "exec": "$HOME/.config/hypr/scripts/updater",
     "interval": 60,
     "tooltip": false,
-    "on-click": "$HOME/.config/hypr/scripts/kittywrapper --class update -T update -e paru -Syu && notify-send 'The system has been updated' ",
+    "on-click": "$HOME/.config/hypr/scripts/kittywrapper --class update -T update -e paru -Syu",
     "on-click-right": "pamac-manager",
   },
 
