@@ -26,32 +26,43 @@
 }
 
 .notification {
-  border-radius: 12px;
+  border-radius: 8px;
   margin: 6px 12px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
   padding: 0;
 }
 
-.normal {
-  background: green;
+.low {
+  background: @noti-bg-alt;
   padding: 6px;
-  border-radius: 12px;
-} 
+  border-radius: 8px;
+  border: 0px solid @noti-bg-hover;
+}
+
+.normal {
+  background: @noti-bg-alt;
+  padding: 6px;
+  border-radius: 8px;
+  border: 2px solid @noti-bg-hover;
+}
 
 .critical {
-  background: @noti-urgent;
+  background: @noti-bg-alt;
   padding: 2px;
-  border-radius: 12px;
+  border-radius: 8px;
+  border-radius: 8px;
+  border: 2px solid @noti-urgent;
 }
 
 .notification-content {
   background: transparent;
   padding: 6px;
-  border-radius: 12px;
+  border-radius: 8px;
+  border: 0px solid;
 }
 
 .close-button {
-  background: @noti-close-bg;
+  background: @noti-bg;
   color: @noti-fg;
   text-shadow: none;
   padding: 0;
@@ -66,7 +77,7 @@
 
 .close-button:hover {
   box-shadow: none;
-  background: @noti-close-bg-hover;
+  background: @noti-urgent;
   transition: all 0.15s ease-in-out;
   border: none;
 }
@@ -76,19 +87,19 @@
   padding: 4px;
   margin: 0;
   box-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: transparent;
+  border: 0px solid;
   color: @noti-fg;
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
   -gtk-icon-effect: none;
-  background: @noti-bg-hover;
+  background: transparent;
 }
 
 .notification-default-action {
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 /* When alternative actions are visible */
@@ -105,12 +116,12 @@
 
 /* add bottom border radius to eliminate clipping */
 .notification-action:first-child {
-  border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 8px;
 }
 
 .notification-action:last-child {
-  border-bottom-right-radius: 10px;
-  border-right: 1px solid @noti-border-color;
+  border-bottom-right-radius: 8px;
+  border-right: 0px solid @noti-border-color;
 }
 
 .image {}
@@ -118,7 +129,7 @@
 .body-image {
   margin-top: 6px;
   background-color: @noti-fg;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .summary {
@@ -154,7 +165,7 @@
 
 .control-center {
   background-color: @noti-bg-alt;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 2px solid @noti-bg-hover;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
 }
@@ -185,13 +196,18 @@
   color: @noti-fg;
   text-shadow: none;
   background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  border: 1px solid @noti-bg-hover;
   box-shadow: none;
   border-radius: 12px;
 }
 
 .widget-title>button:hover {
   background: @noti-bg-focus;
+  color: @noti-bg;
+  border: 1px solid @noti-bg-focus;
+}
+
+.widget-title>button:hover label {
   color: @noti-bg;
 }
 
@@ -203,19 +219,20 @@
 
 .widget-dnd>switch {
   font-size: initial;
-  border-radius: 12px;
+  border-radius: 8px;
   background: @noti-bg;
-  border: 1px solid @noti-bg-focus;
+  border: 1px solid @noti-bg-hover;
   box-shadow: none;
 }
 
 .widget-dnd>switch:checked {
-  background: @bg-selected;
+  background: @noti-bg-focus;
+  border: 1px solid @noti-bg-focus;
 }
 
 .widget-dnd>switch slider {
   background: @noti-bg-hover;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 /* Label widget */
