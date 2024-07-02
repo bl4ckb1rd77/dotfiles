@@ -1,6 +1,6 @@
 {
   "clock#date": {
-    "format": "{:%A %d.%m.%Y}",
+    "format": "{:L%A %d.%m.%Y}",
     "tooltip": false
   },
   "clock#time": {
