@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+pause() read -s -k 
+fastfetch 
+tput civis
+pause
+tput cnorm

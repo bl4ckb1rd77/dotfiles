@@ -1,0 +1,32 @@
+#!/bin/bash
+
+playerid=""
+
+if [ $# -gt 0 ]; then
+
+  playerid=$(wpctl status | grep -i $2 | grep -v 'ahoefer\|active' | awk '{print $1}')
+  case $1 in
+  "up")
+    wpctl set-volume ${playerid} 0.05+
+    ;;
+  "down")
+    wpctl set-volume ${playerid} 0.05-
+    ;;
+  "toggle")
+    wpctl set-mute ${playerid} toggle
+    ;;
+  "state")
+    if [ -z ${playerid} ]; then
+      exit 1
+    fi
+    exit 0
+    ;;
+  "volume")
+    VOLUME=$(wpctl get-volume ${playerid})
+    VOLUME=$(echo "$VOLUME" | awk -F':' '{print $2}' | tr -d ' ' | awk -F'.' '{print $2}')
+    echo $VOLUME
+    ;;
+  esac
+fi
+
+exit 0

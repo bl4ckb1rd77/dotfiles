@@ -1,0 +1,216 @@
+// ---- Left ----
+{
+  "custom/startmenu": {
+    "format": "{icon}",
+    "format-icons": ["Apps"],
+    "tooltip": true,
+    "tooltip-format": "Startmenü",
+    "on-click": "$HOME/.config/hypr/scripts/menu",
+  },
+
+  "custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "exec": "python3 -u $HOME/.config/hypr/scripts/get_weather.py waybar",
+    "interval": 10,
+    "escape": true,
+    "return-type": "json",
+  },
+
+  "mpris": {
+    "format": "{status_icon} {dynamic}",
+    "dynamic-order": ["title", "artist"],
+    "title-len": 25,
+    "artist-len": 25,
+    "interval": 1,
+    "player": "spotify_player",
+    "status-icons": {
+      "paused": "",
+      "playing": "",
+      "stopped": "",
+    },
+  },
+
+  "custom/mpdvol": {
+    "format": " {}%",
+    "format-alt": "󰝛",
+    "interval": 1,
+    "exec": "$HOME/.config/hypr/scripts/mpdvolume volume spotify-player",
+    "on-scroll-up": "$HOME/.config/hypr/scripts/mpdvolume up spotify-player",
+    "on-scroll-down": "$HOME/.config/hypr/scripts/mpdvolume down spotify-player",
+    "on-click": "$HOME/.config/hypr/scripts/mpdvolume toggle spotify-player",
+    "exec-if": "$HOME/.config/hypr/scripts/mpdvolume state spotify-player",
+  },
+
+  // ---- Middle ----
+
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    "sort-by-number": true,
+    "active-only": true,
+    "all-outputs": false,
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "1",
+      "11": "2",
+      "12": "3",
+      "13": "4",
+      "14": "5",
+      "15": "6",
+      "16": "7",
+      "17": "8",
+      "18": "9",
+    },
+    "persistent-workspaces": {
+      "eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "HDMI-A-1": [10, 11, 12, 13, 14, 15, 16, 17, 18],
+      "DP-1": [10, 11, 12, 13, 14, 15, 16, 17, 18],
+      "DP-4": [10, 11, 12, 13, 14, 15, 16, 17, 18],
+    },
+  },
+
+  // ---- Right ----
+
+  "cpu": {
+    "interval": 1,
+    "format": " {usage}%",
+    "max-length": 10,
+    "on-click": "kitty -e btop",
+  },
+
+  "memory": {
+    "interval": 1,
+    "format": " {}%",
+    "max-length": 10,
+  },
+
+  "pulseaudio": {
+    "scroll-step": 5.0,
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 mute",
+    "format-icons": {
+      "default": ["", "", "󰕾"],
+    },
+    "on-click": "pamixer -t",
+    "on-scroll-up": "pamixer -i 5",
+    "on-scroll-down": "pamixer -d 5",
+    "on-click-right": "exec pavucontrol",
+    "tooltip-format": "Volume {volume}%",
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+  },
+
+  "custom/touchpad": {
+    "format": "{}",
+    "interval": 1,
+    "tooltip": false,
+    "on-click": "$HOME/.config/hypr/scripts/touchpad",
+    "exec": "$HOME/.config/hypr/scripts/touchpad -get",
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": "",
+    },
+  },
+
+  "custom/ipinfo": {
+    "format": "{icon}",
+    "format-icons": ["󰩟"],
+    "tooltip": true,
+    "tooltip-format": "{}",
+    "interval": 10,
+    "exec": "$HOME/.config/hypr/scripts/get_weather.py ip 2> /dev/null",
+    "escape": true,
+    "return-type": "json",
+  },
+
+  "custom/updater": {
+    "format": " {}",
+    "exec": "$HOME/.config/hypr/scripts/updater",
+    "interval": 60,
+    "tooltip": false,
+    "on-click": "$HOME/.config/hypr/scripts/kittywrapper --class update -T update -e paru -Syu",
+    "on-click-right": "pamac-manager",
+  },
+
+  "systemd-failed-units": {
+    "hide-on-ok": false,
+    "format": " {nr_failed_system}/{nr_failed_user}",
+    "format-ok": " ✓",
+    "system": true,
+    "user": true,
+  },
+
+  "tray": {
+    "icon-size": 14,
+    "spacing": 4,
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": " {:%H:%M:%S}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "on-scroll": 1,
+      "mode-mon-col": 3,
+      "weeks-pos": "left",
+      "format": {
+        "months": "<span color='#d8dee9'><b>{}</b></span>",
+        "days": "<span><b>{}</b></span>",
+        "weeks": "<span color='#81a1c1'><b>{}</b></span>",
+        "weekdays": "<span color='#ebcb8b'><b>{}</b></span>",
+        "today": "<span color='#ebcb8b'><b><u>{}</u></b></span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_down",
+      "on-scroll-down": "shift_up",
+    },
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}<span color='#ebcb8b'><small> {}</small></span>",
+    "format-icons": {
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": "",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
+}

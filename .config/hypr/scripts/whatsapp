@@ -1,0 +1,3 @@
+#!/bin/bash
+kitty -T whatsapp -o font_size=14 -e nchat &
+

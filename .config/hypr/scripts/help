@@ -1,0 +1,8 @@
+#!/bin/bash
+mdcat ~/.config/hypr/cheatsheet.md 
+# hide the cursor and wait for user input
+tput civis
+read -n 1
+
+# give the cursor back
+tput cnorm

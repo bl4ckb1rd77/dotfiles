@@ -1,0 +1,130 @@
+* {
+  /* font-family: "NotoMono Nerd Font Propo"; */
+  /* font-family: ShureTechMono Nerd Font Propo; */
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-size: 16px;
+  /* font-weight: 600; */
+}
+
+tooltip {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #389964;
+  border-radius: 3px;
+  color: #d8dee9;
+}
+
+tooltip label {
+  color: #d8dee9;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0px;
+    color: rgb(220, 220, 220);
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+window#waybar.top {
+    border-bottom: 1px solid #389964;
+}
+
+window#waybar.bottom {
+    border-top: 1px solid #389964;
+}
+
+#clock,
+#cpu,
+#memory,
+#disk,
+#disk.home,
+#battery,
+#pulseaudio,
+#tray,
+#backlight,
+#custom-updater,
+#custom-rebootrequired,
+#custom-touchpad,
+#custom-mpdvol,
+#custom-power,
+#custom-ncspot,
+#cava,
+#hyprland-window,
+#custom-launcher-terminal,
+#custom-launcher-chrome,
+#custom-launcher-spotify,
+#custom-launcher-nvim,
+#custom-launcher-whatsapp,
+#custom-launcher-nemo,
+#custom-launcher-calc,
+#custom-ncspot,
+#custom-ipinfo,
+#mpris {
+  color: #D8DEE9;
+  margin-left: 4px;  
+}
+
+#cava,
+#custom-startmenu,
+#pulseaudio {
+  margin-left: 10px;
+}
+
+#cava {
+  margin-right: 10px;
+}
+
+/* damn icons */
+#custom-launcher-nemo { margin-left: 6px; }
+
+#custom-launcher-terminal:hover,
+#custom-launcher-chrome:hover,
+#custom-launcher-spotify:hover,
+#custom-launcher-nvim:hover,
+#custom-launcher-whatsapp:hover,
+#custom-launcher-nemo:hover,
+#custom-launcher-calc:hover,
+#custom-startmenu:hover {
+  color: #83b5e0;
+}
+
+#systemd-failed-units {
+  color: #BF616A;
+}
+
+#systemd-failed-units.ok {
+  color: #EBCB8B;
+}
+
+#custom-power,
+#battery {
+  margin-right: 10px;
+}
+
+#workspaces button {
+  margin: 0px 2px 0px 2px;
+  padding: 0px;
+  color: #D8DEE9;
+}
+
+#workspaces button.persistent {
+  color: #d8dee9;
+  background: rgba(0,0,0,0);
+}
+
+#workspaces button.empty {
+  color: #5E81AC;
+}
+
+#workspaces button.active {
+  color: #EBCB8B;
+  background: rgba(0,0,0,0);
+}
+
+#workspaces button:hover {
+  transition: none;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  border-radius: inherit;
+  color: #83b5e0;
+  background: rgba(0,0,0,0);
+}

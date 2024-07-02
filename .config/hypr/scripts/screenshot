@@ -1,0 +1,22 @@
+#!/bin/bash
+
+time=$(date +%Y-%m-%d-%H-%M-%S)
+dir="$(xdg-user-dir PICTURES)/Screenshots"
+file="Screenshot_${time}_${RANDOM}.png"
+
+function getmenu() {
+  echo "󰹑 screenshot desktop"
+  echo "󰲎 screenshot area"
+}
+
+result=$(getmenu | rofi -i -dmenu -config $HOME/.config/rofi/clipboard.rasi -p "Screenshot")
+case $result in
+	"󰹑 screenshot desktop")
+		sleep 1
+		grimblast --notify save screen ${dir}/$file
+		;;
+	"󰲎 screenshot area")
+		grimblast --notify save area ${dir}/$file
+		;;
+esac
+exit 0
