@@ -1,6 +1,3 @@
-[submodule "nvim"]
-	path = nvim
-	url = https://github.com/NvChad/NvChad
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = git@github.com:bl4ckb1rd77/astronvim-user.git
