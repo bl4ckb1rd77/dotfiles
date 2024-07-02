@@ -1,9 +1,0 @@
-#!/bin/bash
-
-CONFIG="$HOME/.config/rofi/menu.rasi"
-
-if [[ ! $(pidof rofi) ]]; then
-  rofi -show drun -config ${CONFIG} -icon-theme ${ICON_THEME}
-else
-  pkill rofi
-fi
