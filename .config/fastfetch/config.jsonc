@@ -2,81 +2,91 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "type": "kitty-direct",
-    "source": "~/.config/fastfetch/hypr.png",
+    "source": "~/.config/fastfetch/archgirl.png",
     "width": 24,
-    "height": 17
+    "height": 17,
   },
   "display": {
-     "separator": "   ",
-     "color": "blue"
+    "separator": "   ",
+    "color": "blue",
   },
   "modules": [
-        {
-            "type": "custom", // HardwareStart
-            "format": "\u001b[11D{#34}           ╭───────────╮"
-        },
-        {
-            "type": "title",
-            "key": "│   User   │",
-            "format": "{1}@{2}"
-        },
-        {
-            "type": "os",
-            "key": "│   OS     │" // Just get your distro's logo off nerdfonts.com
-        },
-        {
-            "type": "kernel",
-            "key": "│   Kernel │",
-            "format": "{1} {2}"
-        },
-        {
-            "type": "host",
-            "key": "│   Host   │"
-        },
-        {
-            "type": "cpu",
-            "key": "│   CPU    │"
-        },
-        {
-            "type": "gpu",
-            "key": "│   GPU    │"
-        },
-        {
-            "type": "packages",
-            "key": "│ 󰏖  Pacman │"
-        },
-        {
-            "type": "wm",
-            "key": "│   WM     │"
-        },
-        {
-            "type": "shell",
-            "key": "│   Shell  │"
-        },
-        // {
-        //     "type": "terminal",
-        //     "key": "│   Term   │"
-        // },
-        {
-            "type": "theme",
-            "key": "│ 󰉼  Theme  │"
-        },
-        {
-            "type": "icons",
-            "key": "│ 󰀻  Icons  │"
-        },
-        {
-            "type": "wifi",
-            "key": "│   Wifi   │",
-            "format": "{4}" // ssid
-        },
-        {
-            "type": "custom", // InformationEnd
-            "format": "\u001b[11D{#34}           ╰───────────╯"
-        },
-        {
-            "type": "colors",
-            "paddingLeft": 2,
-            "symbol": "circle"
-        }
-    ]}
+    {
+      "type": "custom", // HardwareStart
+      "format": "\u001b[11D{#34}           ╭───────────╮",
+    },
+    {
+      "type": "title",
+      "key": "│   User   │",
+      "format": "bl4ckb1rd 󰚌 HP_ProBook",
+      // "format": "{1}@{2}",
+    },
+    {
+      "type": "os",
+      "key": "│   OS     │", // Just get your distro's logo off nerdfonts.com
+    },
+    {
+      "type": "kernel",
+      "key": "│   Kernel │",
+      "format": "{1} {2}",
+    },
+    {
+      "type": "host",
+      "key": "│   Host   │",
+    },
+    {
+      "type": "cpu",
+      "key": "│   CPU    │",
+    },
+    {
+      "type": "gpu",
+      "key": "│   GPU    │",
+    },
+    {
+      "type": "packages",
+      "key": "│ 󰏖  Pacman │",
+    },
+    {
+      "type": "lm",
+      "key": "│ 󰧨  Login  │",
+    },
+    {
+      "type": "wm",
+      "key": "│   WM     │",
+    },
+    {
+      "type": "shell",
+      "key": "│   Shell  │",
+    },
+    {
+      "type": "terminal",
+      "key": "│   Term   │",
+    },
+    {
+      "type": "terminalfont",
+      "key": "│   Font   │",
+    },
+    {
+      "type": "theme",
+      "key": "│ 󰉼  Theme  │",
+    },
+    {
+      "type": "icons",
+      "key": "│ 󰀻  Icons  │",
+    },
+    {
+      "type": "wifi",
+      "key": "│   Wifi   │",
+      "format": "{4}", // ssid
+    },
+    {
+      "type": "custom", // InformationEnd
+      "format": "\u001b[11D{#34}           ╰───────────╯",
+    },
+    {
+      "type": "colors",
+      "paddingLeft": 2,
+      // "symbol": "circle",
+    },
+  ],
+}
