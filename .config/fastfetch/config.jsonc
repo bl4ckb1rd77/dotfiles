@@ -18,8 +18,8 @@
     {
       "type": "title",
       "key": "│   User   │",
-      "format": "bl4ckb1rd 󰚌 HP_ProBook",
-      // "format": "{1}@{2}",
+      // "format": "bl4ckb1rd 󰚌 HP_ProBook",
+      "format": "{1}@{2}",
     },
     {
       "type": "os",
