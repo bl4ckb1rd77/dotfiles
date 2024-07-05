@@ -122,13 +122,13 @@ window#waybar {
 #workspaces button.empty {
   color: @textcolor;
   background-color: @emptybackground;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 #workspaces button.urgent {
   color: @textcolor;
   background-color: @urgentbackground;
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 #workspaces button.active {
