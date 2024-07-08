@@ -1,8 +1,8 @@
 * {
-    background:             rgba(46, 52, 64, 70%);
-    background2:            rgba(46, 52, 64, 70%);
-    background-alt:         rgba(56, 62, 74, 70%);
-    background-alt-trans:   rgba(56, 62, 74, 70%);
+    background:             rgba(46, 52, 64, 90%);
+    background2:            rgba(46, 52, 64, 90%);
+    background-alt:         rgba(56, 62, 74, 90%);
+    background-alt-trans:   rgba(56, 62, 74, 90%);
     foreground:             #e5e9f0;
     selected:               #81a1c1;
     active:                 #a3be8c;
