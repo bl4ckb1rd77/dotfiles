@@ -5,18 +5,17 @@
     "layer": "top",
     "position": "top",
     "reload_style_on_change": 1,
-    "height": 20,
+    "height": 10,
     "margin": 0,
     "spacing": 0,
     "modules-left": [
       "custom/startmenu",
-      "custom/weather",
+      "hyprland/workspaces",
       "mpris",
       "custom/mpdvol",
+      "custom/weather",
     ],
-    "modules-center": [
-      "hyprland/workspaces"
-    ],
+    "modules-center": [],
     "modules-right": [
       "pulseaudio",
       "cpu",

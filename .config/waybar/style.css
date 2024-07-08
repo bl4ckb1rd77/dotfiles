@@ -1,19 +1,21 @@
 /* ---- Color Definitions ---- */
 
 @define-color barbackground rgba(236, 239, 244, 0.1);
-@define-color background #2e3e44;
+@define-color background #2e3444;
 @define-color blank rgba(0, 0, 0, 0);
 @define-color textcolor #eceff4;
 @define-color buttonbackground #616e87;
 @define-color activebackground #5e81ac;
-@define-color emptybackground #616e87;
+@define-color emptybackground #434c5e;
 @define-color hoverbackground #ebcb8b;
 @define-color urgentbackground #bf616a;
 
 * {
-  font-family: JetBrainsMono Nerd Font Propo;
+  /* font-family: JetBrainsMono Nerd Font Propo; */
+  font-family: Iosevka Nerd Font;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
+  min-height: 0;
 }
 
 /* ---- Toolti ---- */
@@ -37,16 +39,20 @@ window#waybar {
   transition-duration: 0.5s;
 }
 
+/* ==== LEFT ==== */
 /* ---- Startmenu ---- */
 #custom-startmenu {
   background-color: @background;
   color: @textcolor;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
-  border: 2px solid @activebackground;
-  border-radius: 8px;
-  padding: 0px 10px 1px 10px;
-  margin: 5px 10px 3px 10px;
+  border-top: 2px solid @activebackground;
+  border-left: 2px solid @activebackground;
+  border-bottom: 2px solid @activebackground;
+  border-right: 0px;
+  border-radius: 8px 0px 0px 8px;
+  margin: 5px 0px 0px 8px;
+  padding: 0px 10px 0px 10px;
   opacity: 0.8;
 }
 
@@ -54,39 +60,6 @@ window#waybar {
   background-color: @hoverbackground;
   color: @background;
   transition: all 0.3s ease-in-out;
-  border-radius: 8px;
-  opacity: 0.8;
-}
-
-/* ---- weather ---- */
-#custom-weather {
-  background-color: @background;
-  color: @textcolor;
-  border: 2px solid @activebackground;
-  border-radius: 8px;
-  padding: 0px 10px 1px 10px;
-  margin: 5px 10px 3px 0px;
-  opacity: 0.8;
-}
-
-/* ---- music bubble ---- */
-#mpris {
-  background-color: @background;
-  color: @textcolor;
-  border: 2px solid @activebackground;
-  border-radius: 8px;
-  padding: 0px 10px 1px 10px;
-  margin: 5px 0px 3px 0px;
-  opacity: 0.8;
-}
-
-#custom-mpdvol {
-  background-color: @background;
-  color: @textcolor;
-  border: 2px solid @activebackground;
-  border-radius: 8px;
-  padding: 0px 10px 1px 10px;
-  margin: 5px 0px 3px 10px;
   opacity: 0.8;
 }
 
@@ -94,48 +67,59 @@ window#waybar {
 #workspaces {
   background: @background;
   color: @textcolor;
-  margin: 5px 1px 5px 1px;
-  padding: 0px 1px;
-  border: 2px solid @activebackground;
-  border-radius: 8px;
+  border-top: 2px solid @activebackground;
+  border-left: 0px;
+  border-bottom: 2px solid @activebackground;
+  border-right: 0px;
+  border-radius: 0px;
+  margin: 5px 0px 0px 0px;
+  padding: 3px 0px 3px 0px;
   font-weight: bold;
   font-style: normal;
   opacity: 0.8;
 }
 
+#workspaces label {
+  font-size: 6px;
+}
+
 #workspaces button {
   color: @textcolor;
   background-color: @buttonbackground;
-  padding: 0px 5px;
-  margin: 6px 3px;
+  margin: 6px 3px 6px 3px;
+  padding: 0px;
   border-radius: 15px;
   border: 0px;
   transition: all 0.3s ease-in-out;
-  opacity: 0.7;
+  opacity: 1;
+  min-width: 8px;
 }
 
 #workspaces button.persistent {
   color: @textcolor;
-  background-color: @emptybackground;
+  transition: all 0.3s ease-in-out;
+  background-color: @buttonbackground;
 }
 
 #workspaces button.empty {
   color: @textcolor;
   background-color: @emptybackground;
-  opacity: 0.3;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
 }
 
 #workspaces button.urgent {
   color: @textcolor;
   background-color: @urgentbackground;
-  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
 }
 
 #workspaces button.active {
   color: @textcolor;
   background-color: @activebackground;
   border-radius: 15px;
-  min-width: 40px;
+  min-width: 25px;
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
@@ -144,7 +128,35 @@ window#waybar {
   color: @background;
   background: @hoverbackground;
   border-radius: 15px;
-  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+#mpris,
+#custom-mpdvol {
+  background-color: @background;
+  color: @textcolor;
+  border-top: 2px solid @activebackground;
+  border-left: 0px;
+  border-bottom: 2px solid @activebackground;
+  border-right: 0px;
+  border-radius: 0px;
+  margin: 5px 0px 0px 0px;
+  padding: 0px 10px 0px 10px;
+  opacity: 0.8;
+}
+
+#custom-weather {
+  background-color: @background;
+  color: @textcolor;
+  border-top: 2px solid @activebackground;
+  border-left: 0px;
+  border-bottom: 2px solid @activebackground;
+  border-right: 2px solid @activebackground;
+  border-radius: 0px 8px 8px 0px;
+  margin: 5px 0px 0px 0px;
+  padding: 0px 10px 0px 10px;
+  opacity: 0.8;
 }
 
 /* ---- bat vol bubble ---- */
@@ -154,86 +166,36 @@ window#waybar {
   border-top: 2px solid @activebackground;
   border-left: 2px solid @activebackground;
   border-bottom: 2px solid @activebackground;
+  border-right: 0px;
   border-radius: 8px 0px 0px 8px;
-  margin: 5px 0px 3px 0px;
-  padding: 0px 5px 1px 12px;
+  margin: 5px 0px 0px 0px;
+  padding: 0px 5px 0px 12px;
   opacity: 0.8;
 }
 
 #cpu,
-#memory {
-  background-color: @background;
-  color: @textcolor;
-  border-top: 2px solid @activebackground;
-  border-bottom: 2px solid @activebackground;
-  border-radius: 0px;
-  margin: 5px 0px 3px 0px;
-  padding: 0px 5px 1px 5px;
-  opacity: 0.8;
-}
-
-#battery {
-  background-color: @background;
-  color: @textcolor;
-  border-top: 2px solid @activebackground;
-  border-bottom: 2px solid @activebackground;
-  border-right: 2px solid @activebackground;
-  border-radius: 0px 8px 8px 0px;
-  margin: 5px 0px 3px 0px;
-  padding: 0px 10px 1px 5px;
-  opacity: 0.8;
-}
-/* ---- custom bubble ---- */
-
-#idle_inhibitor {
-  background-color: @background;
-  color: @textcolor;
-  border-top: 2px solid @activebackground;
-  border-left: 2px solid @activebackground;
-  border-bottom: 2px solid @activebackground;
-  border-radius: 8px 0px 0px 8px;
-  margin: 5px 0px 3px 10px;
-  padding: 0px 5px 1px 12px;
-  opacity: 0.8;
-}
-
+#memory,
+#battery,
+#idle_inhibitor,
 #custom-updater,
-#custom-ipinfo {
+#custom-ipinfo,
+#systemd-failed-units,
+#tray,
+#clock {
   background-color: @background;
   color: @textcolor;
   border-top: 2px solid @activebackground;
   border-bottom: 2px solid @activebackground;
+  border-left: 0px;
+  border-right: 0px;
   border-radius: 0px;
-  margin: 5px 0px 3px 0px;
-  padding: 0px 5px 1px 5px;
-  opacity: 0.8;
-}
-
-#systemd-failed-units {
-  background-color: @urgentbackground;
-  color: @textcolor;
-  border-top: 2px solid @activebackground;
-  border-bottom: 2px solid @activebackground;
-  border-right: 2px solid @activebackground;
-  border-radius: 0px 8px 8px 0px;
-  margin: 5px 0px 3px 0px;
-  padding: 0px 10px 1px 5px;
+  margin: 5px 0px 0px 0px;
+  padding: 0px 5px 0px 5px;
   opacity: 0.8;
 }
 
 #systemd-failed-units.ok {
   background-color: @background;
-}
-
-/* ---- Tray ---- */
-#tray {
-  background-color: @background;
-  color: @textcolor;
-  border: 2px solid @activebackground;
-  border-radius: 8px;
-  padding: 0px 10px 1px 10px;
-  margin: 5px 10px 3px 10px;
-  opacity: 0.8;
 }
 
 #tray > .passive {
@@ -244,24 +206,16 @@ window#waybar {
   -gtk-icon-effect: highlight;
 }
 
-/* ---- Clock ---- */
-#clock {
-  background-color: @background;
-  color: @textcolor;
-  border: 2px solid @activebackground;
-  border-radius: 8px;
-  padding: 0px 10px 1px 10px;
-  margin: 5px 10px 3px 0px;
-  opacity: 0.8;
-}
-
 #custom-notification {
   background-color: @background;
   color: @textcolor;
-  border: 2px solid @activebackground;
-  border-radius: 8px;
+  border-left: 0px;
+  border-top: 2px solid @activebackground;
+  border-right: 2px solid @activebackground;
+  border-bottom: 2px solid @activebackground;
+  border-radius: 0px 8px 8px 0px;
   padding: 0px 10px 1px 10px;
-  margin: 5px 10px 3px 0px;
+  margin: 5px 8px 0px 0px;
   opacity: 0.8;
 }
 
