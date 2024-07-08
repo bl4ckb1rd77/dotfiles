@@ -226,6 +226,7 @@ window#waybar {
   font-family: Cantarell ExtraBold;
   font-size: 120px;
   border: 0px solid @blank;
+  text-shadow: 3px 3px rgba(46, 52, 68, 0.6);
 }
 
 #clock.date {
@@ -235,4 +236,5 @@ window#waybar {
   font-family: Cantarell ExtraBold;
   font-size: 40px;
   border: 0px solid @blank;
+  text-shadow: 3px 3px rgba(46, 52, 68, 0.6);
 }
