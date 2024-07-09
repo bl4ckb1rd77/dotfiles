@@ -4,3 +4,21 @@
 [submodule "Bilder/wallpapers"]
 	path = Bilder/wallpapers
 	url = git@github.com:bl4ckb1rd77/wallpapers.git
+[submodule ".config/zsh/plugins/zsh-eza"]
+	path = .config/zsh/plugins/zsh-eza
+	url = https://github.com/z-shell/zsh-eza.git
+[submodule ".config/zsh/plugins/zsh-autosuggestions"]
+	path = .config/zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".config/zsh/plugins/zsh-syntax-highlighting"]
+	path = .config/zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule ".config/zsh/plugins/zsh-history-substring-search"]
+	path = .config/zsh/plugins/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule ".config/zsh/plugins/zsh-auto-notify"]
+	path = .config/zsh/plugins/zsh-auto-notify
+	url = https://github.com/MichaelAquilina/zsh-auto-notify.git
+[submodule ".config/zsh/plugins/ohmyzsh"]
+	path = .config/zsh/plugins/ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
