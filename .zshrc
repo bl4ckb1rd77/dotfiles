@@ -1,9 +1,10 @@
 export PATH=$PATH:"$HOME/.cargo/bin"
 
 ZSH_THEME=""
-HIST_STAMPS="mm/dd/yyyy"
-HISTSIZE=10000
-SAVEHIST=10000
+export HISTFILE=~/.zsh_history
+export HIST_STAMPS="mm/dd/yyyy"
+export HISTSIZE=10000
+export SAVEHIST=10000
 bindkey -e
 
 # Fixing zsh history problems on multiple terminals
@@ -53,6 +54,13 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
 
 # set editor
 export EDITOR="/usr/bin/nvim"
