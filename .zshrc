@@ -64,11 +64,12 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 # set editor
 export EDITOR="/usr/bin/nvim"
+export VISUAL="/usr/bin/nvim"
 
 # settings for Auto Notify
 export AUTO_NOTIFY_THRESHOLD=20
 export AUTO_NOTIFY_EXPIRE_TIME=10000
-export AUTO_NOTIFY_IGNORE=("man" "sleep" "vim" "nvim" "less" "more" "tail" "watch" "git commit" "lazygit" "top" "htop" "btop" "ssh")
+export AUTO_NOTIFY_IGNORE=("man" "sleep" "vim" "nvim" "less" "more" "tail" "watch" "git commit" "lazygit" "top" "htop" "btop" "ssh" "cava" "spotify_player" "sptlrx" "kitten ssh")
 
 # source plugins
 source $HOME/.zsh.plugins
