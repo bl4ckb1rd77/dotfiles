@@ -21,7 +21,7 @@ legacy_input_handling: false
 env:
   browser: google-chrome-stable
   save-path: ~/.local/share/youtube-tui/saved/
-  download-path: ~/YouTube/%(title)s-%(id)s.%(ext)s
-  youtube-downloader: yt-dlp
-  video-player: mpv
   terminal-emulator: kitty -e
+  youtube-downloader: yt-dlp
+  download-path: ~/YouTube/%(title)s-%(id)s.%(ext)s
+  video-player: mpv
