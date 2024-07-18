@@ -65,6 +65,7 @@ element {
   cursor:                      pointer;
   background-color:            transparent;
   text-color:                  @foreground;
+  children:                    [ "element-icon" ];
 }
 
 @media(max-aspect-ratio: 1.8) {
@@ -91,15 +92,6 @@ element-icon {
   size:                        33%;
   cursor:                      inherit;
   border-radius:               0px;
-  background-color:            transparent;
-  text-color:                  inherit;
-}
-
-element-text {
-  vertical-align:              0.5;
-  horizontal-align:            0.5;
-  padding:                     20px;
-  cursor:                      inherit;
   background-color:            transparent;
   text-color:                  inherit;
 }
