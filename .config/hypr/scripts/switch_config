@@ -2,6 +2,8 @@
 monitor_list=$(hyprctl monitors | grep Monitor | awk '{print $2}')
 if [[ ${monitor_list[@]} =~ "DP-3" ]]; then
   ln -snf $HOME/.config/hypr/monitors/DP3.conf $HOME/.config/hypr/monitor.conf
+elif [[ ${monitor_list[@]} =~ "DP-2" ]]; then
+  ln -snf $HOME/.config/hypr/monitors/DP2.conf $HOME/.config/hypr/monitor.conf
 elif [[ ${monitor_list[@]} =~ "DP-1" ]]; then
   ln -snf $HOME/.config/hypr/monitors/DP1.conf $HOME/.config/hypr/monitor.conf
 else
