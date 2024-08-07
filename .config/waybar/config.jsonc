@@ -9,14 +9,17 @@
     "margin": 0,
     "spacing": 0,
     "modules-left": [
+      "custom/left",
       "custom/startmenu",
       "hyprland/workspaces",
       "mpris",
       "custom/mpdvol",
       "custom/weather",
+      "custom/right",
     ],
     "modules-center": [],
     "modules-right": [
+      "custom/left",
       "pulseaudio",
       "cpu",
       "memory",
@@ -28,6 +31,7 @@
       "tray",
       "clock",
       "custom/notification",
+      "custom/right",
     ],
   },
   {

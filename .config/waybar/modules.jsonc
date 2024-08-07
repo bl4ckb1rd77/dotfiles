@@ -1,5 +1,16 @@
-// ---- Left ----
 {
+  // ---- generel ----
+  "custom/left": {
+    "format": "{icon}",
+    "format-icons": [" "],
+    "tooltip": false,
+  },
+  "custom/right": {
+    "format": "{icon}",
+    "format-icons": [" "],
+    "tooltip": false,
+  },
+  // ---- Left ----
   "custom/startmenu": {
     "format": "{icon}",
     "format-icons": ["Apps"],

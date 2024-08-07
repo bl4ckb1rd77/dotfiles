@@ -12,7 +12,7 @@ style:
   before:
     background: ""
     foreground: "#4C566A"
-    bold: true
+    bold: false
     italic: false
     underline: false
     strikethrough: false
@@ -21,7 +21,7 @@ style:
   current:
     background: ""
     foreground: "#D8DEE9"
-    bold: true
+    bold: false
     italic: false
     underline: false
     strikethrough: false
