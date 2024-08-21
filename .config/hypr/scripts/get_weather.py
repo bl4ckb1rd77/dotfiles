@@ -1,13 +1,14 @@
 #!/bin/python3
 
-import os
-import time
-import requests
-import sys
-import re
 import json
-import netifaces as ni
+import os
+import re
+import sys
+import time
 from pathlib import Path
+
+import netifaces as ni
+import requests
 
 #
 # --- Variablen
@@ -18,7 +19,7 @@ wttrurl = "http://de.wttr.in/"
 ipurl = "http://ipinfo.io"
 wttrformat = "?format=%l:%c:%C:%t:%f:%h:%w"
 expiretime = 600
-ifaceignore = ['virbr', 'lo']
+ifaceignore = ["virbr", "lo"]
 localif = []
 localip = []
 
@@ -46,7 +47,7 @@ def saveweather(wttrdata):
 
 def loadweather():
     if wttrcache.is_file():
-        with open(wttrcache, 'r') as rf:
+        with open(wttrcache, "r") as rf:
             return rf.readline()
     else:
         return ""
@@ -61,8 +62,8 @@ def getweather():
                 ipdata = json.load(filehandler)
         else:
             exit(1)
-    city = ipdata['city']
-    if city == "Eschbord":
+    city = ipdata["city"]
+    if city == "Eschborn":
         city = "Köln"
     try:
         res = requests.get(wttrurl + city + wttrformat).text
@@ -77,7 +78,7 @@ def is_iface_up(iface):
 
 
 def get_iface_addr(iface):
-    return ni.ifaddresses(iface)[ni.AF_INET][0]['addr']
+    return ni.ifaddresses(iface)[ni.AF_INET][0]["addr"]
 
 
 def getlocation():
@@ -107,7 +108,7 @@ if len(sys.argv) > 1:
                             ipdata = json.load(filehandler)
                     else:
                         exit(1)
-                wanip = ipdata['ip']
+                wanip = ipdata["ip"]
                 for iface in ni.interfaces():
                     if any(x in iface for x in ifaceignore):
                         continue
@@ -115,11 +116,11 @@ if len(sys.argv) > 1:
                         ifaddr = get_iface_addr(iface)
                         localif.append(iface)
                         localip.append(ifaddr)
-                output = "{\"text\": \"WAN:\t"
+                output = '{"text": "WAN:\t'
                 output += f"{wanip}"
                 for x in range(len(localif)):
                     output += f"\r{localif[x]}:\t{localip[x]}"
-                output += "\"}"
+                output += '"}'
                 print(repr(output).replace("'", ""))
                 exit(0)
             case "location" | "-location" | "--location":
@@ -133,35 +134,36 @@ if len(sys.argv) > 1:
                             ipdata = json.load(filehandler)
                     else:
                         exit(1)
-                country = ipdata['country']
-                city = ipdata['city']
+                country = ipdata["country"]
+                city = ipdata["city"]
                 if city == "Eschbord":
                     city = "Köln"
                 print(f"{country}, {city}")
                 exit(0)
             case "waybar" | "-waybar" | "--waybar":
                 if cacherefresh(wttrcache):
-                    wttr = re.split(':', getweather())
+                    wttr = re.split(":", getweather())
                     saveweather(wttr)
                 else:
-                    wttr = re.split(':', loadweather())
-                waybar = ("{\"text\": "
-                          f"\"{wttr[1]}{wttr[2]} {wttr[3]}\""
-                          ", \"alt\": \"\""
-                          ", \"tooltip\": "
-                          f"\"{wttr[0]}\t{wttr[1]} {wttr[2]}\r"
-                          f"\t{wttr[3]} ({wttr[4]})\r"
-                          f"\t{wttr[5]} {wttr[6]}\""
-                          "}"
-                          )
+                    wttr = re.split(":", loadweather())
+                waybar = (
+                    '{"text": '
+                    f'"{wttr[1]}{wttr[2]} {wttr[3]}"'
+                    ', "alt": ""'
+                    ', "tooltip": '
+                    f'"{wttr[0]}\t{wttr[1]} {wttr[2]}\r'
+                    f"\t{wttr[3]} ({wttr[4]})\r"
+                    f'\t{wttr[5]} {wttr[6]}"'
+                    "}"
+                )
                 print(repr(waybar).replace("'", ""))
                 exit(0)
             case "weather" | "-weather" | "--weather":
                 if cacherefresh(wttrcache):
-                    wttr = re.split(':', getweather())
+                    wttr = re.split(":", getweather())
                     saveweather(wttr)
                 else:
-                    wttr = re.split(':', loadweather())
+                    wttr = re.split(":", loadweather())
                 print(f"{wttr[1]}{wttr[2]} {wttr[3]}")
                 exit(0)
             case _:
