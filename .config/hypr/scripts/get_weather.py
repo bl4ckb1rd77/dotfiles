@@ -136,7 +136,7 @@ if len(sys.argv) > 1:
                         exit(1)
                 country = ipdata["country"]
                 city = ipdata["city"]
-                if city == "Eschbord":
+                if city == "Eschborn":
                     city = "Köln"
                 print(f"{country}, {city}")
                 exit(0)
