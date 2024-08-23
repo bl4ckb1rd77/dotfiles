@@ -21,6 +21,8 @@
     "modules-right": [
       "custom/left",
       "pulseaudio",
+      "disk#root",
+      "disk#home",
       "cpu",
       "memory",
       "battery",

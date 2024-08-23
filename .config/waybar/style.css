@@ -204,6 +204,8 @@ window#waybar {
   opacity: 0.8;
 }
 
+#disk.root,
+#disk.home,
 #cpu,
 #memory,
 #battery,
