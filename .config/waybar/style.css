@@ -213,6 +213,7 @@ window#waybar {
 #custom-updater,
 #custom-ipinfo,
 #systemd-failed-units,
+#custom-touchpad,
 #tray,
 #clock {
   background-color: @background;

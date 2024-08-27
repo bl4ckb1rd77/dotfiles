@@ -96,11 +96,11 @@
   // ---- Right ----
 
   "disk#root": {
-    "format": " {free}",
+    "format": " {free}",
   },
 
   "disk#home": {
-    "format": " {free}",
+    "format": " {free}",
     "path": "/home",
   },
 
@@ -184,6 +184,14 @@
     "format-ok": " ✓",
     "system": true,
     "user": true,
+  },
+
+  "custom/touchpad": {
+    "format": "{}",
+    "interval": 1,
+    "tooltip": false,
+    "on-click": "$HOME/.config/hypr/scripts/touchpad",
+    "exec": "$HOME/.config/hypr/scripts/touchpad -get",
   },
 
   "tray": {
