@@ -8,8 +8,8 @@ export SAVEHIST=10000
 bindkey -e
 
 # Fixing zsh history problems on multiple terminals
-setopt inc_append_history
-setopt share_history
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 
 # Ignore duplicate commands in history file
 setopt histignorealldups
