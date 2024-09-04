@@ -3,7 +3,7 @@
 ## Set GTK Themes, Icons, Cursor and Fonts
 
 THEME='Nordic'
-ICONS='Nordzy-cyan-dark'
+ICONS='BreezeX-Dark'
 FONT='NotoSans Nerd Font 10'
 CURSOR='Nordzy-cursors-white'
 
