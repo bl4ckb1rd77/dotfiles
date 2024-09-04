@@ -1,10 +1,11 @@
 #!/bin/bash
 
+player=$(playerctl -l | grep -v 'brave')
 playerid=""
 
 if [ $# -gt 0 ]; then
 
-  playerid=$(wpctl status | grep -i $2 | grep -v 'ahoefer\|active' | awk '{print $1}')
+  playerid=$(wpctl status | grep -i $player | grep -v 'ahoefer\|active' | awk '{print $1}')
   case $1 in
   "up")
     wpctl set-volume ${playerid} 0.05+

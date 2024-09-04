@@ -74,7 +74,7 @@
     "title-len": 25,
     "artist-len": 25,
     "interval": 1,
-    "player": "spotify_player",
+    // "player": "spotify_player",
     "status-icons": {
       "paused": " ",
       "playing": " ",
@@ -86,11 +86,11 @@
     "format": "󰎇 {}%",
     "format-alt": "󰎊 mute",
     "interval": 1,
-    "exec": "$HOME/.config/hypr/scripts/mpdvolume volume spotify-player",
-    "on-scroll-up": "$HOME/.config/hypr/scripts/mpdvolume up spotify-player",
-    "on-scroll-down": "$HOME/.config/hypr/scripts/mpdvolume down spotify-player",
-    "on-click": "$HOME/.config/hypr/scripts/mpdvolume toggle spotify-player",
-    "exec-if": "$HOME/.config/hypr/scripts/mpdvolume state spotify-player",
+    "exec": "$HOME/.config/hypr/scripts/mpdvolume volume",
+    "on-scroll-up": "$HOME/.config/hypr/scripts/mpdvolume up",
+    "on-scroll-down": "$HOME/.config/hypr/scripts/mpdvolume down",
+    "on-click": "$HOME/.config/hypr/scripts/mpdvolume toggle",
+    "exec-if": "$HOME/.config/hypr/scripts/mpdvolume state",
   },
 
   // ---- Right ----

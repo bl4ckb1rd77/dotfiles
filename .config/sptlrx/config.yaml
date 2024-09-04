@@ -47,7 +47,8 @@ pipe:
 ### MPRIS settings ###
 mpris:
   # Whitelist of MPRIS players. First available is used if empty.
-  players: [spotify_player]
+###   players: [spotify_player]
+  players: [spotify]
 
 #local:
 #  folder: "~/.lyrics"
