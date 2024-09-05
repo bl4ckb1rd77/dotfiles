@@ -18,6 +18,9 @@ setopt histignorealldups
 autoload -Uz select-word-style
 select-word-style bash
 
+# Adding slash after . and ..
+zstyle ':completion:*' special-dirs true
+
 # Add highlight enabled tab completion with colors
 zstyle ':completion:*' menu select
 eval "$(dircolors)"

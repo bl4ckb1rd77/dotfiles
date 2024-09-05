@@ -66,9 +66,10 @@ def getweather():
     if city == "Eschborn":
         city = "Köln"
     try:
-        res = requests.get(wttrurl + city + wttrformat).text
+        res = requests.get(wttrurl + city + wttrformat, timeout=3).text
     except:
-        exit(1)
+        res = "off"
+        # exit(1)
     return res
 
 
@@ -85,7 +86,14 @@ def getlocation():
     try:
         res = requests.get(ipurl)
     except:
-        exit(1)
+        res = {
+            "ip": "offline",
+            "hostname": "AmpadaL027",
+            "country": "DE",
+            "city": "Köln",
+        }
+        data = json.loads(json.dumps(res))
+        return data
     tdat = json.dumps(res.json())
     data = json.loads(tdat)
     return data
@@ -146,16 +154,24 @@ if len(sys.argv) > 1:
                     saveweather(wttr)
                 else:
                     wttr = re.split(":", loadweather())
-                waybar = (
-                    '{"text": '
-                    f'"{wttr[1]}{wttr[2]} {wttr[3]}"'
-                    ', "alt": ""'
-                    ', "tooltip": '
-                    f'"{wttr[0]}\t{wttr[1]} {wttr[2]}\r'
-                    f"\t{wttr[3]} ({wttr[4]})\r"
-                    f'\t{wttr[5]} {wttr[6]}"'
-                    "}"
-                )
+                wttrlen = len(wttr)
+                if wttrlen < 4:
+                    waybar = (
+                        '{"text": "offline"'
+                        ', "alt": "", "tooltip": "Service Offline"'
+                        "}"
+                    )
+                else:
+                    waybar = (
+                        '{"text": '
+                        f'"{wttr[1]}{wttr[2]} {wttr[3]}"'
+                        ', "alt": ""'
+                        ', "tooltip": '
+                        f'"{wttr[0]}\t{wttr[1]} {wttr[2]}\r'
+                        f"\t{wttr[3]} ({wttr[4]})\r"
+                        f'\t{wttr[5]} {wttr[6]}"'
+                        "}"
+                    )
                 print(repr(waybar).replace("'", ""))
                 exit(0)
             case "weather" | "-weather" | "--weather":
@@ -164,7 +180,11 @@ if len(sys.argv) > 1:
                     saveweather(wttr)
                 else:
                     wttr = re.split(":", loadweather())
-                print(f"{wttr[1]}{wttr[2]} {wttr[3]}")
+                wttrlen = len(wttr)
+                if wttrlen < 4:
+                    print("Service Offline")
+                else:
+                    print(f"{wttr[1]}{wttr[2]} {wttr[3]}")
                 exit(0)
             case _:
                 print("ups")

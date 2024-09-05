@@ -5,6 +5,7 @@ cache_dir="$HOME/.cache"
 cache_file="$cache_dir/albumart.txt"
 albumurl="/tmp/.albumart.png"
 cached_data=""
+player=""
 
 help() {
 	echo "Usage: $0 --title | --arturl | --artist | --length | --album | --source | --status"
@@ -15,10 +16,15 @@ if [ $# -eq 0 ]; then
 	help
 fi
 
+# function check player exists
+get_player() {
+	player=$(playerctl -l | grep -v 'brave')
+}
+
 # Function to get metadata using playerctl
 get_metadata() {
 	key=$1
-	playerctl -p spotify_player metadata --format "{{ $key }}" 2>/dev/null
+	playerctl -p $player metadata --format "{{ $key }}" 2>/dev/null
 }
 
 get_art() {
@@ -27,9 +33,8 @@ get_art() {
 	echo $url >$cache_file
 	if [ "$cached_data" != "$url" ]; then
 		wget -O $albumurl.tmp "$url"
-		convert $albumurl.tmp $albumurl
+		magick convert $albumurl.tmp $albumurl
 	fi
-
 }
 
 # Function to determine the source and return an icon and text
@@ -52,6 +57,12 @@ get_source_info() {
 }
 
 # Parse the argument
+get_player
+if [ "$player" == "" ]; then
+	echo ""
+	exit 0
+fi
+
 case "$1" in
 --title)
 	title=$(get_metadata "xesam:title")
@@ -83,7 +94,7 @@ case "$1" in
 	fi
 	;;
 --status)
-	status=$(playerctl -p spotify_player status 2>/dev/null)
+	status=$(playerctl -p "$player" status 2>/dev/null)
 	if [[ $status == "Playing" ]]; then
 		echo " "
 	elif [[ $status == "Paused" ]]; then
