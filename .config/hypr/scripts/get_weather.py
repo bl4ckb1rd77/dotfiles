@@ -66,7 +66,7 @@ def getweather():
     if city == "Eschborn":
         city = "Köln"
     try:
-        res = requests.get(wttrurl + city + wttrformat, timeout=3).text
+        res = requests.get(wttrurl + city + wttrformat, timeout=10).text
     except:
         res = "off"
         # exit(1)
