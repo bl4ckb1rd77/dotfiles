@@ -162,6 +162,7 @@
   "clock": {
     "interval": 1,
     "format": "  {:%H:%M:%S}",
+    "timezone": "Europe/Berlin",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "month",

@@ -1,14 +1,11 @@
 #!/bin/python3
 
 import json
-import os
 import re
 import sys
-import time
 from pathlib import Path
 
 import netifaces as ni
-import requests
 
 #
 # --- Variablen
@@ -27,50 +24,12 @@ localip = []
 #
 # --- functions
 #
-def cacherefresh(file):
-    if file.is_file():
-        cachemtime = os.stat(file)[-2]
-        ctime = int(time.time())
-        if ctime - cachemtime > expiretime:
-            return True
-        else:
-            return False
-    else:
-        return True
-
-
-def saveweather(wttrdata):
-    with open(wttrcache, "w") as filehandler:
-        for line in wttrdata:
-            filehandler.write("".join(line) + ":")
-
-
 def loadweather():
     if wttrcache.is_file():
         with open(wttrcache, "r") as rf:
             return rf.readline()
     else:
         return ""
-
-
-def getweather():
-    if cacherefresh(ipcache):
-        ipdata = getlocation()
-    else:
-        if ipcache.is_file():
-            with open(ipcache) as filehandler:
-                ipdata = json.load(filehandler)
-        else:
-            exit(1)
-    city = ipdata["city"]
-    if city == "Eschborn":
-        city = "Köln"
-    try:
-        res = requests.get(wttrurl + city + wttrformat, timeout=10).text
-    except:
-        res = "off"
-        # exit(1)
-    return res
 
 
 def is_iface_up(iface):
@@ -82,23 +41,6 @@ def get_iface_addr(iface):
     return ni.ifaddresses(iface)[ni.AF_INET][0]["addr"]
 
 
-def getlocation():
-    try:
-        res = requests.get(ipurl)
-    except:
-        res = {
-            "ip": "offline",
-            "hostname": "AmpadaL027",
-            "country": "DE",
-            "city": "Köln",
-        }
-        data = json.loads(json.dumps(res))
-        return data
-    tdat = json.dumps(res.json())
-    data = json.loads(tdat)
-    return data
-
-
 #
 # --- main
 #
@@ -106,16 +48,11 @@ if len(sys.argv) > 1:
     if len(sys.argv) < 3:
         match sys.argv[1]:
             case "ip" | "-ip" | "--ip":
-                if cacherefresh(ipcache):
-                    ipdata = getlocation()
-                    with open(ipcache, "w") as filehandler:
-                        json.dump(ipdata, filehandler)
+                if ipcache.is_file():
+                    with open(ipcache) as filehandler:
+                        ipdata = json.load(filehandler)
                 else:
-                    if ipcache.is_file():
-                        with open(ipcache) as filehandler:
-                            ipdata = json.load(filehandler)
-                    else:
-                        exit(1)
+                    exit(1)
                 wanip = ipdata["ip"]
                 for iface in ni.interfaces():
                     if any(x in iface for x in ifaceignore):
@@ -132,16 +69,11 @@ if len(sys.argv) > 1:
                 print(repr(output).replace("'", ""))
                 exit(0)
             case "location" | "-location" | "--location":
-                if cacherefresh(ipcache):
-                    ipdata = getlocation()
-                    with open(ipcache, "w") as filehandler:
-                        json.dump(ipdata, filehandler)
+                if ipcache.is_file():
+                    with open(ipcache) as filehandler:
+                        ipdata = json.load(filehandler)
                 else:
-                    if ipcache.is_file():
-                        with open(ipcache) as filehandler:
-                            ipdata = json.load(filehandler)
-                    else:
-                        exit(1)
+                    exit(1)
                 country = ipdata["country"]
                 city = ipdata["city"]
                 if city == "Eschborn":
@@ -149,11 +81,7 @@ if len(sys.argv) > 1:
                 print(f"{country}, {city}")
                 exit(0)
             case "waybar" | "-waybar" | "--waybar":
-                if cacherefresh(wttrcache):
-                    wttr = re.split(":", getweather())
-                    saveweather(wttr)
-                else:
-                    wttr = re.split(":", loadweather())
+                wttr = re.split(":", loadweather())
                 wttrlen = len(wttr)
                 if wttrlen < 4:
                     waybar = (
@@ -175,11 +103,7 @@ if len(sys.argv) > 1:
                 print(repr(waybar).replace("'", ""))
                 exit(0)
             case "weather" | "-weather" | "--weather":
-                if cacherefresh(wttrcache):
-                    wttr = re.split(":", getweather())
-                    saveweather(wttr)
-                else:
-                    wttr = re.split(":", loadweather())
+                wttr = re.split(":", loadweather())
                 wttrlen = len(wttr)
                 if wttrlen < 4:
                     print("Service Offline")
