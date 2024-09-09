@@ -4,16 +4,21 @@ monitor_count=$(echo "${monitor_list}" | wc -l)
 if [[ $monitor_count -gt 2 ]]; then
   if [ ${monitor_list[@]} =~ "DP-3" ] && [ ${monitor_list[@]} =~ "DP-2" ]; then
     ln -snf $HOME/.config/hypr/monitors/DP23.conf $HOME/.config/hypr/monitor.conf
+    ln -snf $HOME/.config/hypr/monitors/DP23.jsonc $HOME/.config/waybar/workspace.jsonc
   fi
 elif [[ $monitor_count -eq 2 ]]; then
   if [[ ${monitor_list[@]} =~ "DP-3" ]]; then
     ln -snf $HOME/.config/hypr/monitors/DP3.conf $HOME/.config/hypr/monitor.conf
+    ln -snf $HOME/.config/hypr/monitors/DP3.jsonc $HOME/.config/waybar/workspace.jsonc
   elif [[ ${monitor_list[@]} =~ "DP-2" ]]; then
     ln -snf $HOME/.config/hypr/monitors/DP2.conf $HOME/.config/hypr/monitor.conf
+    ln -snf $HOME/.config/hypr/monitors/DP2.jsonc $HOME/.config/waybar/workspace.jsonc
   elif [[ ${monitor_list[@]} =~ "DP-1" ]]; then
     ln -snf $HOME/.config/hypr/monitors/DP1.conf $HOME/.config/hypr/monitor.conf
+    ln -snf $HOME/.config/hypr/monitors/DP1.jsonc $HOME/.config/waybar/workspace.jsonc
   fi
 else
   ln -snf $HOME/.config/hypr/monitors/eDP1.conf $HOME/.config/hypr/monitor.conf
+  ln -snf $HOME/.config/hypr/monitors/eDP1.jsonc $HOME/.config/waybar/workspace.jsonc
 fi
 exit 0
