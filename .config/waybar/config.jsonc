@@ -1,7 +1,7 @@
 [
   {
     "name": "top",
-    "include": ["$HOME/.config/waybar/modules.jsonc"],
+    "include": ["$HOME/.config/waybar/modules.jsonc","$HOME/.config/waybar/workspace.jsonc"],
     "layer": "top",
     "position": "top",
     "reload_style_on_change": 1,
