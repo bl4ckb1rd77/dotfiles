@@ -56,11 +56,11 @@
   // ---- Right ----
 
   "disk#root": {
-    "format": " {free}",
+    "format": "  {free}",
   },
 
   "disk#home": {
-    "format": " {free}",
+    "format": "  {free}",
     "path": "/home",
   },
 
@@ -135,7 +135,6 @@
     "interval": 60,
     "tooltip": false,
     "on-click": "$HOME/.config/hypr/scripts/kittywrapper --class update -T update -e paru -Syu",
-    "on-click-right": "pamac-manager",
   },
 
   "systemd-failed-units": {

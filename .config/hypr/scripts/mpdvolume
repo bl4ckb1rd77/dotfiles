@@ -1,6 +1,10 @@
 #!/bin/bash
 
 player=$(playerctl -l | grep -v 'brave')
+retVal=$?
+if [ $retVal -eq 1 ]; then
+  exit 1
+fi
 playerid=""
 
 if [ $# -gt 0 ]; then

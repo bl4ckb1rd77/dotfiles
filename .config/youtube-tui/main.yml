@@ -19,9 +19,9 @@ provider: YouTube
 shell: bash
 legacy_input_handling: false
 env:
-  browser: google-chrome-stable
   save-path: ~/.local/share/youtube-tui/saved/
-  terminal-emulator: kitty -e
   youtube-downloader: yt-dlp
+  terminal-emulator: kitty -e
+  browser: google-chrome-stable
   download-path: ~/YouTube/%(title)s-%(id)s.%(ext)s
   video-player: mpv

@@ -11,7 +11,7 @@ hyprctl dispatch movecursortocorner 0
 sleep 0.3
 # kitty -T spotify -o font_size=12 -e spotify_player &
 spotify &
-sleep 0.8
+sleep 1.5
 hyprctl dispatch focuswindow title:sptlrx
 sleep 0.3
 hyprctl dispatch movecursortocorner 1

@@ -7,7 +7,10 @@ if [[ $monitor_count -gt 2 ]]; then
     ln -snf $HOME/.config/hypr/monitors/DP23.jsonc $HOME/.config/waybar/workspace.jsonc
   fi
 elif [[ $monitor_count -eq 2 ]]; then
-  if [[ ${monitor_list[@]} =~ "DP-3" ]]; then
+  if [[ ${monitor_list[@]} =~ "DP-4" ]]; then
+    ln -snf $HOME/.config/hypr/monitors/DP4.conf $HOME/.config/hypr/monitor.conf
+    ln -snf $HOME/.config/hypr/monitors/DP4.jsonc $HOME/.config/waybar/workspace.jsonc
+  elif [[ ${monitor_list[@]} =~ "DP-3" ]]; then
     ln -snf $HOME/.config/hypr/monitors/DP3.conf $HOME/.config/hypr/monitor.conf
     ln -snf $HOME/.config/hypr/monitors/DP3.jsonc $HOME/.config/waybar/workspace.jsonc
   elif [[ ${monitor_list[@]} =~ "DP-2" ]]; then
