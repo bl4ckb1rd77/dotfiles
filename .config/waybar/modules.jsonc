@@ -30,9 +30,8 @@
 
   "mpris": {
     "format": "{status_icon} {dynamic}",
-    "dynamic-order": ["title", "artist"],
-    "title-len": 25,
-    "artist-len": 25,
+    "dynamic-order": ["title"],
+    "title-len": 18,
     "interval": 1,
     // "player": "spotify_player",
     "status-icons": {

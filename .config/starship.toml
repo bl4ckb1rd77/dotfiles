@@ -12,6 +12,7 @@ $java\
 $julia\
 $nodejs\
 $nim\
+$python\
 $rust\
 $scala\
 $docker_context\
@@ -97,6 +98,10 @@ symbol = ""
 
 [nim]
 symbol = " "
+
+[python]
+symbol = '󱔎 '
+pyenv_version_name = true
 
 [rust]
 symbol = ""
