@@ -16,9 +16,7 @@
       "custom/right",
     ],
     "modules-center": [
-      "custom/left",
       "mpris",
-      "custom/right",
     ],
     "modules-right": [
       "custom/left",
