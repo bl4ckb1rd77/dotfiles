@@ -184,7 +184,7 @@
 
   "custom/notification": {
     "tooltip": false,
-    "format": "{icon}<span color='#ebcb8b'><small>  {}</small></span>",
+    "format": "<span color='#ebcb8b'><small>{} </small></span>{icon}",
     "format-icons": {
       "notification": "",
       "none": "",
