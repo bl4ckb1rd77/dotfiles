@@ -35,6 +35,7 @@
     "title",
     "dnd",
     "notifications",
+    "volume",
     "mpris"
   ],
   "widget-config": {
@@ -45,6 +46,10 @@
     },
     "dnd": {
       "text": "Do Not Disturb"
+    },
+    "volume": {
+      "label": "",
+        "show-per-app": true
     },
     "mpris": {
       "image-size": 96,

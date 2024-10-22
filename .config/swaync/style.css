@@ -32,8 +32,9 @@ trough {
   border-radius: 16px;
 }
 
-trough {
-  background: @base01;
+slider {
+  background-color: @base00;
+  border: 1px solid @base0F;  
 }
 
 .notification.low,
@@ -302,6 +303,40 @@ trough {
   background: @background-focus;
   border-radius: 8px;
   padding: 0rem;
+}
+
+/* Volume widget */
+.widget-volume {
+  background-color: @base01;
+  border: 2px solid @base0D;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+/* Volume widget */
+.widget-volume trough {
+  border-radius: 20px;
+  background: @base01;
+  border: 1px solid @base0D;
+  min-height: 5px;
+}
+
+.widget-volume trough highlight {
+  /* ´trough´ is the background of the slider, ´highlight´ is the actual slider */
+  padding-top: 1px;
+  background: @base0A;
+  border: 1px solid @base0A;
+  border-radius: 20px;
+}
+
+.widget-volume trough slider {
+  padding: 1px;
+  background: @base0F;
+  border: 1px solid @base0D;
+}
+.widget-volume trough slider:hover {
+  padding: 1px;
+  background: @base0F;
 }
 
 /* Mpris widget */
