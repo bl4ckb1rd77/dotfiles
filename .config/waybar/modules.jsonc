@@ -13,7 +13,7 @@
   // ---- Left ----
   "custom/startmenu": {
     "format": "{icon}",
-    "format-icons": ["Apps"],
+    "format-icons": ["󰣇"],
     "tooltip": true,
     "tooltip-format": "Startmenü",
     "on-click": "$HOME/.config/hypr/scripts/menu",
