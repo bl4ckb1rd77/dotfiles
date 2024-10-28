@@ -95,7 +95,7 @@ if len(sys.argv) > 1:
                         f'"{wttr[1]}{wttr[3]}"'
                         ', "alt": ""'
                         ', "tooltip": '
-                        f'"{wttr[0]}\t{wttr[1]} {wttr[2]}\r'
+                        f'"{wttr[0]}\t{wttr[1]}{wttr[2]}\r'
                         f"\t{wttr[3]} ({wttr[4]})\r"
                         f'\t{wttr[5]} {wttr[6]}"'
                         "}"
