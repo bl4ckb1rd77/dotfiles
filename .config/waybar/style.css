@@ -53,7 +53,6 @@ window#waybar {
   border-radius: 8px 0px 0px 8px;
   margin: 5px 0px 0px 8px;
   padding: 0px 5px 0px 0px;
-  opacity: 0.8;
 }
 
 #custom-right {
@@ -68,7 +67,6 @@ window#waybar {
   border-radius: 0px 8px 8px 0px;
   margin: 5px 8px 0px 0px;
   padding: 0px 0px 0px 5px;
-  opacity: 0.8;
 }
 
 /* ---- Startmenu ---- */
@@ -83,15 +81,13 @@ window#waybar {
   border-right: 0px;
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
-  padding: 0px 10px 0px 5px;
-  opacity: 0.8;
+  padding: 0px 5px 0px 5px;
 }
 
 #custom-startmenu:hover {
   background-color: @hoverbackground;
   color: @background;
   transition: all 0.3s ease-in-out;
-  opacity: 0.8;
 }
 
 /* ---- Workspaces ---- */
@@ -107,7 +103,6 @@ window#waybar {
   padding: 3px 0px 3px 0px;
   font-weight: bold;
   font-style: normal;
-  opacity: 0.8;
 }
 
 #workspaces label {
@@ -122,7 +117,6 @@ window#waybar {
   border-radius: 15px;
   border: 0px;
   transition: all 0.3s ease-in-out;
-  opacity: 1;
   min-width: 8px;
 }
 
@@ -136,14 +130,12 @@ window#waybar {
   color: @textcolor;
   background-color: @emptybackground;
   transition: all 0.3s ease-in-out;
-  opacity: 1;
 }
 
 #workspaces button.urgent {
   color: @textcolor;
   background-color: @urgentbackground;
   transition: all 0.3s ease-in-out;
-  opacity: 1;
 }
 
 #workspaces button.active {
@@ -152,7 +144,6 @@ window#waybar {
   border-radius: 15px;
   min-width: 25px;
   transition: all 0.3s ease-in-out;
-  opacity: 1;
 }
 
 #workspaces button:hover {
@@ -160,10 +151,9 @@ window#waybar {
   background: @hoverbackground;
   border-radius: 15px;
   transition: all 0.3s ease-in-out;
-  opacity: 1;
 }
 
-#mpris {
+#clock {
   background-color: @background;
   color: @textcolor;
   border-top: 2px solid @activebackground;
@@ -173,7 +163,6 @@ window#waybar {
   border-radius: 8px;
   margin: 5px 0px 0px 0px;
   padding: 0px 10px 0px 10px;
-  opacity: 0.8;
 }
 
 #custom-mpdvol {
@@ -186,7 +175,6 @@ window#waybar {
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
   padding: 0px 10px 0px 10px;
-  opacity: 0.8;
 }
 
 #custom-weather {
@@ -199,7 +187,6 @@ window#waybar {
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
   padding: 0px 5px 0px 10px;
-  opacity: 0.8;
 }
 
 /* ---- bat vol bubble ---- */
@@ -213,7 +200,6 @@ window#waybar {
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
   padding: 0px 5px 0px 5px;
-  opacity: 0.8;
 }
 
 #disk.root,
@@ -227,7 +213,7 @@ window#waybar {
 #systemd-failed-units,
 #custom-touchpad,
 #tray,
-#clock {
+#mpris {
   background-color: @background;
   color: @textcolor;
   border-top: 2px solid @activebackground;
@@ -237,7 +223,6 @@ window#waybar {
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
   padding: 0px 5px 0px 5px;
-  opacity: 0.8;
 }
 
 #systemd-failed-units.ok {
@@ -262,7 +247,6 @@ window#waybar {
   border-radius: 0px;
   padding: 0px 10px 1px 10px;
   margin: 5px 0px 0px 0px;
-  opacity: 0.8;
 }
 
 #clock.time {

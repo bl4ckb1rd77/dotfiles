@@ -78,7 +78,7 @@
 
   "pulseaudio": {
     "scroll-step": 5.0,
-    "format": "{icon} {volume}%",
+    "format": "{icon}",
     "format-muted": "󰖁 mute",
     "format-icons": {
       "default": ["", "", "󰕾"],
@@ -97,8 +97,12 @@
       "warning": 30,
       "critical": 15,
     },
-    "format": "{icon}  {capacity}%",
-    "format-icons": ["", "", "", "", ""],
+    "format": "{icon}",
+    "format-charging": "󰂄",
+    "format-plugged": "",
+    // "format-icons": ["", "", "", "", ""],
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰁹"],
+    "tooltip-format": "{capacity}%"
   },
 
   "custom/touchpad": {
@@ -159,7 +163,7 @@
 
   "clock": {
     "interval": 1,
-    "format": "  {:%H:%M:%S}",
+    "format": "  {:%d.%m.%Y -   %H:%M:%S}",
     "timezone": "Europe/Berlin",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {

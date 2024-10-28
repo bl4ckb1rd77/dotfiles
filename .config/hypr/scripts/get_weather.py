@@ -92,7 +92,7 @@ if len(sys.argv) > 1:
                 else:
                     waybar = (
                         '{"text": '
-                        f'"{wttr[1]}{wttr[2]} {wttr[3]}"'
+                        f'"{wttr[1]}{wttr[3]}"'
                         ', "alt": ""'
                         ', "tooltip": '
                         f'"{wttr[0]}\t{wttr[1]} {wttr[2]}\r'

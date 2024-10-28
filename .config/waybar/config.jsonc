@@ -13,40 +13,40 @@
       "custom/startmenu",
       "hyprland/workspaces",
       "custom/weather",
+      "mpris",
       "custom/right",
     ],
     "modules-center": [
-      "mpris",
+      "clock",
     ],
     "modules-right": [
       "custom/left",
-      "group/hardware",
+      "cpu",
+      "memory",
+      "disk#root",
+      "disk#home",
+      "custom/updater",
+      "systemd-failed-units",
+      "custom/touchpad",
+      // "group/hardware",
+      "custom/ipinfo",
+      "battery",
       "pulseaudio",
       "custom/mpdvol",
       "idle_inhibitor",
       "tray",
-      "clock",
       "custom/notification",
       "custom/right",
     ],
-    "group/hardware": {
-  		"orientation": "horizontal",
-      "drawer": {
-        "transition-duration": 500,
-        "transition-left-to-right": false,
-      },
-      "modules": [
-        "battery",
-        "disk#root",
-        "disk#home",
-        "cpu",
-        "memory",
-        "custom/ipinfo",
-        "custom/updater",
-        "systemd-failed-units",
-        "custom/touchpad",
-	  	]
-  	},
+    // "group/hardware": {
+  		// "orientation": "horizontal",
+    //   "drawer": {
+    //     "transition-duration": 500,
+    //     "transition-left-to-right": false,
+    //   },
+    //   "modules": [
+	  	// ]
+  	// },
   },
   {
     "name": "clock",
