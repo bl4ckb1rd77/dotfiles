@@ -21,32 +21,38 @@
     ],
     "modules-right": [
       "custom/left",
-      "cpu",
-      "memory",
-      "disk#root",
-      "disk#home",
+      // "cpu",
+      // "memory",
+      // "disk#root",
+      // "disk#home",
+      "group/hardware",
       "custom/updater",
       "systemd-failed-units",
       "custom/touchpad",
-      // "group/hardware",
       "custom/ipinfo",
       "battery",
       "pulseaudio",
+      "pulseaudio/slider",
       "custom/mpdvol",
       "idle_inhibitor",
       "tray",
       "custom/notification",
       "custom/right",
     ],
-    // "group/hardware": {
-  		// "orientation": "horizontal",
-    //   "drawer": {
-    //     "transition-duration": 500,
-    //     "transition-left-to-right": false,
-    //   },
-    //   "modules": [
-	  	// ]
-  	// },
+    "group/hardware": {
+  		"orientation": "horizontal",
+      "drawer": {
+        "transition-duration": 500,
+        "transition-left-to-right": false,
+      },
+      "modules": [
+        "custom/group",
+        "cpu",
+        "memory",
+        "disk#root",
+        "disk#home",
+	  	]
+  	},
   },
   {
     "name": "clock",

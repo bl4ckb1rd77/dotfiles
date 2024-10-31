@@ -10,6 +10,11 @@
     "format-icons": [" "],
     "tooltip": false,
   },
+  "custom/group": {
+    "format": "{icon}",
+    "format-icons": ["󰛁"],
+    "tooltip": false,
+  },
   // ---- Left ----
   "custom/startmenu": {
     "format": "{icon}",
@@ -88,6 +93,12 @@
     "on-scroll-down": "pamixer -d 5",
     "on-click-right": "exec pavucontrol",
     "tooltip-format": "Volume {volume}%",
+  },
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"    
   },
 
   "battery": {

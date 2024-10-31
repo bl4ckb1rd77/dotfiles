@@ -70,6 +70,7 @@ window#waybar {
 }
 
 /* ---- Startmenu ---- */
+#custom-group,
 #custom-startmenu {
   background-color: @background;
   color: @textcolor;
@@ -190,6 +191,7 @@ window#waybar {
 }
 
 /* ---- bat vol bubble ---- */
+
 #pulseaudio {
   background-color: @background;
   color: @textcolor;
@@ -200,6 +202,38 @@ window#waybar {
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
   padding: 0px 5px 0px 5px;
+}
+
+#pulseaudio-slider {
+  background-color: @background;
+  color: @textcolor;
+  border-top: 2px solid @activebackground;
+  border-left: 0px;
+  border-bottom: 2px solid @activebackground;
+  border-right: 0px;
+  border-radius: 0px;
+  margin: 5px 0px 0px 0px;
+  padding: 0px 9px 0px 7px;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 8px;
+    min-width: 70px;
+    border-radius: 5px;
+    background-color: @buttonbackground;
+}
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 3px;
+    background-color: @hoverbackground;
 }
 
 #disk.root,
