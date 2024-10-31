@@ -6,7 +6,7 @@
 
 @define-color background rgba(17, 17, 27, 0.85);
 @define-color background-alt rgba(137, 180, 250, 0.05);
-@define-color background-focus alpha(@base0A, 0.4);
+@define-color background-focus alpha(@base0A, 1.0);
 @define-color border rgba(255, 255, 255, 0.1);
 @define-color red rgb( 243, 139, 168);
 @define-color orange rgb( 250, 179, 135);
@@ -204,7 +204,7 @@ slider {
   border-radius: 8px;
   color: @base05;
   padding: 1rem;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .control-center-list {

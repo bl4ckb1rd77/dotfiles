@@ -36,7 +36,7 @@
   "mpris": {
     "format": "{status_icon} {dynamic}",
     "dynamic-order": ["title"],
-    "title-len": 18,
+    "title-len": 25,
     "interval": 1,
     // "player": "spotify_player",
     "status-icons": {
