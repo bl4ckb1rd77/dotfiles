@@ -1,2 +1,6 @@
 .config/btop/btop.log
 .config/hypr/monitor.conf
+.config/hypr/hyprland.conf-bak
+.config/hypr/keybinds.conf-bak
+.config/hypr/monitor.conf-bak
+.config/hypr/window_rules.conf-bak

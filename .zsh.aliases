@@ -5,3 +5,4 @@ alias grep='grep --color=auto'
 alias ssh='kitten ssh'
 alias ct='while true; do clear; todo; sleep 5; done'
 alias enable-ansible216='source /home/ahoefer/ansible_216/bin/activate'
+alias paccleanup="sudo pacman -Rns $(sudo pacman -Qdtq)"
