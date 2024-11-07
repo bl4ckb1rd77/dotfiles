@@ -15,7 +15,7 @@
   /* font-family: JetBrainsMono Nerd Font Propo; */
   font-family: Hack Nerd Font;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   min-height: 0;
 }
 
@@ -65,6 +65,20 @@ window#waybar > box {
 }
 
 #custom-right {
+  background-color: @background;
+  color: @textcolor;
+  font-size: 1px;
+  transition: all 0.3s ease-in-out;
+  border-top: 2px solid @activebackground;
+  border-right: 2px solid @activebackground;
+  border-bottom: 2px solid @activebackground;
+  border-left: 0px;
+  border-radius: 0px 8px 8px 0px;
+  margin: 5px 0px 0px 0px;
+  padding: 0px 0px 0px 5px;
+}
+
+#custom-rightend {
   background-color: @background;
   color: @textcolor;
   font-size: 1px;
@@ -161,6 +175,18 @@ window#waybar > box {
   background: @hoverbackground;
   border-radius: 15px;
   transition: all 0.3s ease-in-out;
+}
+
+#mpris {
+  background-color: @background;
+  color: @textcolor;
+  border-top: 2px solid @activebackground;
+  border-left: 2px solid @activebackground;
+  border-bottom: 2px solid @activebackground;
+  border-right: 2px solid @activebackground;
+  border-radius: 8px;
+  margin: 5px 10px 0px 0px;
+  padding: 0px 10px 0px 10px;
 }
 
 #window {
@@ -269,8 +295,7 @@ window#waybar > box {
 #custom-ipinfo,
 #systemd-failed-units,
 #custom-touchpad,
-#tray,
-#mpris {
+#tray {
   background-color: @background;
   color: @textcolor;
   border-top: 2px solid @activebackground;
@@ -304,24 +329,4 @@ window#waybar > box {
   border-radius: 0px;
   padding: 0px 10px 1px 10px;
   margin: 5px 0px 0px 0px;
-}
-
-#clock.time {
-  margin: 0px 0px 60px 30px;
-  background: transparent;
-  color: alpha(@textcolor, 0.7);
-  font-family: Cantarell ExtraBold;
-  font-size: 120px;
-  border: 0px solid @blank;
-  text-shadow: 3px 3px rgba(46, 52, 68, 0.6);
-}
-
-#clock.date {
-  margin: 0px 0px 30px 50px;
-  background: transparent;
-  color: alpha(@textcolor, 0.7);
-  font-family: Cantarell ExtraBold;
-  font-size: 40px;
-  border: 0px solid @blank;
-  text-shadow: 3px 3px rgba(46, 52, 68, 0.6);
 }

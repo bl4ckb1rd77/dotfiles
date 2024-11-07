@@ -10,6 +10,11 @@
     "format-icons": [" "],
     "tooltip": false,
   },
+  "custom/rightend": {
+    "format": "{icon}",
+    "format-icons": [" "],
+    "tooltip": false,
+  },
   "custom/group": {
     "format": "{icon}",
     "format-icons": ["󰛁"],
@@ -36,7 +41,7 @@
   "mpris": {
     "format": "{status_icon} {dynamic}",
     "dynamic-order": ["title"],
-    "title-len": 19,
+    "title-len": 23,
     "interval": 1,
     // "player": "spotify_player",
     "status-icons": {
@@ -48,7 +53,7 @@
 
   "hyprland/window": {
     "format": " {}",
-    "max-length": 19,
+    "max-length": 23,
     "icon": false,
     "separate-outputs": true,
   },
