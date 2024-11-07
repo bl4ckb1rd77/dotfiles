@@ -163,6 +163,22 @@ window#waybar > box {
   transition: all 0.3s ease-in-out;
 }
 
+#window {
+  background-color: @background;
+  color: @textcolor;
+  border-top: 2px solid @activebackground;
+  border-left: 2px solid @activebackground;
+  border-bottom: 2px solid @activebackground;
+  border-right: 2px solid @activebackground;
+  border-radius: 8px;
+  margin: 5px 0px 0px 0px;
+  padding: 0px 10px 0px 10px;
+}
+
+#window#waybar.empty #window {
+  background-color: transparent;
+}
+
 #clock {
   background-color: @background;
   color: @textcolor;
@@ -198,8 +214,6 @@ window#waybar > box {
   margin: 5px 0px 0px 0px;
   padding: 0px 5px 0px 10px;
 }
-
-/* ---- bat vol bubble ---- */
 
 #pulseaudio {
   background-color: @background;

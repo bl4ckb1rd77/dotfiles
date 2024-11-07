@@ -36,7 +36,7 @@
   "mpris": {
     "format": "{status_icon} {dynamic}",
     "dynamic-order": ["title"],
-    "title-len": 25,
+    "title-len": 19,
     "interval": 1,
     // "player": "spotify_player",
     "status-icons": {
@@ -44,6 +44,13 @@
       "playing": " ",
       "stopped": " ",
     },
+  },
+
+  "hyprland/window": {
+    "format": " {}",
+    "max-length": 19,
+    "icon": false,
+    "separate-outputs": true,
   },
 
   "custom/mpdvol": {
@@ -148,7 +155,7 @@
     "exec": "$HOME/.config/hypr/scripts/updater",
     "interval": 60,
     "tooltip": false,
-    "on-click": "kitty --class update -T update -e paru -Syu",
+    "on-click": "kitty -T update -e paru -Syu",
   },
 
   "systemd-failed-units": {
