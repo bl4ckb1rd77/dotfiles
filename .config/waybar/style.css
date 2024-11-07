@@ -1,6 +1,7 @@
 /* ---- Color Definitions ---- */
 
-@define-color barbackground rgba(236, 239, 244, 0.1);
+@define-color barbackground rgba(46, 52, 68, 0.66);
+@define-color barshadow rgba(26, 32, 48, 0.66);
 @define-color background #2e3444;
 @define-color blank rgba(0, 0, 0, 0);
 @define-color textcolor #eceff4;
@@ -37,6 +38,14 @@ window#waybar {
   color: @textcolor;
   transition-property: background-color;
   transition-duration: 0.5s;
+}
+
+window#waybar > box {
+  border-radius: 0px;
+  margin: 0px 0px 8px 0px;
+  padding: 0px 0px 6px 0px;
+  background-color: @barbackground;
+  box-shadow: 4px 4px 2px 1px @barshadow;
 }
 
 /* ==== LEFT ==== */
