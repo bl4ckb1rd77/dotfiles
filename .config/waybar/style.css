@@ -177,18 +177,7 @@ window#waybar > box {
   transition: all 0.3s ease-in-out;
 }
 
-#mpris {
-  background-color: @background;
-  color: @textcolor;
-  border-top: 2px solid @activebackground;
-  border-left: 2px solid @activebackground;
-  border-bottom: 2px solid @activebackground;
-  border-right: 2px solid @activebackground;
-  border-radius: 8px;
-  margin: 5px 10px 0px 0px;
-  padding: 0px 10px 0px 10px;
-}
-
+#mpris,
 #window {
   background-color: @background;
   color: @textcolor;
@@ -197,7 +186,7 @@ window#waybar > box {
   border-bottom: 2px solid @activebackground;
   border-right: 2px solid @activebackground;
   border-radius: 8px;
-  margin: 5px 0px 0px 0px;
+  margin: 5px 8px 0px 0px;
   padding: 0px 10px 0px 10px;
 }
 
