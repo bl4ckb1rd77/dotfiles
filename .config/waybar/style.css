@@ -15,7 +15,7 @@
   /* font-family: JetBrainsMono Nerd Font Propo; */
   font-family: Hack Nerd Font;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
   min-height: 0;
 }
 
@@ -45,7 +45,7 @@ window#waybar > box {
   margin: 0px 0px 8px 0px;
   padding: 0px 0px 6px 0px;
   background-color: @barbackground;
-  box-shadow: 4px 4px 2px 1px @barshadow;
+  box-shadow: 0px 4px 2px 1px @barshadow;
 }
 
 /* ==== LEFT ==== */
@@ -59,7 +59,7 @@ window#waybar > box {
   border-left: 2px solid @activebackground;
   border-bottom: 2px solid @activebackground;
   border-right: 0px;
-  border-radius: 8px 0px 0px 8px;
+  border-radius: 4px 0px 0px 4px;
   margin: 5px 0px 0px 8px;
   padding: 0px 5px 0px 0px;
 }
@@ -73,7 +73,7 @@ window#waybar > box {
   border-right: 2px solid @activebackground;
   border-bottom: 2px solid @activebackground;
   border-left: 0px;
-  border-radius: 0px 8px 8px 0px;
+  border-radius: 0px 4px 4px 0px;
   margin: 5px 0px 0px 0px;
   padding: 0px 0px 0px 5px;
 }
@@ -87,7 +87,7 @@ window#waybar > box {
   border-right: 2px solid @activebackground;
   border-bottom: 2px solid @activebackground;
   border-left: 0px;
-  border-radius: 0px 8px 8px 0px;
+  border-radius: 0px 4px 4px 0px;
   margin: 5px 8px 0px 0px;
   padding: 0px 0px 0px 5px;
 }
@@ -185,7 +185,7 @@ window#waybar > box {
   border-left: 2px solid @activebackground;
   border-bottom: 2px solid @activebackground;
   border-right: 2px solid @activebackground;
-  border-radius: 8px;
+  border-radius: 4px;
   margin: 5px 8px 0px 0px;
   padding: 0px 10px 0px 10px;
 }
@@ -201,7 +201,7 @@ window#waybar > box {
   border-left: 2px solid @activebackground;
   border-bottom: 2px solid @activebackground;
   border-right: 2px solid @activebackground;
-  border-radius: 8px;
+  border-radius: 4px;
   margin: 5px 0px 0px 0px;
   padding: 0px 10px 0px 10px;
 }
