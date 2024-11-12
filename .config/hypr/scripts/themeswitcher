@@ -1,0 +1,39 @@
+#!/bin/bash
+currenttheme=$(cat $HOME/.config/flavor)
+SCHEMA='gsettings set org.gnome.desktop.interface'
+
+if [ $# -eq 0 ]
+then
+  echo "{ \"text\": \"themes\", \"alt\": \"${currenttheme}\" }"
+  exit 0
+else
+  case $currenttheme in
+    "latte")
+      THEME='catppuccin-frappe-blue-standard+default'
+      ICONS='Papirus-Dark'
+      SCHEME='prefer-dark'
+      CSS="frappe"
+      ;;
+    "frappe")
+      THEME='catppuccin-latte-blue-standard+default'
+      ICONS='Papirus-Light'
+      SCHEME='prefer-light'
+      CSS="latte"
+      ;;
+  esac
+
+  echo "${CSS}" > "$HOME/.config/flavor"
+ 	${SCHEMA} gtk-theme "$THEME"
+  ${SCHEMA} icon-theme "$ICONS"
+  ${SCHEMA} color-scheme "$SCHEME"
+  ln -sf "$HOME/.config/waybar/${CSS}.css" "$HOME/.config/waybar/color.css"
+  ln -sf "$HOME/.config/rofi/${CSS}.rasi" "$HOME/.config/rofi/colors.rasi"
+  ln -sf "$HOME/.config/swaync/${CSS}.css" "$HOME/.config/swaync/style.css"
+  ln -sf "$HOME/.config/cava/${CSS}" "$HOME/.config/cava/config"
+  kitty +kitten themes --reload-in=all "catppuccin-${CSS}"
+  killall -SIGUSR2 waybar
+  kvantummanager --set "catppuccin-${CSS}-blue"
+  swaync-client -rs
+  sed -i "s/${currenttheme}/${CSS}/g" "$HOME/.config/nvim/lua/plugins/astroui.lua"
+  echo "${CSS}" > "$HOME/.config/flavor"
+fi

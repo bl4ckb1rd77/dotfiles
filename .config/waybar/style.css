@@ -1,15 +1,4 @@
-/* ---- Color Definitions ---- */
-
-@define-color barbackground rgba(46, 52, 68, 0.66);
-@define-color barshadow rgba(26, 32, 48, 0.66);
-@define-color background #2e3444;
-@define-color blank rgba(0, 0, 0, 0);
-@define-color textcolor #eceff4;
-@define-color buttonbackground #616e87;
-@define-color activebackground #5e81ac;
-@define-color emptybackground #434c5e;
-@define-color hoverbackground #ebcb8b;
-@define-color urgentbackground #bf616a;
+@import "color.css";
 
 * {
   /* font-family: JetBrainsMono Nerd Font Propo; */
@@ -25,10 +14,12 @@ tooltip {
   border: 2px solid @activebackground;
   border-radius: 8px;
   color: @textcolor;
+  text-shadow: unset;
 }
 
 tooltip label {
-  color: #d8dee9;
+  color: @textcolor;
+  text-shadow: unset;
 }
 
 /* ---- waybar ---- */
@@ -257,7 +248,8 @@ window#waybar > box {
 #pulseaudio-slider slider {
     min-height: 0px;
     min-width: 0px;
-    opacity: 0;
+    opacity: 1;
+    background-color: @hoverbackground;
     background-image: none;
     border: none;
     box-shadow: none;
@@ -280,6 +272,7 @@ window#waybar > box {
 #memory,
 #battery,
 #idle_inhibitor,
+#custom-theme,
 #custom-updater,
 #custom-ipinfo,
 #systemd-failed-units,

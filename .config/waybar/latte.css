@@ -1,0 +1,12 @@
+/* ---- Color Definitions ---- */
+
+@define-color barbackground rgba(239, 241, 245, 0.66);
+@define-color barshadow rgba(220, 224, 232, 0.66);
+@define-color background #eff1f5;
+@define-color blank rgba(0, 0, 0, 0);
+@define-color textcolor #4c4f69;
+@define-color buttonbackground #9ca0b0;
+@define-color activebackground #04a5e5;
+@define-color emptybackground #ccd0da;
+@define-color hoverbackground #df8e1d;
+@define-color urgentbackground #dd7878;
