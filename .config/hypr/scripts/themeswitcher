@@ -33,7 +33,7 @@ else
   kitty +kitten themes --reload-in=all "catppuccin-${CSS}"
   killall -SIGUSR2 waybar
   kvantummanager --set "catppuccin-${CSS}-blue"
-  swaync-client -rs
+  swaync-client --reload-css
   sed -i "s/${currenttheme}/${CSS}/g" "$HOME/.config/nvim/lua/plugins/astroui.lua"
-  echo "${CSS}" > "$HOME/.config/flavor"
+  sleep 10
 fi
