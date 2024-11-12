@@ -174,8 +174,8 @@
   "custom/theme": {
     "format": "{icon}",
     "format-icons": {
-      "latte": "",
-      "frappe": ""
+      "latte": " ",
+      "frappe": " "
     },
     "return-type": "json",
     "interval": 1,
