@@ -34,7 +34,7 @@
       "custom/right",
       "custom/left",
       "pulseaudio",
-      "pulseaudio/slider",
+      // "pulseaudio/slider",
       // "custom/mpdvol",
       "idle_inhibitor",
       "tray",

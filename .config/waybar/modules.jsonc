@@ -95,7 +95,7 @@
 
   "pulseaudio": {
     "scroll-step": 5.0,
-    "format": "{icon}",
+    "format": "{icon} {volume}%",
     "format-muted": "󰖁 mute",
     "format-icons": {
       "default": ["", "", "󰕾"],
