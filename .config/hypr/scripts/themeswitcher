@@ -1,5 +1,5 @@
 #!/bin/bash
-currenttheme=$(cat $HOME/.config/flavor)
+currenttheme=$(cat "$HOME/.config/flavor")
 SCHEMA='gsettings set org.gnome.desktop.interface'
 
 if [ $# -eq 0 ]
@@ -33,8 +33,9 @@ else
   ln -sf "$HOME/.config/cava/${CSS}" "$HOME/.config/cava/config"
   kitty +kitten themes --reload-in=all "catppuccin-${CSS}"
   killall -SIGUSR2 waybar
+  sleep 2
   kvantummanager --set "catppuccin-${CSS}-blue"
+  sleep 2
   swaync-client --reload-css
-  sed -i "s/${currenttheme}/${CSS}/g" "$HOME/.config/nvim/lua/plugins/astroui.lua"
-  sleep 10
+  sleep 2
 fi
