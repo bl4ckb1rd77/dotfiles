@@ -26,6 +26,7 @@ else
  	${SCHEMA} gtk-theme "$THEME"
   ${SCHEMA} icon-theme "$ICONS"
   ${SCHEMA} color-scheme "$SCHEME"
+  ln -sf "$HOME/.config/hypr/${CSS}.conf" "$HOME/.config/hypr/colors.conf"
   ln -sf "$HOME/.config/waybar/${CSS}.css" "$HOME/.config/waybar/color.css"
   ln -sf "$HOME/.config/rofi/${CSS}.rasi" "$HOME/.config/rofi/colors.rasi"
   ln -sf "$HOME/.config/swaync/${CSS}.css" "$HOME/.config/swaync/style.css"
