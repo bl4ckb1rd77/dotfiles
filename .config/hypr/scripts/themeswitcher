@@ -23,19 +23,18 @@ else
   esac
 
   echo "${CSS}" > "$HOME/.config/flavor"
- 	${SCHEMA} gtk-theme "$THEME"
-  ${SCHEMA} icon-theme "$ICONS"
-  ${SCHEMA} color-scheme "$SCHEME"
+ 	nohup ${SCHEMA} gtk-theme "$THEME"
+  nohup ${SCHEMA} icon-theme "$ICONS"
+  nohup ${SCHEMA} color-scheme "$SCHEME"
   ln -sf "$HOME/.config/hypr/${CSS}.conf" "$HOME/.config/hypr/colors.conf"
   ln -sf "$HOME/.config/waybar/${CSS}.css" "$HOME/.config/waybar/color.css"
   ln -sf "$HOME/.config/rofi/${CSS}.rasi" "$HOME/.config/rofi/colors.rasi"
   ln -sf "$HOME/.config/swaync/${CSS}.css" "$HOME/.config/swaync/style.css"
   ln -sf "$HOME/.config/cava/${CSS}" "$HOME/.config/cava/config"
-  kitty +kitten themes --reload-in=all "catppuccin-${CSS}"
-  killall -SIGUSR2 waybar
-  sleep 2
-  kvantummanager --set "catppuccin-${CSS}-blue"
-  sleep 2
-  swaync-client --reload-css
-  sleep 2
+  nohup kitty +kitten themes --reload-in=all "catppuccin-${CSS}"
+  nohup killall -SIGUSR2 waybar
+  nohup killall -SIGURS1 cava
+  nohup kvantummanager --set "catppuccin-${CSS}-blue"
+  nohup swaync-client --reload-css
+  nohup notify-send -t 60000 "ThemeSwitcher" "Theme Switched to ${CSS}"
 fi

@@ -309,6 +309,6 @@ window#waybar > box {
   border-right: 0px;
   border-bottom: 2px solid @activebackground;
   border-radius: 0px;
-  padding: 0px 10px 1px 10px;
   margin: 5px 0px 0px 0px;
+  padding: 0px 5px 0px 5px;
 }
