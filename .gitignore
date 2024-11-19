@@ -5,3 +5,4 @@
 .config/hypr/monitor.conf-bak
 .config/hypr/window_rules.conf-bak
 .config/flavor
+.config/hypr/colors.conf
