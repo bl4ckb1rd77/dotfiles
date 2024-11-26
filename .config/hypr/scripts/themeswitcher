@@ -34,6 +34,7 @@ else
   ln -sf "$HOME/.config/rofi/${CSS}.rasi" "$HOME/.config/rofi/colors.rasi"
   ln -sf "$HOME/.config/swaync/${CSS}.css" "$HOME/.config/swaync/style.css"
   ln -sf "$HOME/.config/cava/${CSS}" "$HOME/.config/cava/config"
+  ln -sf "$HOME/.config/clipse/${CSS}.json" "$HOME/.config/clipse/custom_theme.json"
   kitty +kitten themes --reload-in=all "catppuccin-${CSS}"
   killall -SIGUSR2 waybar
   killall -SIGURS1 cava
