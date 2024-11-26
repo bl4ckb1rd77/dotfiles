@@ -1,7 +1,7 @@
 #!/bin/bash
 currenttheme=$(cat "$HOME/.config/flavor")
 SCHEMA='gsettings set org.gnome.desktop.interface'
-monitors=$(hyprctl monitors | grep "Monitor" | wc -l)
+monitors=$(hyprctl monitors | grep -c "Monitor")
 
 if [ $# -eq 0 ]
 then
@@ -26,9 +26,9 @@ else
   echo "${CSS}" > "$HOME/.config/flavor"
   spicetify config color_scheme "${CSS}"
   spicetify apply
- 	"${SCHEMA}" gtk-theme "$THEME"
-  "${SCHEMA}" icon-theme "$ICONS"
-  "${SCHEMA}" color-scheme "$SCHEME"
+ 	${SCHEMA} gtk-theme "$THEME"
+  ${SCHEMA} icon-theme "$ICONS"
+  ${SCHEMA} color-scheme "$SCHEME"
   ln -sf "$HOME/.config/hypr/${CSS}.conf" "$HOME/.config/hypr/colors.conf"
   ln -sf "$HOME/.config/waybar/${CSS}.css" "$HOME/.config/waybar/color.css"
   ln -sf "$HOME/.config/rofi/${CSS}.rasi" "$HOME/.config/rofi/colors.rasi"
