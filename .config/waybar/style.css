@@ -12,7 +12,7 @@
 tooltip {
   background: @background;
   border: 2px solid @activebackground;
-  border-radius: 8px;
+  border-radius: 4px;
   color: @textcolor;
   text-shadow: unset;
 }
