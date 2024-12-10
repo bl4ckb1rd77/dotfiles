@@ -5,6 +5,11 @@
     "format-icons": [" "],
     "tooltip": false,
   },
+  "custom/leftstart": {
+    "format": "{icon}",
+    "format-icons": [" "],
+    "tooltip": false,
+  },
   "custom/right": {
     "format": "{icon}",
     "format-icons": [" "],
