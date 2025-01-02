@@ -1,0 +1,9 @@
+font-family = "Hack Nerd Font"
+font-size = 10.0
+window-decoration = false
+gtk-adwaita = false
+gtk-titlebar = false
+shell-integration = zsh
+
+config-file = ?theme
+config-file = ?keybind

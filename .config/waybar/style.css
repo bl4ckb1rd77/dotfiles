@@ -45,9 +45,9 @@ window#waybar > box {
   color: @textcolor;
   font-size: 1px;
   transition: all 0.3s ease-in-out;
-  border-top: 2px solid @activebackground;
+  border-top: 0px solid @activebackground;
   border-left: 0px solid @activebackground;
-  border-bottom: 2px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
   border-right: 0px;
   border-radius: 0px 0px 0px 0px;
   margin: 5px 0px 0px 0px;
@@ -59,9 +59,9 @@ window#waybar > box {
   color: @textcolor;
   font-size: 1px;
   transition: all 0.3s ease-in-out;
-  border-top: 2px solid @activebackground;
-  border-left: 2px solid @activebackground;
-  border-bottom: 2px solid @activebackground;
+  border-top: 0px solid @activebackground;
+  border-left: 0px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
   border-right: 0px;
   border-radius: 4px 0px 0px 4px;
   margin: 5px 0px 0px 8px;
@@ -73,9 +73,9 @@ window#waybar > box {
   color: @textcolor;
   font-size: 1px;
   transition: all 0.3s ease-in-out;
-  border-top: 2px solid @activebackground;
-  border-right: 2px solid @activebackground;
-  border-bottom: 2px solid @activebackground;
+  border-top: 0px solid @activebackground;
+  border-right: 0px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
   border-left: 0px;
   border-radius: 0px 4px 4px 0px;
   margin: 5px 0px 0px 0px;
@@ -87,9 +87,9 @@ window#waybar > box {
   color: @textcolor;
   font-size: 1px;
   transition: all 0.3s ease-in-out;
-  border-top: 2px solid @activebackground;
+  border-top: 0px solid @activebackground;
   border-right: 0px solid @activebackground;
-  border-bottom: 2px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
   border-left: 0px;
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
@@ -103,9 +103,9 @@ window#waybar > box {
   color: @textcolor;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
-  border-top: 2px solid @activebackground;
+  border-top: 0px solid @activebackground;
   border-left: 0px;
-  border-bottom: 2px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
   border-right: 0px;
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
@@ -122,9 +122,9 @@ window#waybar > box {
 #workspaces {
   background: @background;
   color: @textcolor;
-  border-top: 2px solid @activebackground;
+  border-top: 0px solid @activebackground;
   border-left: 0px;
-  border-bottom: 2px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
   border-right: 0px;
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
@@ -189,20 +189,20 @@ window#waybar > box {
   background-color: @background;
   color: @textcolor;
   border-top: 0px solid @activebackground;
-  border-left: 2px solid @activebackground;
-  border-bottom: 2px solid @activebackground;
-  border-right: 2px solid @activebackground;
-  border-radius: 0px 0px 4px 4px;
-  margin: 0px 0px 0px 0px;
-  padding: 5px 10px 0px 10px;
+  border-left: 0px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
+  border-right: 0px solid @activebackground;
+  border-radius: 4px 4px 4px 4px;
+  margin: 5px 0px 0px 0px;
+  padding: 0px 10px 0px 10px;
 }
 
 #custom-mpdvol {
   background-color: @background;
   color: @textcolor;
-  border-top: 2px solid @activebackground;
+  border-top: 0px solid @activebackground;
   border-left: 0px;
-  border-bottom: 2px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
   border-right: 0px;
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
@@ -214,11 +214,11 @@ window#waybar > box {
 #custom-weather {
   background-color: @background;
   color: @textcolor;
-  border-top: 2px solid @activebackground;
+  border-top: 0px solid @activebackground;
   border-left: 0px;
-  border-bottom: 2px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
   border-right: 0px;
-  border-radius: 0px;
+  border-radius: 4px;
   margin: 5px 0px 0px 0px;
   padding: 0px 5px 0px 10px;
 }
@@ -226,9 +226,9 @@ window#waybar > box {
 #pulseaudio {
   background-color: @background;
   color: @textcolor;
-  border-top: 2px solid @activebackground;
+  border-top: 0px solid @activebackground;
   border-left: 0px;
-  border-bottom: 2px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
   border-right: 0px;
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
@@ -238,9 +238,9 @@ window#waybar > box {
 #pulseaudio-slider {
   background-color: @background;
   color: @textcolor;
-  border-top: 2px solid @activebackground;
+  border-top: 0px solid @activebackground;
   border-left: 0px;
-  border-bottom: 2px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
   border-right: 0px;
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
@@ -282,13 +282,25 @@ window#waybar > box {
 #tray {
   background-color: @background;
   color: @textcolor;
-  border-top: 2px solid @activebackground;
-  border-bottom: 2px solid @activebackground;
+  border-top: 0px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
   border-left: 0px;
   border-right: 0px;
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
   padding: 0px 5px 0px 5px;
+}
+
+#custom-powermenu {
+  background-color: @background;
+  color: @textcolor;
+  border-top: 0px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px;
+  margin: 5px 0px 0px 0px;
+  padding: 0px 5px 0px 10px;
 }
 
 #systemd-failed-units.ok {
@@ -307,9 +319,9 @@ window#waybar > box {
   background-color: @background;
   color: @textcolor;
   border-left: 0px;
-  border-top: 2px solid @activebackground;
+  border-top: 0px solid @activebackground;
   border-right: 0px;
-  border-bottom: 2px solid @activebackground;
+  border-bottom: 0px solid @activebackground;
   border-radius: 0px;
   margin: 5px 0px 0px 0px;
   padding: 0px 5px 0px 5px;

@@ -28,7 +28,7 @@
   // ---- Left ----
   "custom/startmenu": {
     "format": "{icon}",
-    "format-icons": ["󰣇"],
+    "format-icons": ["Applications"],
     "tooltip": true,
     "tooltip-format": "Startmenü",
     "on-click": "$HOME/.config/hypr/scripts/menu",
@@ -246,5 +246,10 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true,
+  },
+  "custom/powermenu": {
+    "format": "{icon}",
+    "format-icons": [""],
+    "on-click": "$HOME/.config/hypr/scripts/powermenu",
   },
 }

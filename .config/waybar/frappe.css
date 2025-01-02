@@ -1,6 +1,6 @@
 /* ---- Color Definitions ---- */
 
-@define-color barbackground rgba(48, 52, 70, 0.85);
+@define-color barbackground rgba(48, 52, 70, 0.55);
 @define-color barshadow rgba(35, 38, 52, 0.66);
 @define-color background #303446;
 @define-color blank rgba(0, 0, 0, 0);
