@@ -1,20 +1,8 @@
-'h':
-  0: MoveLeft
-'a':
-  2: First
-'w':
-  2: RemoveWord
-End:
-  0: ClearHistory
-'d':
-  0: ClearHistory
-  4: RemoveWord
-Home:
-  0: FirstHistory
-'r':
-  2: Reload
 'e':
   2: End
+Down:
+  2: NextEntry
+  0: MoveDown
 Right:
   2: NextWord
   0: MoveRight
@@ -23,29 +11,41 @@ Right:
 F5:
   0: Reload
 Left:
-  2: PreviousWord
-  4: Back
   0: MoveLeft
-Down:
-  0: MoveDown
-  2: NextEntry
+  4: Back
+  2: PreviousWord
+Esc:
+  0: Deselect
+':':
+  0: StartCommandCapture
+Backspace:
+  0: Back
+'a':
+  2: First
+End:
+  0: ClearHistory
+'q':
+  0: Exit
+Enter:
+  0: Select
+'l':
+  0: MoveRight
+Home:
+  0: FirstHistory
+'r':
+  2: Reload
+'w':
+  2: RemoveWord
 'v':
   2: Paste
 Up:
   0: MoveUp
   2: PreviousEntry
-Esc:
-  0: Deselect
-'q':
-  0: Exit
-':':
-  0: StartCommandCapture
-'l':
-  0: MoveRight
-Backspace:
-  0: Back
-Enter:
-  0: Select
+'h':
+  0: MoveLeft
+'d':
+  4: RemoveWord
+  0: ClearHistory
 'k':
   0: MoveUp
 'j':

@@ -11,7 +11,7 @@
 /* ---- Toolti ---- */
 tooltip {
   background: @background;
-  border: 2px solid @activebackground;
+  border: 0px solid @activebackground;
   border-radius: 4px;
   color: @textcolor;
   text-shadow: unset;
@@ -197,7 +197,9 @@ window#waybar > box {
   padding: 0px 10px 0px 10px;
 }
 
-#custom-mpdvol {
+#custom-mpdvol,
+#window,
+#custom-weather {
   background-color: @background;
   color: @textcolor;
   border-top: 0px solid @activebackground;
@@ -209,14 +211,12 @@ window#waybar > box {
   padding: 0px 10px 0px 10px;
 }
 
-#mpris,
-#window,
-#custom-weather {
+#mpris {
   background-color: @background;
   color: @textcolor;
-  border-top: 0px solid @activebackground;
+  border-top: 0px;
   border-left: 0px;
-  border-bottom: 0px solid @activebackground;
+  border-bottom: 0px;
   border-right: 0px;
   border-radius: 4px;
   margin: 5px 0px 0px 0px;
