@@ -185,18 +185,7 @@ window#waybar > box {
   background-color: transparent;
 }
 
-#clock {
-  background-color: @background;
-  color: @textcolor;
-  border-top: 0px solid @activebackground;
-  border-left: 0px solid @activebackground;
-  border-bottom: 0px solid @activebackground;
-  border-right: 0px solid @activebackground;
-  border-radius: 4px 4px 4px 4px;
-  margin: 5px 0px 0px 0px;
-  padding: 0px 10px 0px 10px;
-}
-
+#clock,
 #custom-mpdvol,
 #window,
 #custom-weather {

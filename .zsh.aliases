@@ -2,7 +2,7 @@ alias ls='eza --icons'
 alias ll='ls -al'
 alias rr='reboot-required'
 alias grep='grep --color=auto'
-alias ssh='kitten ssh'
+# alias ssh='kitten ssh'
 alias ct='while true; do clear; todo; sleep 5; done'
 alias enable-ansible216='source /home/ahoefer/ansible_216/bin/activate'
 alias paccleanup="sudo pacman -Rns $(sudo pacman -Qdtq)"
