@@ -4,6 +4,7 @@ window-decoration = false
 gtk-adwaita = false
 gtk-titlebar = false
 shell-integration = zsh
+shell-integration-features = sudo
 
 config-file = ?theme
 config-file = ?keybind
