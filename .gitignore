@@ -8,3 +8,6 @@
 .config/hypr/colors.conf
 .config/yazi
 .config/yazi.backup
+.config/QtProject.conf
+.config/waybar/workspace.jsonc
+.config/btop/btop.conf
