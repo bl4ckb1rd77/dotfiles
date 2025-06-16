@@ -1,110 +1,118 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = """
+ \ 
 $username\
+[](fg:blue bg:surface1 )\
 $directory\
-$git_branch\
-$git_status\
-$c\
-$elixir\
-$elm\
-$golang\
-$haskell\
-$java\
-$julia\
-$nodejs\
-$nim\
-$python\
-$rust\
-$scala\
-$docker_context\
-$character\
+[](fg:surface1 bg:base )\
+$git_branch$git_status\
+$java$lua$python\
+$line_break$character\
 """
-add_newline = false
+
+add_newline = true
+
+palette = 'catppuccin_frappe'
+
+[palettes.catppuccin_frappe]
+rosewater = "#f2d5cf"
+flamingo = "#eebebe"
+pink = "#f4b8e4"
+mauve = "#ca9ee6"
+red = "#e78284"
+maroon = "#ea999c"
+peach = "#ef9f76"
+yellow = "#e5c890"
+green = "#a6d189"
+teal = "#81c8be"
+sky = "#99d1db"
+sapphire = "#85c1dc"
+blue = "#8caaee"
+lavender = "#babbf1"
+text = "#c6d0f5"
+subtext1 = "#b5bfe2"
+subtext0 = "#a5adce"
+overlay2 = "#949cbb"
+overlay1 = "#838ba7"
+overlay0 = "#737994"
+surface2 = "#626880"
+surface1 = "#51576d"
+surface0 = "#414559"
+base = "#303446"
+mantle = "#292c3c"
+crust = "#232634"
+
+[fill]
+symbol = ' '
 
 [username]
-style_user = "green bold"
-style_root = "red bold"
-format = "[$user]($style) "
+style_user = "bg:blue fg:base"
+style_root = "bg:red fg:base"
+format = '[ $user ]($style)'
 disabled = false
-show_always = false
+show_always = true
 
 [hostname]
 ssh_only = false
-format = 'on [$hostname](bold purple) '
-trim_at = "."
+style = "fg:base"
+format = '[ . $hostname ]($style)'
+trim_at = ""
 disabled = false
 
-# Replace the "❯" symbol in the prompt with "➜"
-[character]                            # The name of the module we are configuring is "character"
-success_symbol = "[ ](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[ ✗](bold red)"
-
-#  
-# configure directory
 [directory]
-read_only = " "
+read_only = " 🔒 "
 truncation_length = 10
-truncate_to_repo = true # truncates directory to root folder if in github repo
-style = "bold italic blue"
-
-[cmd_duration]
-min_time = 4
-show_milliseconds = false
-disabled = true
-style = "bold italic red"
-
-[aws]
-symbol = "  "
-
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[c]
-symbol = " "
-
-[docker_context]
-symbol = " "
-format = '$symbol$context$path'
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
+truncation_symbol = "…/"
+truncate_to_repo = true
+style = "fg:text bg:surface1"
+format = '[  $path ]($style)'
 
 [git_branch]
 symbol = " "
-format = '$symbol$branch'
+style = "fg:green"
+format = '[ $symbol$branch ]($style)'
 
 [git_status]
-format = '$all_status$ahead_behind'
+format = '[$all_status$ahead_behind ]($style)'
+style = "fg:green"
+conflicted = "🏳"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count} 😵"
+up_to_date = "✓"
+untracked = "🤷"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
 
-[golang]
-symbol = " "
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[ ](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[ ✗](bold red)"
 
-[haskell]
-symbol = " "
+[aws]
+symbol = "  "
+format = 'on [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
 
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[nodejs]
-symbol = ""
-
-[nim]
-symbol = " "
+[lua]
+style = "fg:text"
+format = '[ via  $version ]($style)'
 
 [python]
-symbol = '󱔎 '
+symbol = ' '
+style = "fg:text"
 pyenv_version_name = true
+format = '[ via ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) ) ]($style)'
 
-[rust]
-symbol = ""
+[docker_context]
+style = "fg:text"
+symbol = " "
+format = '[ $symbol$context$path ]($style)'
 
-[scala]
-symbol = " "
+[kubernetes]
+style = "fg:text"
+format = '[ via 󱃾 $context\($namespace\) ]($style)'
+disabled = false
+
