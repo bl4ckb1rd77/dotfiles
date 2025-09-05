@@ -1,1 +1,10 @@
-/home/ahoefer/.config/rofi/frappe.rasi
+* {
+    background:             rgba(48, 52, 70, 90%);
+    background2:            rgba(48, 52, 70, 90%);
+    background-alt:         rgba(35, 38, 52, 90%);
+    background-alt-trans:   rgba(35, 38, 52, 90%);
+    foreground:             #c6d0f5;
+    selected:               #51576d;
+    active:                 #626880;
+    urgent:                 #eebebe;
+}
