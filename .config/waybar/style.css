@@ -4,7 +4,7 @@
   /* font-family: JetBrainsMono Nerd Font Propo; */
   font-family: Hack Nerd Font;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
   min-height: 0;
 }
 
@@ -121,7 +121,7 @@ window#waybar > box {
 /* ---- Workspaces ---- */
 #workspaces {
   background: @background;
-  color: @textcolor;
+  color: @blank;
   border-top: 0px solid @activebackground;
   border-left: 0px;
   border-bottom: 0px solid @activebackground;
@@ -138,10 +138,10 @@ window#waybar > box {
 }
 
 #workspaces button {
-  color: @textcolor;
+  color: @blank;
   background-color: @buttonbackground;
   margin: 4px 3px 4px 3px;
-  padding: 2px;
+  padding: 1px;
   border-radius: 15px;
   border: 0px;
   transition: all 0.3s ease-in-out;
@@ -149,28 +149,28 @@ window#waybar > box {
 }
 
 #workspaces button.persistent {
-  color: @textcolor;
+  color: @blank;
   transition: all 0.3s ease-in-out;
   background-color: @buttonbackground;
 }
 
 #workspaces button.empty {
-  color: @textcolor;
+  color: @blank;
   background-color: @emptybackground;
   transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.urgent {
-  color: @textcolor;
+  color: @blank;
   background-color: @urgentbackground;
   transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  color: @textcolor;
+  color: @blank;
   background-color: @activebackground;
   border-radius: 15px;
-  min-width: 25px;
+  min-width: 20px;
   transition: all 0.3s ease-in-out;
 }
 

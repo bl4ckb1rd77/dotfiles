@@ -1,7 +1,10 @@
 [
   {
     "name": "top",
-    "include": ["$HOME/.config/waybar/modules.jsonc","$HOME/.config/waybar/workspace.jsonc"],
+    "include": [
+      "$HOME/.config/waybar/modules.jsonc",
+      "$HOME/.config/waybar/workspace.jsonc"
+    ],
     "layer": "top",
     "position": "top",
     "reload_style_on_change": 1,
@@ -12,69 +15,47 @@
       "custom/leftstart",
       "custom/startmenu",
       "hyprland/workspaces",
-      // "custom/weather",
-      "hyprland/window",
-      "custom/right",
+      // "hyprland/window",
+      "mpris",
+      "custom/right"
     ],
     "modules-center": [
-      "mpris",
+      "custom/left",
+      "clock",
+      "custom/weather",
+      "custom/right"
     ],
     "modules-right": [
       "custom/left",
+      "cpu",
+      "memory",
+      "disk#root",
       // "group/hardware",
       "pulseaudio",
       "battery",
       "idle_inhibitor",
-      "custom/theme",
+      // "custom/theme",
       "custom/updater",
       "systemd-failed-units",
       "custom/touchpad",
       "custom/ipinfo",
       "tray",
-      "clock",
       "custom/notification",
       "custom/powermenu",
-      "custom/rightend",
+      "custom/rightend"
     ],
     "group/hardware": {
-  		"orientation": "horizontal",
+      "orientation": "horizontal",
       "drawer": {
         "transition-duration": 500,
-        "transition-left-to-right": false,
+        "transition-left-to-right": false
       },
       "modules": [
         "custom/group",
         "cpu",
         "memory",
-        "disk#root",
-        "disk#home",
-	  	]
-  	},
+        "disk#root"
+      ]
+    }
   }
-  // {
-  //   "name": "clock",
-  //   "include": ["$HOME/.config/waybar/desktop.jsonc"],
-  //   "exclusive": false,
-  //   "layer": "bottom",
-  //   "position": "bottom",
-  //   "height": 20,
-  //   "margin": 0,
-  //   "spacing": 0,
-  //   "modules-left": ["clock#time"],
-  //   "modules-center": [],
-  //   "modules-right": [],
-  // },
-  // {
-  //   "name": "date",
-  //   "include": ["$HOME/.config/waybar/desktop.jsonc"],
-  //   "exclusive": false,
-  //   "layer": "bottom",
-  //   "position": "bottom",
-  //   "height": 20,
-  //   "margin": 0,
-  //   "spacing": 0,
-  //   "modules-left": ["clock#date"],
-  //   "modules-center": [],
-  //   "modules-right": [],
-  // },
 ]

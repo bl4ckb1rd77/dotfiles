@@ -4,7 +4,6 @@ SUPER + Shift + Enter       * __open Floating Terminal__\
 ALT   + b                   * __open Bravo__\
 ALT   + e                   * __open Nemo__\
 ALT   + m                   * __Media Player__\
-ALT   + w                   * __Ferdium Multi WebChat__\
 SUPER + v                   * __start WebCam Video__
 
 ### System Shortcuts
