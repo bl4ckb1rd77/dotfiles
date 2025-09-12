@@ -15,18 +15,13 @@
       "custom/leftstart",
       "custom/startmenu",
       "hyprland/workspaces",
-      // "hyprland/window",
       "mpris",
-      "custom/right"
     ],
     "modules-center": [
-      "custom/left",
       "clock",
       "custom/weather",
-      "custom/right"
     ],
     "modules-right": [
-      "custom/left",
       "cpu",
       "memory",
       "disk#root",
