@@ -79,13 +79,14 @@ window#waybar > box {
   border-bottom: 0px solid @surface0;
   border-right: 0px;
   border-radius: 0px;
-  margin: 0px 0px 0px 0px;
+  margin: 6px 0px 6px 3px;
   padding: 0px 7px 0px 5px;
 }
 
 #custom-startmenu:hover {
   background-color: @yellow;
   color: @crust;
+  border-radius: 8px;
   transition: all 0.3s ease-in-out;
 }
 

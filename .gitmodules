@@ -1,6 +1,3 @@
-[submodule ".config/nvim"]
-	path = .config/nvim
-	url = git@github.com:bl4ckb1rd77/lazy-nvim.git
 [submodule "Bilder/wallpapers"]
 	path = Bilder/wallpapers
 	url = git@github.com:bl4ckb1rd77/wallpapers.git
@@ -22,3 +19,6 @@
 [submodule ".config/zsh/plugins/ohmyzsh"]
 	path = .config/zsh/plugins/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = git@github.com:bl4ckb1rd77/astrovim.git

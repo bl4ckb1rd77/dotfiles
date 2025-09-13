@@ -1,7 +1,11 @@
 #!/bin/bash
 
-time=$(date +%Y-%m-%d-%H-%M-%S)
 dir="$(xdg-user-dir PICTURES)/Screenshots"
+if [ ! -d "$dir" ]; then
+	mkdir -p "$dir"
+fi
+
+time=$(date +%Y-%m-%d-%H-%M-%S)
 file="Screenshot_${time}_${RANDOM}.png"
 
 function getmenu() {

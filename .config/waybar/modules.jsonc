@@ -85,7 +85,7 @@
   },
   // ---- Right ----
   "disk#root": {
-    "format": " {free}"
+    "format": "<span color='#e5c890'> </span>{free}"
   },
   "disk#home": {
     "format": " {free}",
@@ -93,18 +93,18 @@
   },
   "cpu": {
     "interval": 1,
-    "format": " {usage}%",
+    "format": "<span color='#e5c890'> </span>{usage}%",
     "max-length": 10,
     "on-click": "kitty -e btop"
   },
   "memory": {
     "interval": 1,
-    "format": " {}%",
+    "format": "<span color='#e5c890'> </span>{}%",
     "max-length": 10
   },
   "pulseaudio": {
     "scroll-step": 5.0,
-    "format": "{icon} {volume}%",
+    "format": "<span color='#e5c890'>{icon}</span> {volume}%",
     "format-muted": "󰖁 mute",
     "format-icons": {
       "default": [
@@ -132,20 +132,20 @@
       "critical": 15
     },
     "format": "{icon}",
-    "format-charging": "󰂄",
+    "format-charging": "<span color='#81c8be'>󰂄</span>",
     "format-plugged": "",
     // "format-icons": ["", "", "", "", ""],
     "format-icons": [
-      "󰂎",
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰁹"
+      "<span color='#e78284'>󰂎</span>",
+      "<span color='#e78284'>󰁺</span>",
+      "<span color='#e78284'>󰁻</span>",
+      "<span color='#e5c890'>󰁼</span>",
+      "<span color='#e5c890'>󰁽</span>",
+      "<span color='#e5c890'>󰁾</span>",
+      "<span color='#e5c890'>󰁿</span>",
+      "<span color='#81c8be'>󰂀</span>",
+      "<span color='#81c8be'>󰂁</span>",
+      "<span color='#81c8be'>󰁹</span>"
     ],
     "tooltip-format": "{capacity}%"
   },
@@ -176,7 +176,7 @@
     "return-type": "json"
   },
   "custom/updater": {
-    "format": " {}",
+    "format": "<span color='#ebcb8b'> </span>{}",
     "exec": "$HOME/.config/hypr/scripts/updater",
     "interval": 60,
     "tooltip": false,
@@ -184,7 +184,7 @@
   },
   "systemd-failed-units": {
     "hide-on-ok": false,
-    "format": " {nr_failed_system}/{nr_failed_user}",
+    "format": "  {nr_failed_system}/{nr_failed_user}",
     "format-ok": " ✓",
     "system": true,
     "user": true
@@ -206,8 +206,8 @@
   },
   "clock": {
     "interval": 1,
-    "format": " {:%H:%M:%S}",
-    "format-alt": " {:L%A %d.%m.%Y}",
+    "format": "<span color='#ebcb8b'>󰥔 </span>{:%H:%M:%S}",
+    "format-alt": "<span color='#ebcb8b'> </span>{:L%A %d.%m.%Y}",
     "timezone": "Europe/Berlin",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
