@@ -33,4 +33,4 @@
 ![Screenshot](screenshot-1.png "Screenshot Sysinfo")
 ![Screenshot](screenshot-2.png "Screenshot Notify and Startmenu")
 ![Screenshot](screenshot-3.png "Screenshot Hyprlock")
-![Screenshot](screenshot-4.png "Screenshot Yazi and AstroNvim")
+![Screenshot](screenshot-4.png "Screenshot Power Menu")
