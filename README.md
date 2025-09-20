@@ -5,18 +5,21 @@
 - **OS**: Arch Linux x86_64
 - **WM**: [Hyprland](https://github.com/hyprwm/Hyprland)
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
-- **Shell**: [OhMyZsh](https://github.com/ohmyzsh/ohmyzsh)
+- **Shell**: Zsh
   - **Prompt**: [Starship](https://github.com/starship/starship)
-- **Menus**: [Rofi-Wayland](https://github.com/lbonn/rofi)
+  - **some plugins**:
+- **Menus**: [Rofi](https://github.com/davatorium/rofi)
 - **Lockscreen**: [Hyprlock](https://github.com/hyprwm/hyprlock) / [Hypridle](https://github.com/hyprwm/hypridle)
-- **Theme**: [Nordic](https://github.com/EliverLara/Nordic)
-- **Icons**: [Nordzy-dark](https://github.com/alvatip/Nordzy-icon)
+- **Login**: sddm Catppuccin theme
+- **Theme**: [Catppuccin](https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git)
+  - **sassc**: required for theme build
+- **Icons**: [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - **Notify**: [swaync](https://github.com/ErikReider/SwayNotificationCenter)
 - **Info**: [fastfetch](https://github.com/fastfetch-cli/fastfetch)
-- **Music**: [spotify-player](https://github.com/aome510/spotify-player) + [cava](https://github.com/karlstav/cava) + [sptlrx](https://github.com/raitonoberu/sptlrx)
 
-#### changelog:
+#### changelog
 
+- **2025-09-20**: add xdg-desktop-portal-hyprland and eza theme
 - **2024-07-02**: some theme changes for swaync and managed dotfiles with stow
 - **2024-06-30**: Add SwayNC
 - **2024-06-17**: switched from ncspot to spotify-player
@@ -31,4 +34,3 @@
 ![Screenshot](screenshot-2.png "Screenshot Notify and Startmenu")
 ![Screenshot](screenshot-3.png "Screenshot Hyprlock")
 ![Screenshot](screenshot-4.png "Screenshot Yazi and AstroNvim")
-![Screenshot](screenshot-5.png "Screenshot Spotify-Player, SptLrx and Cava")
