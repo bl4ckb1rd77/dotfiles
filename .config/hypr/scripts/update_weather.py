@@ -15,7 +15,7 @@ wttrcache = Path("/tmp/.wttr.cache")
 ipcache = Path("/tmp/.ip.cache")
 wttrurl = "http://de.wttr.in/"
 ipurl = "http://ipinfo.io"
-wttrformat = "?format=%l:%c:%C:%t:%f:%h:%w"
+wttrformat = "?format=%c:%C:%t:%f:%h:%w"
 expiretime = 600
 ifaceignore = ["virbr", "lo"]
 localif = []

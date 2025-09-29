@@ -61,7 +61,7 @@ trim_at = ""
 disabled = false
 
 [directory]
-read_only = " 🔒 "
+read_only = " "
 truncation_length = 10
 truncation_symbol = "…/"
 truncate_to_repo = true
@@ -76,7 +76,7 @@ format = '[ $symbol$branch ]($style)'
 [git_status]
 format = '[$all_status$ahead_behind ]($style)'
 style = "fg:green"
-conflicted = "🏳"
+conflicted = "\uf0ec"
 ahead = "⇡${count}"
 behind = "⇣${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count} 😵"
