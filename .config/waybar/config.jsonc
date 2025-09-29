@@ -32,7 +32,6 @@
       // "custom/theme",
       "custom/updater",
       "systemd-failed-units",
-      "custom/touchpad",
       "custom/ipinfo",
       "tray",
       "custom/notification",

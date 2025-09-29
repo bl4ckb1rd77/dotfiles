@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TOUCHDEVICE="elan2204:00-04f3:30f5-"
+TOUCHDEVICE="syna32b9:00-06cb:ce7d-"
 
 if [ -z "$XDG_RUNTIME_DIR" ]; then
   export XDG_RUNTIME_DIR=/run/user/$(id -u)
