@@ -125,7 +125,7 @@
     "orientation": "horizontal"
   },
   "battery": {
-    "bat": "BAT1",
+    "bat": "BAT0",
     "states": {
       "good": 95,
       "warning": 30,
