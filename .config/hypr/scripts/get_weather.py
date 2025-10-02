@@ -92,10 +92,10 @@ if len(sys.argv) > 1:
                 else:
                     waybar = (
                         '{"text": '
-                        f'"{wttr[3]}"'
+                        f'"{wttr[0]}{wttr[3]}"'
                         ', "alt": ""'
                         ', "tooltip": '
-                        f'"{wttr[0]}\t{wttr[2]}\r'
+                        f'"{wttr[0]}\t{wttr[1]} {wttr[2]}\r'
                         f"\t{wttr[3]} ({wttr[4]})\r"
                         f'\t{wttr[5]} {wttr[6]}"'
                         "}"
@@ -108,7 +108,7 @@ if len(sys.argv) > 1:
                 if wttrlen < 4:
                     print("Service Offline")
                 else:
-                    print(f"{wttr[1]}{wttr[2]} {wttr[3]}")
+                    print(f"{wttr[0]}{wttr[1]} {wttr[2]}")
                 exit(0)
             case _:
                 print("ups")
