@@ -254,6 +254,7 @@
     "format-icons": [
       ""
     ],
-    "on-click": "$HOME/.config/hypr/scripts/powermenu"
+    "tooltip": false,
+    "on-click": "wlogout -b 4 -l $HOME/.config/wlogout/layout -C $HOME/.config/wlogout/themes/catppuccin/style.css"
   }
 }
