@@ -165,9 +165,9 @@ window#waybar > box {
   border-bottom: 0px solid @surface0;
   border-right: 0px;
   border-top-left-radius: 8px;
-  border-top-right-radius: 0px;
+  border-top-right-radius: 8px;
   border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 8px;
   margin: 6px 0px 6px 0px;
   padding: 0px 6px 0px 10px;
 }
@@ -233,7 +233,6 @@ window#waybar > box {
 
 #tray,
 #custom-ipinfo,
-#systemd-failed-units,
 #custom-touchpad {
   background-color: @base;
   color: @text;
@@ -246,8 +245,17 @@ window#waybar > box {
   padding: 0px 3px 0px 3px;
 }
 
+#systemd-failed-units,
 #systemd-failed-units.ok {
   background-color: @base;
+  color: @text;
+  border-top: 0px solid @surface0;
+  border-bottom: 0px solid @surface0;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px;
+  margin: 6px 0px 6px 0px;
+  padding: 0px 3px 0px 6px;
 }
 
 #tray > .passive {
@@ -267,5 +275,5 @@ window#waybar > box {
   border-bottom: 0px solid @surface0;
   border-radius: 0px 8px 8px 0px;
   margin: 6px 0px 6px 0px;
-  padding: 0px 10px 0px 4px;
+  padding: 0px 14px 0px 4px;
 }

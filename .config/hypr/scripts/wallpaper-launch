@@ -31,7 +31,7 @@ for imagen in "$wall_dir"/*; do
 		fi
 		imagename=$(basename "$imagepath")
 		if [ ! -f "${cacheDir}/${imagename}" ]; then
-			convert -strip "$imagepath" -thumbnail 500x500^ -gravity center -extent 500x500 "${cacheDir}/${imagename}"
+			magick -strip "$imagepath" -thumbnail 500x500^ -gravity center -extent 500x500 "${cacheDir}/${imagename}"
 		fi
 	fi
 done

@@ -177,17 +177,18 @@
   },
   "custom/updater": {
     "format": "<span color='#ebcb8b'> </span>{}",
-    "exec": "$HOME/.config/hypr/scripts/updater",
-    "interval": 60,
-    "tooltip": false,
-    "on-click": "kitty --title=\"update\" paru -Syu"
+		"return-type": "json",
+    "exec": "$HOME/.config/hypr/scripts/system-update.sh module",
+		"signal": 1,
+		"interval": 120,
+    "on-click": "kitty --title=\"update\" $HOME/.config/hypr/scripts/system-update.sh"
   },
   "systemd-failed-units": {
     "hide-on-ok": false,
     "format": "  {nr_failed_system}/{nr_failed_user}",
     "format-ok": " ✓",
     "system": true,
-    "user": true
+    "user": false
   },
   "custom/theme": {
     "format": "{icon}",
@@ -206,8 +207,7 @@
   },
   "clock": {
     "interval": 1,
-    "format": "<span color='#ebcb8b'>󰥔 </span>{:%H:%M:%S}",
-    "format-alt": "<span color='#ebcb8b'> </span>{:L%A %d.%m.%Y}",
+    "format": "<span color='#ebcb8b'>󰥔 </span>{:%H:%M:%S - %A %d.%m.%Y}",
     "timezone": "Europe/Berlin",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {

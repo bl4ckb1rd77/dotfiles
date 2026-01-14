@@ -81,3 +81,10 @@ source $HOME/.zsh.plugins
 source $HOME/.zsh.aliases
 
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/home/ahoefer/.bun/_bun" ] && source "/home/ahoefer/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -19,7 +19,6 @@
     ],
     "modules-center": [
       "clock",
-      "custom/weather",
     ],
     "modules-right": [
       "cpu",
@@ -32,7 +31,6 @@
       // "custom/theme",
       "custom/updater",
       "systemd-failed-units",
-      "custom/ipinfo",
       "tray",
       "custom/notification",
       "custom/powermenu",
