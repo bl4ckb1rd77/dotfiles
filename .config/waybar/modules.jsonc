@@ -83,28 +83,53 @@
     "on-click": "$HOME/.config/hypr/scripts/mpdvolume toggle",
     "exec-if": "$HOME/.config/hypr/scripts/mpdvolume state"
   },
+  "custom/terminal": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": "Terminal\nFloating Terminal",
+    "on-click": "exec kitty",
+    "on-click-right": "exec kitty --title=\"floatkitty\""
+  },
+  "custom/filemanager": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": "File Manager",
+    "on-click": "exec caja"
+  },
+  "custom/browser": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": "Brave\nBrave Incognito",
+    "on-click": "exec brave",
+    "on-click-right": "exec brave --incognito"
+  },
+  "custom/steam": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": "Steam",
+    "on-click": "exec steam"
+  },
+  "custom/discord": {
+    "format": "󰙯 ",
+    "tooltip": true,
+    "tooltip-format": "Discord",
+    "on-click": "exec discord"
+  },
   // ---- Right ----
-  "disk#root": {
-    "format": "<span color='#e5c890'> </span>{free}"
-  },
-  "disk#home": {
-    "format": " {free}",
-    "path": "/home"
-  },
   "cpu": {
     "interval": 1,
-    "format": "<span color='#e5c890'> </span>{usage}%",
+    "format": "<span color='#8caaee'> </span>{usage}%",
     "max-length": 10,
     "on-click": "kitty -e btop"
   },
   "memory": {
     "interval": 1,
-    "format": "<span color='#e5c890'> </span>{}%",
+    "format": "<span color='#8caaee'> </span>{}%",
     "max-length": 10
   },
   "pulseaudio": {
     "scroll-step": 5.0,
-    "format": "<span color='#e5c890'>{icon}</span> {volume}%",
+    "format": "<span color='#8caaee'>{icon}</span> {volume}%",
     "format-muted": "󰖁 mute",
     "format-icons": {
       "default": [
@@ -132,7 +157,7 @@
       "critical": 15
     },
     "format": "{icon}",
-    "format-charging": "<span color='#81c8be'>󰂄</span>",
+    "format-charging": "<span color='#8caaee'>󰂄</span>",
     "format-plugged": "",
     // "format-icons": ["", "", "", "", ""],
     "format-icons": [
@@ -176,7 +201,7 @@
     "return-type": "json"
   },
   "custom/updater": {
-    "format": "<span color='#ebcb8b'> </span>{}",
+    "format": "<span color='#8caaee'> </span>{}",
 		"return-type": "json",
     "exec": "$HOME/.config/hypr/scripts/system-update.sh module",
 		"signal": 1,
@@ -185,8 +210,8 @@
   },
   "systemd-failed-units": {
     "hide-on-ok": false,
-    "format": "  {nr_failed_system}/{nr_failed_user}",
-    "format-ok": " ✓",
+    "format": " <span color='#e78284'> </span>{nr_failed_system}/{nr_failed_user}",
+    "format-ok": "<span color='#8caaee'> </span>✓",
     "system": true,
     "user": false
   },
@@ -207,7 +232,7 @@
   },
   "clock": {
     "interval": 1,
-    "format": "<span color='#ebcb8b'>󰥔 </span>{:%H:%M:%S - %A %d.%m.%Y}",
+    "format": "<span color='#8caaee'>󰥔 </span>{:%H:%M:%S - %A %d.%m.%Y}",
     "timezone": "Europe/Berlin",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {

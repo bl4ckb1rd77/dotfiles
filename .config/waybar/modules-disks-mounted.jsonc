@@ -1,0 +1,16 @@
+{
+  "disk#root": {
+    "format": "<span color='#8caaee'> </span>{free}",
+    "unit": "GB"
+  },
+  "disk#home": {
+    "format": "<span color='#8caaee'> </span>{free}",
+    "path": "/home",
+    "unit": "GB"
+  },
+  "disk#steam": {
+    "format": "<span color='#8caaee'> </span>{free}",
+    "path": "/home/ahoefer/steam2",
+    "unit": "GB"
+  },
+}

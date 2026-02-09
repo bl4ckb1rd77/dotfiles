@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "hyprlock",
+    "action" : "hyprlocksnd",
     "text" : "",
     "keybind" : "l"
 }
