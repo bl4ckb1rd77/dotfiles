@@ -8,6 +8,7 @@ SUPER + Shift + Enter       * __open Floating Terminal__\
 ALT   + b                   * __open Bravo__\
 ALT   + e                   * __open Nemo__\
 ALT   + m                   * __Media Player__\
+SUPER + d                   * __discord__\
 SUPER + v                   * __start WebCam Video__
 
 ### System Shortcuts
@@ -20,6 +21,7 @@ SUPER + l                   * __Lock Screen__\
 SUPER + s                   * __Screenshot Menu__\
 SUPER + w                   * __Wallpaper Menu__\
 SUPER + b                   * __next random Wallpaper__\
+ALT + d                     * __select Audio outpud__\
 SUPER + TAB                 * __Window Switcher__\
 SUPER + SHIFT + v           * __Clipboard History__
 
