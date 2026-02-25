@@ -169,9 +169,9 @@
       "<span color='#e5c890'>󰁽</span>",
       "<span color='#e5c890'>󰁾</span>",
       "<span color='#e5c890'>󰁿</span>",
-      "<span color='#81c8be'>󰂀</span>",
-      "<span color='#81c8be'>󰂁</span>",
-      "<span color='#81c8be'>󰁹</span>"
+      "<span color='#a6d189'>󰂀</span>",
+      "<span color='#a6d189'>󰂁</span>",
+      "<span color='#a6d189'>󰁹</span>"
     ],
     "tooltip-format": "{capacity}%"
   },
@@ -212,7 +212,7 @@
   "systemd-failed-units": {
     "hide-on-ok": false,
     "format": " <span color='#e78284'> </span>{nr_failed_system}/{nr_failed_user}",
-    "format-ok": "<span color='#8caaee'> </span>✓",
+    "format-ok": "<span color='#a6d189'> </span>✓",
     "system": true,
     "user": false
   },

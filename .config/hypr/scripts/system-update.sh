@@ -34,7 +34,7 @@ check-updates() {
 	aur=0
 	if [[ -n $helper ]]; then
 		local aout astat
-		aout=$(timeout $TIMEOUT "$helper" -Quaq)
+		aout=$(timeout $TIMEOUT "$helper" -Quaq | grep -v -F -f <(awk '/^IgnorePkg/ {gsub(/.*=/, "", $0); gsub(/ /, "\n", $0); print}' /etc/pacman.conf))
 		astat=$?
 		# Return only if the exit status is non-zero and there is an error
 		# message
@@ -47,10 +47,10 @@ check-updates() {
 }
 
 update-packages() {
-	printf '\n%bUpdating pacman packages...%b\n' "$BLU" "$RST"
-	sudo pacman -Syu
+	# printf '\n%bUpdating pacman packages...%b\n' "$BLU" "$RST"
+	# sudo pacman -Syu
 
-	printf '\n%bUpdating AUR packages...%b\n' "$BLU" "$RST"
+	printf '\n%bUpdating pacman and AUR packages...%b\n' "$BLU" "$RST"
 	"$helper" -Syu
 
 	notify-send 'Update Complete' -i 'package-install'
