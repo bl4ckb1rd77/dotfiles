@@ -1,6 +1,6 @@
 #!/bin/bash
 
-player=$(playerctl -l | grep -v 'brave')
+player=$(playerctl -l | grep -v 'brave\|chromium')
 retVal=$?
 if [ $retVal -eq 1 ]; then
   exit 1
