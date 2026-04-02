@@ -93,4 +93,9 @@ return {
       )
     end,
   },
+
+  {
+    "RRethy/base16-nvim",
+    config = function() require("matugen").setup() end,
+  },
 }

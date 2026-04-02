@@ -1,0 +1,8 @@
+{
+  "updateIntervalMinutes": 10,
+  "updateTerminalCommand": "kitty -e",
+  "currentIconName": "package",
+  "hideOnZero": false,
+  "customCmdGetNumUpdates": "checkupdates | wc -l",
+  "customCmdDoSystemUpdate": "paru -Suy"
+}
