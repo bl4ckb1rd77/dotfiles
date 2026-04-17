@@ -1,0 +1,61 @@
+{
+  "todos": [
+    {
+      "id": 1776397963784,
+      "text": "Hotelrechnung",
+      "completed": false,
+      "createdAt": "2026-04-17T03:52:43.784Z",
+      "pageId": 0,
+      "priority": "high",
+      "details": ""
+    },
+    {
+      "id": 1776397954792,
+      "text": "AZN Eintragen",
+      "completed": false,
+      "createdAt": "2026-04-17T03:52:34.792Z",
+      "pageId": 0,
+      "priority": "high",
+      "details": ""
+    },
+    {
+      "id": 1776055624465,
+      "text": "Sopra Passwort Ändern - VPN Required",
+      "completed": false,
+      "createdAt": "2026-04-13T04:47:04.465Z",
+      "pageId": 0,
+      "priority": "high",
+      "details": ""
+    },
+    {
+      "id": 1776055553414,
+      "text": "Schreiber Anrufen wegen Oviva",
+      "completed": false,
+      "createdAt": "2026-04-13T04:45:53.414Z",
+      "pageId": 0,
+      "priority": "high",
+      "details": ""
+    }
+  ],
+  "pages": [
+    {
+      "id": 0,
+      "name": "General"
+    }
+  ],
+  "current_page_id": 0,
+  "count": 4,
+  "completedCount": 0,
+  "showCompleted": true,
+  "showBackground": false,
+  "isExpanded": false,
+  "useCustomColors": false,
+  "priorityColors": {
+    "high": "#f38ba8",
+    "medium": "#cba6f7",
+    "low": "#a3b4eb"
+  },
+  "exportPath": "~/Documents",
+  "exportFormat": "markdown",
+  "exportEmptySections": false
+}

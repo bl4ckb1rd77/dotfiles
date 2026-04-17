@@ -1,0 +1,13 @@
+#!/bin/bash
+findmnt -n -o ACTION --poll=mount,umount --mountpoint /home/ahoefer/steam2 | while read line; do
+  case $line in
+    mount)
+      ln -snf $HOME/.config/waybar/modules-disks-mounted.jsonc $HOME/.config/waybar/modules-disks.jsonc
+      pkill -SIGUSR2 waybar
+      ;;
+    umount)
+      ln -snf $HOME/.config/waybar/modules-disks-unmounted.jsonc $HOME/.config/waybar/modules-disks.jsonc
+      pkill -SIGUSR2 waybar
+      ;;
+  esac
+done

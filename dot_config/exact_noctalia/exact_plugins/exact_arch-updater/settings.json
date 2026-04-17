@@ -1,0 +1,17 @@
+{
+  "checkCmd": "(checkupdates; paru -Qua) 2>/dev/null",
+  "updateCmd": "pachub",
+  "flatpak": false,
+  "noctalia": true,
+  "toast": true,
+  "desktopTip": true,
+  "hideOnEmpty": false,
+  "refreshTimer": true,
+  "refreshInterval": 20,
+  "iconName": "package",
+  "useDistroLogo": false,
+  "customIconPath": "",
+  "boldText": true,
+  "enableColorization": true,
+  "iconColor": "secondary"
+}

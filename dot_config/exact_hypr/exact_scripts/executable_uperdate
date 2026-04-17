@@ -1,0 +1,3 @@
+#!/bin/bash
+currentdate=$(date '+%A, %d. %B')
+echo ${currentdate^^}

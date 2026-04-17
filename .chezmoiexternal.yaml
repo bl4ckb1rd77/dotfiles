@@ -1,0 +1,29 @@
+".config/nvim":
+  type: "git-repo"
+  url: "git@github.com:bl4ckb1rd77/astrovim.git"
+  refreshPeriod: "24h"
+".config/zsh/plugins/zsh-eza":
+  type: "git-repo"
+  url: "https://github.com/z-shell/zsh-eza.git"
+  refreshPeriod: "24h"
+".config/zsh/plugins/zsh-autosuggestions":
+  type: "git-repo"
+  url: "https://github.com/zsh-users/zsh-autosuggestions"
+  refreshPeriod: "24h"
+".config/zsh/plugins/zsh-syntax-highlighting":
+  type: "git-repo"
+  url: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+  refreshPeriod: "24h"
+".config/zsh/plugins/zsh-history-substring-search":
+  type: "git-repo"
+  url: "https://github.com/zsh-users/zsh-history-substring-search.git"
+  refreshPeriod: "24h"
+".config/zsh/plugins/zsh-auto-notify":
+  type: "git-repo"
+  url: "https://github.com/MichaelAquilina/zsh-auto-notify.git"
+  refreshPeriod: "24h"
+".config/zsh/plugins/ohmyzsh":
+  type: "git-repo"
+  url: "https://github.com/ohmyzsh/ohmyzsh.git"
+  refreshPeriod: "24h"
+

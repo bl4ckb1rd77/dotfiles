@@ -1,0 +1,324 @@
+{
+  "cheatsheetData": [
+    {
+      "title": "System",
+      "binds": [
+        {
+          "keys": "Super + Q",
+          "desc": "Kill Aktive Window"
+        },
+        {
+          "keys": "Super + F",
+          "desc": "Toggle Floating"
+        },
+        {
+          "keys": "Super + J",
+          "desc": "Toggle Split"
+        },
+        {
+          "keys": "Super + W",
+          "desc": "Wallpaper Switcher"
+        },
+        {
+          "keys": "Super + L",
+          "desc": "Lock Screen"
+        },
+        {
+          "keys": "Super + V",
+          "desc": "Clipboard History"
+        },
+        {
+          "keys": "Super + S",
+          "desc": "Screenshot Full"
+        },
+        {
+          "keys": "Super + Shift + S",
+          "desc": "Screenshot Window"
+        },
+        {
+          "keys": "Super + Ctrl + S",
+          "desc": "Screenshot Region"
+        },
+        {
+          "keys": "Super + P",
+          "desc": "Power Menu"
+        },
+        {
+          "keys": "Super + H",
+          "desc": "Show Cheat Sheet"
+        },
+        {
+          "keys": "Super + I",
+          "desc": "Sysinfo"
+        },
+        {
+          "keys": "Super + R",
+          "desc": "App Menu"
+        },
+        {
+          "keys": "Super + X",
+          "desc": "Settings"
+        },
+        {
+          "keys": "Super + C",
+          "desc": "Hypr Calculator"
+        },
+        {
+          "keys": "Super + O",
+          "desc": "Toggle Opaque"
+        }
+      ]
+    },
+    {
+      "title": "Application",
+      "binds": [
+        {
+          "keys": "Super + RETURN",
+          "desc": "Terminal"
+        },
+        {
+          "keys": "Super + Shift + RETURN",
+          "desc": "Floating Terminal"
+        },
+        {
+          "keys": "Alt + E",
+          "desc": "File Manager"
+        },
+        {
+          "keys": "Alt + M",
+          "desc": "Spotify"
+        },
+        {
+          "keys": "Alt + B",
+          "desc": "Brave Browser"
+        },
+        {
+          "keys": "Super + N",
+          "desc": "NeoVIM"
+        },
+        {
+          "keys": "Super + D",
+          "desc": "Discord"
+        }
+      ]
+    },
+    {
+      "title": "Media Player",
+      "binds": [
+        {
+          "keys": "Super + Ctrl + UP",
+          "desc": "Player Volume Up"
+        },
+        {
+          "keys": "Super + Ctrl + DOWN",
+          "desc": "Player Volume Down"
+        },
+        {
+          "keys": "Super + Ctrl + LEFT",
+          "desc": "Previous Track"
+        },
+        {
+          "keys": "Super + Ctrl + RIGHT",
+          "desc": "Next Track"
+        },
+        {
+          "keys": "Super + Ctrl + RETURN",
+          "desc": "Play Pause"
+        }
+      ]
+    },
+    {
+      "title": "Windows",
+      "binds": [
+        {
+          "keys": "Super + Alt + LEFT",
+          "desc": "move focus left"
+        },
+        {
+          "keys": "Super + Alt + RIGHT",
+          "desc": "move focus right"
+        },
+        {
+          "keys": "Super + Alt + UP",
+          "desc": "move focus up"
+        },
+        {
+          "keys": "Super + Alt + DOWN",
+          "desc": "move focus down"
+        },
+        {
+          "keys": "Super + F11",
+          "desc": "Toggle Fullscreen"
+        },
+        {
+          "keys": "Super + Shift + LEFT",
+          "desc": "move window left"
+        },
+        {
+          "keys": "Super + Shift + RIGHT",
+          "desc": "move window right"
+        },
+        {
+          "keys": "Super + Shift + UP",
+          "desc": "move window up"
+        },
+        {
+          "keys": "Super + Shift + DOWN",
+          "desc": "move window down"
+        },
+        {
+          "keys": "Alt + L",
+          "desc": "increase window width by 30"
+        },
+        {
+          "keys": "Alt + H",
+          "desc": "decrease window width by 30"
+        },
+        {
+          "keys": "Alt + J",
+          "desc": "decrease window high by 30"
+        },
+        {
+          "keys": "Alt + K",
+          "desc": "increase window high by 30"
+        },
+        {
+          "keys": "Super + Left Click",
+          "desc": "move window leftclick"
+        },
+        {
+          "keys": "Super + Right Click",
+          "desc": "resize window rightclick"
+        }
+      ]
+    },
+    {
+      "title": "Workspaces",
+      "binds": [
+        {
+          "keys": "Super + 1",
+          "desc": "switch to workspace 1"
+        },
+        {
+          "keys": "Super + 2",
+          "desc": "switch to workspace 2"
+        },
+        {
+          "keys": "Super + 3",
+          "desc": "switch to workspace 3"
+        },
+        {
+          "keys": "Super + 4",
+          "desc": "switch to workspace 4"
+        },
+        {
+          "keys": "Super + 5",
+          "desc": "switch to workspace 5"
+        },
+        {
+          "keys": "Super + 6",
+          "desc": "switch to workspace 6"
+        },
+        {
+          "keys": "Super + 7",
+          "desc": "switch to workspace 7"
+        },
+        {
+          "keys": "Super + 8",
+          "desc": "switch to workspace 8"
+        },
+        {
+          "keys": "Super + 9",
+          "desc": "switch to workspace 9"
+        },
+        {
+          "keys": "Alt + 1",
+          "desc": "move window to workspace 1"
+        },
+        {
+          "keys": "Alt + 2",
+          "desc": "move window to workspace 2"
+        },
+        {
+          "keys": "Alt + 3",
+          "desc": "move window to workspace 3"
+        },
+        {
+          "keys": "Alt + 4",
+          "desc": "move window to workspace 4"
+        },
+        {
+          "keys": "Alt + 5",
+          "desc": "move window to workspace 5"
+        },
+        {
+          "keys": "Alt + 6",
+          "desc": "move window to workspace 6"
+        },
+        {
+          "keys": "Alt + 7",
+          "desc": "move window to workspace 7"
+        },
+        {
+          "keys": "Alt + 8",
+          "desc": "move window to workspace 8"
+        },
+        {
+          "keys": "Alt + 9",
+          "desc": "move window to workspace 9"
+        },
+        {
+          "keys": "Super + LEFT",
+          "desc": "scroll workspaces backward"
+        },
+        {
+          "keys": "Super + RIGHT",
+          "desc": "scroll workspaces forward"
+        },
+        {
+          "keys": "Super + Scroll Down",
+          "desc": "scroll workspaces forward"
+        },
+        {
+          "keys": "Super + Scroll Up",
+          "desc": "scroll workspaces backward"
+        }
+      ]
+    },
+    {
+      "title": "Asus TUF Special Keys",
+      "binds": [
+        {
+          "keys": "Vol Up",
+          "desc": "Volume Up"
+        },
+        {
+          "keys": "Vol Down",
+          "desc": "Volume Down"
+        },
+        {
+          "keys": "Mic Mute",
+          "desc": "Toggle Mic Mute"
+        },
+        {
+          "keys": "Bright Down",
+          "desc": "Brightness Down"
+        },
+        {
+          "keys": "Bright Up",
+          "desc": "Brightness Up"
+        },
+        {
+          "keys": "XF86TOUCHPADTOGGLE",
+          "desc": "Toggle Touchpad"
+        }
+      ]
+    }
+  ],
+  "detectedCompositor": "hyprland",
+  "niriConfigPath": "~/.config/niri/config.kdl",
+  "hyprlandConfigPath": "~/.config/hypr/hyprland.conf",
+  "modKeyVariable": "$mainMod",
+  "windowHeight": 850,
+  "windowWidth": 1400
+}
