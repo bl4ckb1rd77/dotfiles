@@ -19,7 +19,7 @@ managed by chezmoi (https://www.chezmoi.io/)
 
 ---
 
-![Screenshot](screenshot-1.png "Screenshot Blank Dasktop)
+![Screenshot](screenshot-1.png "Screenshot Blank Dasktop")
 ![Screenshot](screenshot-2.png "Screenshot SysInfo")
 ![Screenshot](screenshot-3.png "Screenshot Power Menu")
 ![Screenshot](screenshot-4.png "Screenshot Hyprland")
