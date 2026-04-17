@@ -23,5 +23,5 @@ managed by chezmoi (https://www.chezmoi.io/)
 ![Screenshot](screenshot-2.png "Screenshot SysInfo")
 ![Screenshot](screenshot-3.png "Screenshot Power Menu")
 ![Screenshot](screenshot-4.png "Screenshot Hyprland")
-![Screenshot](screenshot-4.png "Screenshot Notification Center")
+![Screenshot](screenshot-5.png "Screenshot Notification Center")
 
