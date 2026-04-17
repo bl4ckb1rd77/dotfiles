@@ -1,5 +1,7 @@
 # dotfiles
 
+managed by chezmoi (https://www.chezmoi.io/)
+
 ---
 
 - **OS**: Arch Linux x86_64
