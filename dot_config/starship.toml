@@ -3,6 +3,7 @@
 format = """
  \ 
 $username\
+$hostname\
 $directory\
 $git_branch$git_status\
 $java$lua$python\
@@ -47,14 +48,14 @@ symbol = ' '
 [username]
 style_user = "bg:blue fg:base"
 style_root = "bg:red fg:base"
-format = '[ $user ]($style)'
+format = '[  $user ]($style)'
 disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-style = "fg:base"
-format = '[ . $hostname ]($style)'
+style = "bg:green fg:base"
+format = '[  $hostname ]($style)'
 trim_at = ""
 disabled = false
 
