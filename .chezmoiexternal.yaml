@@ -26,4 +26,7 @@
   type: "git-repo"
   url: "https://github.com/ohmyzsh/ohmyzsh.git"
   refreshPeriod: "24h"
-
+"Bilder/wallpapers":
+  type: "git-repo"
+  url: "git@github.com:bl4ckb1rd77/wallpapers.git"
+  refreshPeriod: "24h"

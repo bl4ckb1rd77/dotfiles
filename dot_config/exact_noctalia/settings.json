@@ -50,7 +50,7 @@
         "density": "comfortable",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "fontScale": 1,
+        "fontScale": 1.1099999999999999,
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
@@ -146,12 +146,6 @@
                     "showText": true,
                     "textColor": "none",
                     "useFixedWidth": false
-                }
-            ],
-            "right": [
-                {
-                    "iconColor": "secondary",
-                    "id": "WallpaperSelector"
                 },
                 {
                     "defaultSettings": {
@@ -180,6 +174,12 @@
                         "useCustomColors": false
                     },
                     "id": "plugin:todo"
+                }
+            ],
+            "right": [
+                {
+                    "iconColor": "secondary",
+                    "id": "WallpaperSelector"
                 },
                 {
                     "compactMode": false,
@@ -248,6 +248,7 @@
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
+                        "steam"
                     ]
                 },
                 {
@@ -419,6 +420,7 @@
         "pinnedApps": [
             "kitty",
             "brave-browser",
+            "teams-for-linux",
             "caja",
             "vesktop",
             "steam",
@@ -475,7 +477,7 @@
                 "Up"
             ]
         },
-        "language": "",
+        "language": "de",
         "lockOnSuspend": true,
         "lockScreenAnimations": true,
         "lockScreenBlur": 0.05,
@@ -733,6 +735,10 @@
             {
                 "enabled": true,
                 "id": "hyprland"
+            },
+            {
+                "enabled": true,
+                "id": "spicetify"
             }
         ],
         "enableUserTheming": true
@@ -752,7 +758,7 @@
         "translucentWidgets": false
     },
     "wallpaper": {
-        "automationEnabled": false,
+        "automationEnabled": true,
         "directory": "/home/ahoefer/Bilder/wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
@@ -768,12 +774,12 @@
         "overviewEnabled": false,
         "overviewTint": 0.6,
         "panelPosition": "follow_bar",
-        "randomIntervalSec": 600,
+        "randomIntervalSec": 1800,
         "setWallpaperOnAllMonitors": true,
         "showHiddenFiles": false,
-        "skipStartupTransition": false,
+        "skipStartupTransition": true,
         "solidColor": "#1a1a2e",
-        "sortOrder": "date_desc",
+        "sortOrder": "name",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": [

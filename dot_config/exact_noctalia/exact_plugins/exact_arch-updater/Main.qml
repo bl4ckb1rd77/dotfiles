@@ -10,15 +10,10 @@ Item {
     // Plugin API (injected by PluginService)
     property var pluginApi: null
 
-    // System
-    property string nameStr: ""
-    property string newVerStr: ""
-    property string oldVerStr: ""
-
-    // Flatpak
-    property string flatpakNameStr: ""
-    property string flatpakNewVerStr: ""
-    property string flatpakOldVerStr: ""
+    // Strings
+    property string systemStr: ""
+    property string aurStr: ""
+    property string flatpakStr: ""
 
     // Structured update data (used by Panel)
     property var updates: []
@@ -26,20 +21,16 @@ Item {
     // State
     property bool refreshing: false
 
-    // Counts
-    property int updateCount: 0
-    property int flatpakCount: 0
-
     // Noctalia updates
-    property variant noctaliaNames: ["noctalia-qs", "noctalia-shell"]
+    property var noctaliaNames: ["noctalia-qs", "noctalia-shell"]
     property bool noctaliaUpdate: false
 
-    function checkNoctalia() {
-        if (noctaliaNames.some(name => root.nameStr.includes(name)) && (pluginApi.pluginSettings.noctalia ?? pluginApi.manifest.metadata.defaultSettings.noctalia ?? true)) {
+    function checkNoctalia(string) {
+        if (noctaliaNames.some(name => string.includes(name)) && (pluginApi.pluginSettings.noctalia ?? pluginApi.manifest.metadata.defaultSettings.noctalia ?? true)) {
             root.noctaliaUpdate = true
-            Logger.d("Update Widget", "Noctalia updates found")
+            Logger.d("Arch Updater", "Noctalia updates found")
         } else {
-            Logger.d("Update Widget", "No Noctalia updates found")
+            Logger.d("Arch Updater", "No Noctalia updates found")
         }
     }
 
@@ -47,30 +38,98 @@ Item {
         refresh()
     }
 
+    Process {
+        id: checkRepo
+        
+        property string _output: ""
+        property var _callback: null
+
+        stdout: SplitParser {
+            onRead: data => checkRepo._output += data + "\n"
+        }
+
+        onExited: {
+            if (_callback) _callback(_output)
+            _output = ""
+            _callback = null
+        }
+
+        function run(cmd, callback) {
+            _output = ""
+            _callback = callback
+            command = cmd
+            running = true
+        }
+    }
+
+    function openURL(source, id) {
+        // Opens the page for the package
+        switch (source) {
+            case "system":
+                checkRepo.run(["sh", "-c", "pacman -Qi " + id + " | awk 'FNR <= 1 {print $4}'"], output => {
+                    var repo = output
+                    switch (repo) {
+                        case "cachyos-znver4":
+                            var url = "https://packages.cachyos.org/package/cachyos-znver4/x86_64_v4/" + id
+                            break
+                        case "cachyos-extra-znver4":
+                            var url = "https://packages.cachyos.org/package/cachyos-extra-znver4/x86_64_v4/" + id
+                            break
+                        case "cachyos-core-znver4":
+                            var url = "https://packages.cachyos.org/package/cachyos-core-znver4/x86_64_v4/" + id
+                            break
+                        case "extra":
+                            var url = "https://archlinux.org/packages/extra/x86_64/" + id
+                            break
+                        case "multilib":
+                            var url = "https://archlinux.org/packages/multilib/x86_64/" + id
+                            break
+                        default:
+                            var url = "https://archlinux.org/packages/core/x86_64/" + id
+                            break
+                    }
+                    Qt.openUrlExternally(url)
+                })
+                break
+            case "aur":
+                Qt.openUrlExternally("https://aur.archlinux.org/packages/" + id)
+                break
+            case "flatpak":
+                Qt.openUrlExternally("https://flathub.org/en/apps/" + id)
+                break
+            default:
+                Logger.i("Arch Updater", "Unkown source: " + source)
+                ToastService.showNotice("Unkown source: " + source)
+                break
+        }
+    }
+
+    function copy(text) {
+        // Copy the text and send a toast
+        Quickshell.execDetached(["sh", "-c", "wl-copy '" + text + "'"])
+        ToastService.showNotice('Copied "' + text + '"')
+        Logger.d("Arch Updater", "Copied " + text)
+    }
+
     function refresh() {
-        Logger.i("Update Widget", "Refreshing updates...")
+        Logger.i("Arch Updater", "Refreshing updates...")
         if (pluginApi.pluginSettings.toast ?? pluginApi.manifest.metadata.defaultSettings.toast ?? true) {
             ToastService.showNotice("Refreshing updates...")
         }
-        root.nameStr = ""
-        root.newVerStr = ""
-        root.oldVerStr = ""
-        root.flatpakNameStr = ""
-        root.flatpakNewVerStr = ""
-        root.flatpakOldVerStr = ""
+        root.systemStr = ""
+        root.aurStr = ""
+        root.flatpakStr = ""
         root.updates = []
-        root.updateCount = 0
-        root.flatpakCount = 0
         root.noctaliaUpdate = false
         root.refreshing = true
 
         // Use configurable check command (output format: "name oldver -> newver")
-        getUpdates.command = ["sh", "-c", pluginApi.pluginSettings.checkCmd || pluginApi.manifest.metadata.defaultSettings.checkCmd]
-        getUpdates.running = true
+        getSystemUpdates.command = ["sh", "-c", pluginApi.pluginSettings.systemCmd || pluginApi.manifest.metadata.defaultSettings.systemCmd]
+        getSystemUpdates.running = true
     }
 
     function update() {
-        Logger.i("Update Widget", "Updating...")
+        Logger.i("Arch Updater", "Updating...")
         runUpdate.command = ["sh", "-c", pluginApi.pluginSettings.updateCmd || pluginApi.manifest.metadata.defaultSettings.updateCmd]
         runUpdate.running = true
     }
@@ -78,10 +137,10 @@ Item {
     // Single process for all system update data
     // Expected output format: "name oldver -> newver" per line
     Process {
-        id: getUpdates
+        id: getSystemUpdates
         onExited: (exitCode, exitStatus) => {
             if (exitCode !== 0) {
-                Logger.w("Update Widget", "Check command exited with code " + exitCode)
+                Logger.w("Arch Updater", "Check command exited with code " + exitCode)
                 root.refreshing = false
             }
         }
@@ -89,7 +148,53 @@ Item {
             onStreamFinished: {
                 var output = this.text.slice(0, -1)
                 if (!output) {
-                    Logger.d("Update Widget", "No system updates found")
+                    Logger.d("Arch Updater", "No system updates found")
+                    getAURUpdates.command = ["sh", "-c", pluginApi.pluginSettings.aurCmd || pluginApi.manifest.metadata.defaultSettings.aurCmd]
+                    getAURUpdates.running = true
+                    return
+                }
+
+                var lines = output.split("\n")
+                var names = []
+                var rows = []
+
+                for (var i = 0; i < lines.length; i++) {
+                    var parts = lines[i].split(/\s+/)
+                    // Expected format: name oldver -> newver
+                    if (parts.length >= 4) {
+                        names.push(parts[0])
+                        rows.push({id: parts[0], name: parts[0], oldVer: parts[1], newVer: parts[3], source: "system" })
+                    }
+                }
+
+                root.systemStr = names.join("\n")
+                root.updates = rows
+
+                Logger.d("Arch Updater", "System update count: " + names.length)
+                Logger.d("Arch Updater", "System updates: " + names)
+
+                // Chain: start AUR check after system updates are done
+                getAURUpdates.command = ["sh", "-c", pluginApi.pluginSettings.aurCmd || pluginApi.manifest.metadata.defaultSettings.aurCmd]
+                getAURUpdates.running = true
+            }
+        }
+    }
+
+    // Single process for all AUR update data
+    // Expected output format: "name oldver -> newver" per line
+    Process {
+        id: getAURUpdates
+        onExited: (exitCode, exitStatus) => {
+            if (exitCode !== 0) {
+                Logger.w("Arch Updater", "Check command exited with code " + exitCode)
+                root.refreshing = false
+            }
+        }
+        stdout: StdioCollector {
+            onStreamFinished: {
+                var output = this.text.slice(0, -1)
+                if (!output) {
+                    Logger.d("Arch Updater", "No AUR updates found")
                     // Still start flatpak check if enabled
                     if (pluginApi.pluginSettings.flatpak ?? pluginApi.manifest.metadata.defaultSettings.flatpak) {
                         getFlatpakUpdates.running = true
@@ -101,29 +206,24 @@ Item {
 
                 var lines = output.split("\n")
                 var names = []
-                var oldVers = []
-                var newVers = []
-                var rows = []
+                var rows = [...root.updates]
 
                 for (var i = 0; i < lines.length; i++) {
                     var parts = lines[i].split(/\s+/)
                     // Expected format: name oldver -> newver
                     if (parts.length >= 4) {
                         names.push(parts[0])
-                        oldVers.push(parts[1])
-                        newVers.push(parts[3])
-                        rows.push({ name: parts[0], oldVer: parts[1], newVer: parts[3], isFlatpak: false })
+                        rows.push({id: parts[0], name: parts[0], oldVer: parts[1], newVer: parts[3], source: "aur" })
                     }
                 }
 
-                root.nameStr = names.join("\n")
-                root.oldVerStr = oldVers.join("\n")
-                root.newVerStr = newVers.join("\n")
-                root.updateCount = names.length
+                root.aurStr = names.join("\n")
                 root.updates = rows
 
-                Logger.d("Update Widget", "System updates: " + root.updateCount)
-                checkNoctalia()
+                Logger.d("Arch Updater", "AUR update count: " + names.length)
+                Logger.d("Arch Updater", "AUR updates: " + names)
+
+                checkNoctalia(systemStr + aurStr)
 
                 // Chain: start flatpak check after system updates are done
                 if (pluginApi.pluginSettings.flatpak ?? pluginApi.manifest.metadata.defaultSettings.flatpak) {
@@ -143,7 +243,7 @@ Item {
         command: ["sh", "-c", "join -t'\t' -j1 <(flatpak remote-ls --updates --columns=application,name,version 2>/dev/null | sort -t'\t' -k1,1) <(flatpak list --columns=application,version 2>/dev/null | sort -t'\t' -k1,1)"]
         onExited: (exitCode, exitStatus) => {
             if (exitCode !== 0) {
-                Logger.w("Update Widget", "Flatpak check exited with code " + exitCode)
+                Logger.w("Arch Updater", "Flatpak check exited with code " + exitCode)
                 root.refreshing = false
             }
         }
@@ -151,38 +251,29 @@ Item {
             onStreamFinished: {
                 var output = this.text.slice(0, -1)
                 if (!output) {
-                    Logger.d("Update Widget", "No flatpak updates found")
+                    Logger.d("Arch Updater", "No flatpak updates found")
                     root.refreshing = false
                     return
                 }
 
                 var lines = output.split("\n")
                 var names = []
-                var oldVers = []
-                var newVers = []
-                var current = root.updates.slice()
+                var rows = [...root.updates]
 
                 for (var i = 0; i < lines.length; i++) {
                     var parts = lines[i].split(/\t+/)
-                    // Expected: application\tname\tnewver\toldver
+                    // Expected format: application\tname\tnewver\toldver
                     if (parts.length >= 4) {
-                        var name = parts[1].trim()
-                        var newVer = parts[2].trim()
-                        var oldVer = parts[3].trim()
-                        names.push(name)
-                        newVers.push(newVer)
-                        oldVers.push(oldVer)
-                        current.push({ name: name, oldVer: oldVer, newVer: newVer, isFlatpak: true })
+                        names.push(parts[1])
+                        rows.push({id: parts[0], name: parts[1], oldVer: parts[2], newVer: parts[3], source: "flatpak" })
                     }
                 }
 
-                root.flatpakNameStr = names.join("\n")
-                root.flatpakNewVerStr = newVers.join("\n")
-                root.flatpakOldVerStr = oldVers.join("\n")
-                root.flatpakCount = names.length
-                root.updates = current
+                root.flatpakStr = names.join("\n")
+                root.updates = rows
 
-                Logger.d("Update Widget", "Flatpak updates: " + root.flatpakCount)
+                Logger.d("Arch Updater", "Flatpak update count: " + names.length)
+                Logger.d("Arch Updater", "Flatpak updates: " + names)
                 root.refreshing = false
             }
         }
@@ -202,7 +293,7 @@ Item {
         running: true
         repeat: true
         onTriggered: {
-            Logger.d("Update Widget", "Timer refresh...")
+            Logger.d("Arch Updater", "Timer refresh...")
             refresh()
         }
     }
@@ -211,12 +302,12 @@ Item {
         target: "plugin:arch-updater"
 
         function refresh() {
-            Logger.d("Update Widget", "Refreshing through IPC...")
+            Logger.d("Arch Updater", "Refreshing through IPC...")
             root.pluginApi.mainInstance.refresh()
         }
 
         function update() {
-            Logger.d("Update Widget", "Updating through IPC...")
+            Logger.d("Arch Updater", "Updating through IPC...")
             root.pluginApi.mainInstance.update()
         }
     }

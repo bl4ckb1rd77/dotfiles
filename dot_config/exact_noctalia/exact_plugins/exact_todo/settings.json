@@ -1,37 +1,46 @@
 {
   "todos": [
     {
-      "id": 1776397963784,
-      "text": "Hotelrechnung",
+      "id": 1777012511226,
+      "text": "Elster Zugänge machen",
       "completed": false,
-      "createdAt": "2026-04-17T03:52:43.784Z",
+      "createdAt": "2026-04-24T06:35:11.226Z",
       "pageId": 0,
       "priority": "high",
       "details": ""
     },
     {
-      "id": 1776397954792,
-      "text": "AZN Eintragen",
+      "id": 1776755796409,
+      "text": "Prod Ticket für BDP OpenSearch 3.3.0",
       "completed": false,
-      "createdAt": "2026-04-17T03:52:34.792Z",
-      "pageId": 0,
-      "priority": "high",
-      "details": ""
-    },
-    {
-      "id": 1776055624465,
-      "text": "Sopra Passwort Ändern - VPN Required",
-      "completed": false,
-      "createdAt": "2026-04-13T04:47:04.465Z",
+      "createdAt": "2026-04-21T07:16:36.409Z",
       "pageId": 0,
       "priority": "high",
       "details": ""
     },
     {
       "id": 1776055553414,
-      "text": "Schreiber Anrufen wegen Oviva",
+      "text": "Schreiber e-mail schreiben wegen Oviva",
       "completed": false,
       "createdAt": "2026-04-13T04:45:53.414Z",
+      "pageId": 0,
+      "priority": "high",
+      "details": ""
+    },
+    {
+      "id": 1777011464279,
+      "text": "Urlaub beantragen und nicht nur Planen",
+      "completed": true,
+      "createdAt": "2026-04-24T06:17:44.279Z",
+      "pageId": 0,
+      "priority": "high",
+      "details": ""
+    },
+    {
+      "id": 1777281397732,
+      "text": "Jonas Axer BDP Prod 3.3.0",
+      "completed": true,
+      "createdAt": "2026-04-27T09:16:37.732Z",
       "pageId": 0,
       "priority": "high",
       "details": ""
@@ -44,8 +53,8 @@
     }
   ],
   "current_page_id": 0,
-  "count": 4,
-  "completedCount": 0,
+  "count": 5,
+  "completedCount": 2,
   "showCompleted": true,
   "showBackground": false,
   "isExpanded": false,

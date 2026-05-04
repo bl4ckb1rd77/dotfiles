@@ -8,8 +8,7 @@ fi
 playerid=""
 
 if [ $# -gt 0 ]; then
-
-  playerid=$(wpctl status | grep -i $player | grep -v 'ahoefer\|active' | awk '{print $1}')
+  playerid=$(wpctl status | grep -i audio-src | awk '{ print$1 }' | tr -d '.')
   case $1 in
   "up")
     wpctl set-volume ${playerid} 0.05+
