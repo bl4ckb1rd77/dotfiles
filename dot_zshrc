@@ -89,5 +89,8 @@ eval "$(starship init zsh)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# init zoxide
+eval "$(zoxide init zsh --cmd cd)"
+
 # chezmoi completion
 eval "$(chezmoi completion zsh)"

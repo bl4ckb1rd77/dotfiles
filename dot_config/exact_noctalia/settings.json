@@ -88,6 +88,10 @@
                     "useCustomFont": false
                 },
                 {
+                    "iconColor": "secondary",
+                    "id": "WallpaperSelector"
+                },
+                {
                     "compactMode": false,
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
@@ -178,8 +182,7 @@
             ],
             "right": [
                 {
-                    "iconColor": "secondary",
-                    "id": "WallpaperSelector"
+                    "id": "plugin:clipboard"
                 },
                 {
                     "compactMode": false,
@@ -248,7 +251,8 @@
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
-                        "steam"
+                        "steam",
+                        "Microsoft Teams"
                     ]
                 },
                 {
