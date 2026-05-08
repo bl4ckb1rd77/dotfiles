@@ -182,9 +182,6 @@
             ],
             "right": [
                 {
-                    "id": "plugin:clipboard"
-                },
-                {
                     "compactMode": false,
                     "diskPath": "/",
                     "iconColor": "primary",
@@ -243,6 +240,9 @@
                     "textColor": "none"
                 },
                 {
+                    "id": "plugin:clipboard"
+                },
+                {
                     "blacklist": [
                     ],
                     "chevronColor": "secondary",
@@ -252,7 +252,8 @@
                     "id": "Tray",
                     "pinned": [
                         "steam",
-                        "Microsoft Teams"
+                        "Microsoft Teams",
+                        "WhatsDesk"
                     ]
                 },
                 {

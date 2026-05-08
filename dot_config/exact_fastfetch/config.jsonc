@@ -16,19 +16,31 @@
       "format": "\u001b[11D{#34}           ╭───────────╮",
     },
     {
+      "type": "os",
+      "key": "│   OS     │", // Just get your distro's logo off nerdfonts.com
+    },
+    {
       "type": "title",
       "key": "│   User   │",
       // "format": "bl4ckb1rd 󰚌 HP_ProBook",
       "format": "{1}@{2}",
     },
     {
-      "type": "os",
-      "key": "│   OS     │", // Just get your distro's logo off nerdfonts.com
-    },
-    {
       "type": "kernel",
       "key": "│   Kernel │",
       "format": "{1} {2}",
+    },
+    {
+      "type": "command",
+      "key": "│   Hybrid │",
+      "text": "pacman -Qi glibc | grep -E 'Packager|Repository' | sed 's/.*: //'",
+      "format": "Hybrid ({1})"
+    },
+    {
+      "type": "command",
+      "key": "│   Build  │",
+      "text": "/lib/ld-linux-x86-64.so.2 --help | grep -q 'v3 (supported, searched)' && echo 'x86-64-v3 Optimized (CachyOS)' || echo 'Standard Arch'",
+      "keyColor": "34" // Blau für den G14-Vibe
     },
     {
       "type": "host",
