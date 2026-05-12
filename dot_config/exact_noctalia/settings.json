@@ -42,15 +42,15 @@
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0.93,
+        "backgroundOpacity": 1,
         "barType": "framed",
         "capsuleColorKey": "none",
-        "capsuleOpacity": 1,
-        "contentPadding": 2,
+        "capsuleOpacity": 0.8,
+        "contentPadding": 5,
         "density": "comfortable",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "fontScale": 1.1099999999999999,
+        "fontScale": 1,
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
@@ -71,11 +71,11 @@
         "rightClickFollowMouse": true,
         "screenOverrides": [
         ],
-        "showCapsule": false,
+        "showCapsule": true,
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
-        "useSeparateOpacity": false,
-        "widgetSpacing": 2,
+        "useSeparateOpacity": true,
+        "widgetSpacing": 5,
         "widgets": {
             "center": [
                 {

@@ -35,6 +35,8 @@ hl.bind(mainMod .. " + ALT + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + ALT + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + ALT + down", hl.dsp.focus({ direction = "down" }))
 
+hl.bind(mainMod .. " + F11", hl.dsp.window.fullscreen({ fullscreen, toggle }))
+
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
