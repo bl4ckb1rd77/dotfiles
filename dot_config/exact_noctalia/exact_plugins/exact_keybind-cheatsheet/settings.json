@@ -316,9 +316,11 @@
     }
   ],
   "detectedCompositor": "hyprland",
-  "niriConfigPath": "~/.config/niri/config.kdl",
-  "hyprlandConfigPath": "~/.config/hypr/hyprland.conf",
-  "modKeyVariable": "$mainMod",
+  "windowWidth": 1400,
   "windowHeight": 850,
-  "windowWidth": 1400
+  "autoHeight": true,
+  "columnCount": 3,
+  "modKeyVariable": "$mainMod",
+  "hyprlandConfigPath": "~/.config/hypr/modules/keybinds.conf",
+  "niriConfigPath": "~/.config/niri/config.kdl"
 }

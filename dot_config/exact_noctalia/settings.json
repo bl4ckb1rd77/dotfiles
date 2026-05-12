@@ -110,11 +110,11 @@
             ],
             "left": [
                 {
-                    "colorizeSystemIcon": "secondary",
+                    "colorizeSystemIcon": "tertiary",
                     "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": true,
-                    "icon": "rocket",
+                    "icon": "hyprland",
                     "iconColor": "none",
                     "id": "Launcher",
                     "useDistroLogo": false
@@ -240,6 +240,11 @@
                     "textColor": "none"
                 },
                 {
+                    "defaultSettings": {
+                        "density": "comfortable",
+                        "maxHistorySize": 100,
+                        "showImagePreviews": true
+                    },
                     "id": "plugin:clipboard"
                 },
                 {
@@ -295,9 +300,9 @@
                     "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": true,
-                    "icon": "noctalia",
+                    "icon": "settings-filled",
                     "id": "ControlCenter",
-                    "useDistroLogo": true
+                    "useDistroLogo": false
                 }
             ]
         }
@@ -739,11 +744,11 @@
             },
             {
                 "enabled": true,
-                "id": "hyprland"
+                "id": "spicetify"
             },
             {
                 "enabled": true,
-                "id": "spicetify"
+                "id": "hyprland"
             }
         ],
         "enableUserTheming": true
@@ -754,7 +759,7 @@
         "fontDefaultScale": 1,
         "fontFixed": "Hack Nerd Font Mono",
         "fontFixedScale": 1,
-        "panelBackgroundOpacity": 0.85,
+        "panelBackgroundOpacity": 0.9,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
