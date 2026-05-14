@@ -171,7 +171,8 @@ Item {
 
     var filePath;
     if (CompositorService.isHyprland) {
-      filePath = pluginApi?.pluginSettings?.hyprlandConfigPath || (homeDir + "/.config/hypr/hyprland.conf");
+//      filePath = pluginApi?.pluginSettings?.hyprlandConfigPath || (homeDir + "/.config/hypr/hyprland.conf");
+      filePath = pluginApi?.pluginSettings?.hyprlandConfigPath || (homeDir + "/.config/hypr/hyprland.lua");
       filePath = filePath.replace(/^~/, homeDir);
     } else if (CompositorService.isNiri) {
       filePath = pluginApi?.pluginSettings?.niriConfigPath || (homeDir + "/.config/niri/config.kdl");
@@ -581,70 +582,139 @@ Item {
     }
   }
 
-  // ========== HYPRLAND PARSER ==========
+// ========== HYPRLAND PARSER (LUA VERSION) ==========
   function parseHyprlandConfig(text) {
     var lines = text.split('\n');
     var categories = [];
     var currentCategory = null;
-    var hasCategories = false; // Track if we found any category headers
-
-    var modVar = pluginApi?.pluginSettings?.modKeyVariable || "$mod";
-    var modVarUpper = modVar.toUpperCase();
+    var hasCategories = false;
 
     for (var i = 0; i < lines.length; i++) {
       var line = lines[i].trim();
 
-      // Category header: # 1. Category Name
-      if (line.startsWith("#") && line.match(/#\s*\d+\./)) {
-        hasCategories = true; // Found at least one category
+      // 1. Kategorien parsen: -- 1 Kategorie Name
+      // Sucht nach -- gefolgt von einer Zahl und dem Titel
+      var catMatch = line.match(/^--\s*(\d+)\s+(.*)$/);
+      if (catMatch) {
+        hasCategories = true;
         if (currentCategory) {
           categories.push(currentCategory);
         }
-        var title = line.replace(/#\s*\d+\.\s*/, "").trim();
-        currentCategory = { "title": title, "binds": [] };
+        currentCategory = { "title": catMatch[2].trim(), "binds": [] };
+        continue;
       }
-      // Keybind: bind = $mod, T, exec, cmd #"description"
-      else if (line.includes("bind") && line.includes('#"')) {
-        // If no categories found yet, create default category
+
+      // 2. Bindings parsen: hl.bind(MOD, "KEY", ...) -- Beschreibung
+      // Wir suchen nach hl.bind und extrahieren den Inhalt der Klammer sowie den Kommentar
+      if (line.includes("hl.bind") && line.includes("--")) {
+        // Falls noch keine Kategorie gefunden wurde, Standard-Kategorie erstellen
         if (!currentCategory && !hasCategories) {
-          var defaultCategoryName = pluginApi?.tr("default-category");
+          var defaultCategoryName = pluginApi?.tr("default-category") || "General";
           currentCategory = { "title": defaultCategoryName, "binds": [] };
         }
 
         if (currentCategory) {
-          var descMatch = line.match(/#"(.*?)"$/);
-          var description = descMatch ? descMatch[1] : "No description";
+          // Extrahiere Beschreibung (alles nach dem --)
+          var descParts = line.split('--');
+          var description = descParts.length > 1 ? descParts[1].trim() : "No description";
 
-          var parts = line.split(',');
-          if (parts.length >= 2) {
-            var modPart = parts[0].split('=')[1].trim().toUpperCase();
-            var rawKey = parts[1].trim().toUpperCase();
-            var key = formatSpecialKey(rawKey);
+          // Extrahiere Argumente innerhalb von hl.bind(...)
+          var contentMatch = line.match(/hl\.bind\((.*)\)/);
+          if (contentMatch) {
+            var args = contentMatch[1].split(',');
+            if (args.length >= 2) {
+              var modPart = args[0].trim().replace(/['"]/g, ""); // Entfernt Anführungszeichen falls vorhanden
+              var keyPart = args[1].trim().replace(/['"]/g, "");
 
-            // Build modifiers list properly
-            var mods = [];
-            if (modPart.includes(modVarUpper) || modPart.includes("SUPER")) mods.push("Super");
+              // Formatierung der Tasten (Nutzt deine vorhandene formatSpecialKey Funktion)
+              var key = formatSpecialKey(keyPart.toUpperCase());
+              
+              // Einfache Mod-Anzeige (kann je nach deinen Lua-Variablen angepasst werden)
+              var fullKey = modPart + " + " + key;
 
-            if (modPart.includes("SHIFT")) mods.push("Shift");
-            if (modPart.includes("CTRL") || modPart.includes("CONTROL")) mods.push("Ctrl");
-            if (modPart.includes("ALT")) mods.push("Alt");
-
-            // Build full key string
-            var fullKey;
-            if (mods.length > 0) {
-              fullKey = mods.join(" + ") + " + " + key;
-            } else {
-              fullKey = key;
+              currentCategory.binds.push({
+                "keys": fullKey,
+                "desc": description
+              });
             }
-
-            currentCategory.binds.push({
-              "keys": fullKey,
-              "desc": description
-            });
           }
         }
       }
     }
+
+    if (currentCategory) {
+      categories.push(currentCategory);
+    }
+
+    saveToDb(categories);
+    isCurrentlyParsing = false;
+    clearParsingData();
+  }
+
+//  // ========== HYPRLAND PARSER ==========
+//  function parseHyprlandConfig(text) {
+//    var lines = text.split('\n');
+//    var categories = [];
+//    var currentCategory = null;
+//    var hasCategories = false; // Track if we found any category headers
+//
+//    var modVar = pluginApi?.pluginSettings?.modKeyVariable || "$mod";
+//    var modVarUpper = modVar.toUpperCase();
+//
+//    for (var i = 0; i < lines.length; i++) {
+//      var line = lines[i].trim();
+//
+//      // Category header: # 1. Category Name
+//      if (line.startsWith("#") && line.match(/#\s*\d+\./)) {
+//        hasCategories = true; // Found at least one category
+//        if (currentCategory) {
+//          categories.push(currentCategory);
+//        }
+//        var title = line.replace(/#\s*\d+\.\s*/, "").trim();
+//        currentCategory = { "title": title, "binds": [] };
+//      }
+//      // Keybind: bind = $mod, T, exec, cmd #"description"
+//      else if (line.includes("bind") && line.includes('#"')) {
+//        // If no categories found yet, create default category
+//        if (!currentCategory && !hasCategories) {
+//          var defaultCategoryName = pluginApi?.tr("default-category");
+//          currentCategory = { "title": defaultCategoryName, "binds": [] };
+//        }
+//
+//        if (currentCategory) {
+//          var descMatch = line.match(/#"(.*?)"$/);
+//          var description = descMatch ? descMatch[1] : "No description";
+//
+//          var parts = line.split(',');
+//          if (parts.length >= 2) {
+//            var modPart = parts[0].split('=')[1].trim().toUpperCase();
+//            var rawKey = parts[1].trim().toUpperCase();
+//            var key = formatSpecialKey(rawKey);
+//
+//            // Build modifiers list properly
+//            var mods = [];
+//            if (modPart.includes(modVarUpper) || modPart.includes("SUPER")) mods.push("Super");
+//
+//            if (modPart.includes("SHIFT")) mods.push("Shift");
+//            if (modPart.includes("CTRL") || modPart.includes("CONTROL")) mods.push("Ctrl");
+//            if (modPart.includes("ALT")) mods.push("Alt");
+//
+//            // Build full key string
+//            var fullKey;
+//            if (mods.length > 0) {
+//              fullKey = mods.join(" + ") + " + " + key;
+//            } else {
+//              fullKey = key;
+//            }
+//
+//            currentCategory.binds.push({
+//              "keys": fullKey,
+//              "desc": description
+//            });
+//          }
+//        }
+//      }
+//    }
 
     if (currentCategory) {
       categories.push(currentCategory);

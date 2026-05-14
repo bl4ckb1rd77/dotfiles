@@ -8,24 +8,6 @@
       "pageId": 0,
       "priority": "high",
       "details": ""
-    },
-    {
-      "id": 1776755796409,
-      "text": "Prod Ticket für BDP OpenSearch 3.3.0",
-      "completed": false,
-      "createdAt": "2026-04-21T07:16:36.409Z",
-      "pageId": 0,
-      "priority": "high",
-      "details": ""
-    },
-    {
-      "id": 1776055553414,
-      "text": "Schreiber e-mail schreiben wegen Oviva",
-      "completed": false,
-      "createdAt": "2026-04-13T04:45:53.414Z",
-      "pageId": 0,
-      "priority": "high",
-      "details": ""
     }
   ],
   "pages": [
@@ -35,7 +17,7 @@
     }
   ],
   "current_page_id": 0,
-  "count": 3,
+  "count": 1,
   "completedCount": 0,
   "showCompleted": true,
   "showBackground": false,

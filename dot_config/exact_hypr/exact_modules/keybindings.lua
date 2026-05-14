@@ -17,6 +17,7 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(ipc .. " wallpaper toggle"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. " lockScreen lock"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. " plugin:clipboard toggle"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(ipc .. " sessionMenu toggle"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(ipc .. " plugin:assistant-panel toggle"))
 hl.bind(mainMod .. " + I", hl.dsp.exec_raw(terminal .. " --title='sysinfo' -e ~/.config/hypr/scripts/sysinfo"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_raw(terminal .. " -e nvim"))
 hl.bind("switch:[Lid Switch]", hl.dsp.exec_cmd(ipc .. " lockScreen lock"))
@@ -35,7 +36,7 @@ hl.bind(mainMod .. " + ALT + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + ALT + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + ALT + down", hl.dsp.focus({ direction = "down" }))
 
-hl.bind(mainMod .. " + F11", hl.dsp.window.fullscreen({ fullscreen, toggle }))
+hl.bind(mainMod .. " + F11", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
