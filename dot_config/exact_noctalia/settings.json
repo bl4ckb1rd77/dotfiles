@@ -465,7 +465,8 @@
             "steam",
             "spotify",
             "whatsdesk",
-            "gimp"
+            "gimp",
+            "steam_app_440900"
         ],
         "pinnedStatic": true,
         "position": "bottom",

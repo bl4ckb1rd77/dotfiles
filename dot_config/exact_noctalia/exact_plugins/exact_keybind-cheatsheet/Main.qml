@@ -171,7 +171,6 @@ Item {
 
     var filePath;
     if (CompositorService.isHyprland) {
-//      filePath = pluginApi?.pluginSettings?.hyprlandConfigPath || (homeDir + "/.config/hypr/hyprland.conf");
       filePath = pluginApi?.pluginSettings?.hyprlandConfigPath || (homeDir + "/.config/hypr/hyprland.lua");
       filePath = filePath.replace(/^~/, homeDir);
     } else if (CompositorService.isNiri) {
@@ -582,58 +581,62 @@ Item {
     }
   }
 
-// ========== HYPRLAND PARSER (LUA VERSION) ==========
-  function parseHyprlandConfig(text) {
+// ========== HYPRLAND PARSER (LUA - FIX) ==========
+function parseHyprlandConfig(text) {
     var lines = text.split('\n');
     var categories = [];
     var currentCategory = null;
-    var hasCategories = false;
 
     for (var i = 0; i < lines.length; i++) {
       var line = lines[i].trim();
+      if (line === "") continue;
 
-      // 1. Kategorien parsen: -- 1 Kategorie Name
-      // Sucht nach -- gefolgt von einer Zahl und dem Titel
+      // 1. Kategorien parsen: -- 1 Applications
       var catMatch = line.match(/^--\s*(\d+)\s+(.*)$/);
       if (catMatch) {
-        hasCategories = true;
-        if (currentCategory) {
-          categories.push(currentCategory);
-        }
+        if (currentCategory) categories.push(currentCategory);
         currentCategory = { "title": catMatch[2].trim(), "binds": [] };
         continue;
       }
 
-      // 2. Bindings parsen: hl.bind(MOD, "KEY", ...) -- Beschreibung
-      // Wir suchen nach hl.bind und extrahieren den Inhalt der Klammer sowie den Kommentar
-      if (line.includes("hl.bind") && line.includes("--")) {
-        // Falls noch keine Kategorie gefunden wurde, Standard-Kategorie erstellen
-        if (!currentCategory && !hasCategories) {
-          var defaultCategoryName = pluginApi?.tr("default-category") || "General";
-          currentCategory = { "title": defaultCategoryName, "binds": [] };
-        }
+      // 2. Bindings parsen
+      var lastCommentIndex = line.lastIndexOf("--");
+      
+      // STRIKTE BEDINGUNG: Nur Zeilen mit hl.bind UND einem Kommentar am Ende
+      if (line.indexOf("hl.bind") !== -1 && lastCommentIndex !== -1) {
+        
+        // Beschreibung extrahieren (hinter dem letzten --)
+        var description = line.substring(lastCommentIndex + 2).trim();
+        if (description === "") continue;
 
-        if (currentCategory) {
-          // Extrahiere Beschreibung (alles nach dem --)
-          var descParts = line.split('--');
-          var description = descParts.length > 1 ? descParts[1].trim() : "No description";
+        // Code-Teil vor dem Kommentar (z.B. hl.bind(mainMod .. " + Q", hl.dsp...))
+        var codePart = line.substring(0, lastCommentIndex).trim();
 
-          // Extrahiere Argumente innerhalb von hl.bind(...)
-          var contentMatch = line.match(/hl\.bind\((.*)\)/);
-          if (contentMatch) {
-            var args = contentMatch[1].split(',');
-            if (args.length >= 2) {
-              var modPart = args[0].trim().replace(/['"]/g, ""); // Entfernt Anführungszeichen falls vorhanden
-              var keyPart = args[1].trim().replace(/['"]/g, "");
+        // Inhalt der hl.bind Klammern finden
+        var openParen = codePart.indexOf('(');
+        var closeParen = codePart.lastIndexOf(')');
 
-              // Formatierung der Tasten (Nutzt deine vorhandene formatSpecialKey Funktion)
-              var key = formatSpecialKey(keyPart.toUpperCase());
-              
-              // Einfache Mod-Anzeige (kann je nach deinen Lua-Variablen angepasst werden)
-              var fullKey = modPart + " + " + key;
+        if (openParen !== -1 && closeParen !== -1) {
+          var content = codePart.substring(openParen + 1, closeParen);
+          
+          // Wir splitten beim ERSTEN Komma, um den Keybind vom Dispatcher zu trennen
+          var commaIndex = content.indexOf(',');
+          if (commaIndex !== -1) {
+            var rawKeybind = content.substring(0, commaIndex).trim();
+            
+            // Lua-Bereinigung:
+            // 1. Entferne Anführungszeichen
+            // 2. Ersetze Verkettungspunkte " .. " durch Leerzeichen oder Plus
+            // 3. Entferne doppelte Plus-Zeichen
+            var cleanKeybind = rawKeybind
+                                .replace(/['"]/g, "")      // Anführungszeichen weg
+                                .replace(/\.\./g, "")      // Lua-Punkte weg
+                                .replace(/\s+/g, " ")      // Doppelte Leerzeichen weg
+                                .trim();
 
+            if (currentCategory) {
               currentCategory.binds.push({
-                "keys": fullKey,
+                "keys": cleanKeybind,
                 "desc": description
               });
             }
@@ -642,10 +645,7 @@ Item {
       }
     }
 
-    if (currentCategory) {
-      categories.push(currentCategory);
-    }
-
+    if (currentCategory) categories.push(currentCategory);
     saveToDb(categories);
     isCurrentlyParsing = false;
     clearParsingData();
@@ -715,15 +715,15 @@ Item {
 //        }
 //      }
 //    }
-
-    if (currentCategory) {
-      categories.push(currentCategory);
-    }
-
-    saveToDb(categories);
-    isCurrentlyParsing = false;
-    clearParsingData();
-  }
+//
+//    if (currentCategory) {
+//      categories.push(currentCategory);
+//    }
+//
+//    saveToDb(categories);
+//    isCurrentlyParsing = false;
+//    clearParsingData();
+//  }
 
   function formatSpecialKey(key) {
     var keyMap = {
