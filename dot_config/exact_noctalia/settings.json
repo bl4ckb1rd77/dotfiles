@@ -88,8 +88,34 @@
                     "useCustomFont": false
                 },
                 {
-                    "iconColor": "secondary",
-                    "id": "WallpaperSelector"
+                    "defaultSettings": {
+                        "animate_window": true,
+                        "animation_cards_duration": 750,
+                        "animation_window_duration": 500,
+                        "background_color": null,
+                        "background_opacity": null,
+                        "card_height": 350,
+                        "card_spacing": 6,
+                        "card_strip_width": 90,
+                        "cards_shown": 11,
+                        "center_width_ratio": 0.33,
+                        "hide_help": false,
+                        "hide_top_bar": false,
+                        "image_filter": [
+                            "png",
+                            "jpg",
+                            "jpeg"
+                        ],
+                        "live_preview": false,
+                        "selected_filter": "images",
+                        "shear_factor": -0.25,
+                        "top_bar_height": 35,
+                        "video_filter": [
+                            "mp4",
+                            "avi"
+                        ]
+                    },
+                    "id": "plugin:wallcards"
                 },
                 {
                     "defaultSettings": {
@@ -465,8 +491,7 @@
             "steam",
             "spotify",
             "whatsdesk",
-            "gimp",
-            "steam_app_440900"
+            "gimp"
         ],
         "pinnedStatic": true,
         "position": "bottom",
@@ -798,7 +823,7 @@
         "translucentWidgets": false
     },
     "wallpaper": {
-        "automationEnabled": true,
+        "automationEnabled": false,
         "directory": "/home/ahoefer/Bilder/wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
