@@ -1,6 +1,15 @@
 {
   "todos": [
     {
+      "id": 1779257305031,
+      "text": "Excel Anpassen",
+      "completed": false,
+      "createdAt": "2026-05-20T06:08:25.031Z",
+      "pageId": 0,
+      "priority": "high",
+      "details": ""
+    },
+    {
       "id": 1777012511226,
       "text": "Elster Zugänge machen",
       "completed": false,
@@ -17,7 +26,7 @@
     }
   ],
   "current_page_id": 0,
-  "count": 1,
+  "count": 2,
   "completedCount": 0,
   "showCompleted": true,
   "showBackground": false,

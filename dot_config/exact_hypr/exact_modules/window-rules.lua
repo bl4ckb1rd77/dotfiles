@@ -61,3 +61,12 @@ hl.window_rule({
 		initial_title = "^update$",
 	},
 })
+
+hl.window_rule({
+	name = "Skyrim SE",
+	float = false,
+	fullscreen = true,
+	match = {
+		class = "^steam_app_489830$",
+	},
+})

@@ -88,65 +88,6 @@
                     "useCustomFont": false
                 },
                 {
-                    "defaultSettings": {
-                        "animate_window": true,
-                        "animation_cards_duration": 750,
-                        "animation_window_duration": 500,
-                        "background_color": null,
-                        "background_opacity": null,
-                        "card_height": 350,
-                        "card_spacing": 6,
-                        "card_strip_width": 90,
-                        "cards_shown": 11,
-                        "center_width_ratio": 0.33,
-                        "hide_help": false,
-                        "hide_top_bar": false,
-                        "image_filter": [
-                            "png",
-                            "jpg",
-                            "jpeg"
-                        ],
-                        "live_preview": false,
-                        "selected_filter": "images",
-                        "shear_factor": -0.25,
-                        "top_bar_height": 35,
-                        "video_filter": [
-                            "mp4",
-                            "avi"
-                        ]
-                    },
-                    "id": "plugin:wallcards"
-                },
-                {
-                    "defaultSettings": {
-                        "ai": {
-                            "apiKeys": {
-                            },
-                            "maxHistoryLength": 100,
-                            "model": "gemini-2.5-flash",
-                            "openaiBaseUrl": "https://api.openai.com/v1/chat/completions",
-                            "openaiLocal": false,
-                            "provider": "google",
-                            "systemPrompt": "You are a helpful assistant integrated into a Linux desktop shell. Be concise and helpful.",
-                            "temperature": 0.7
-                        },
-                        "maxHistoryLength": 100,
-                        "panelDetached": true,
-                        "panelHeightRatio": 0.85,
-                        "panelPosition": "right",
-                        "panelWidth": 520,
-                        "scale": 1,
-                        "translator": {
-                            "backend": "google",
-                            "deeplApiKey": "",
-                            "realTimeTranslation": true,
-                            "sourceLanguage": "auto",
-                            "targetLanguage": "en"
-                        }
-                    },
-                    "id": "plugin:assistant-panel"
-                },
-                {
                     "compactMode": false,
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
@@ -313,7 +254,8 @@
                     "pinned": [
                         "steam",
                         "Microsoft Teams",
-                        "WhatsDesk"
+                        "WhatsDesk",
+                        "Microsoft Teams (2)"
                     ]
                 },
                 {
