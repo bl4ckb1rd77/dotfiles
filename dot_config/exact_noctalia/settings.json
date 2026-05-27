@@ -43,19 +43,19 @@
         "autoHideDelay": 500,
         "autoShowDelay": 150,
         "backgroundOpacity": 1,
-        "barType": "framed",
+        "barType": "floating",
         "capsuleColorKey": "none",
-        "capsuleOpacity": 0.8,
-        "contentPadding": 5,
-        "density": "comfortable",
+        "capsuleOpacity": 1,
+        "contentPadding": 4,
+        "density": "spacious",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
         "fontScale": 1,
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
-        "marginHorizontal": 4,
-        "marginVertical": 4,
+        "marginHorizontal": 12,
+        "marginVertical": 8,
         "middleClickAction": "none",
         "middleClickCommand": "",
         "middleClickFollowMouse": false,
@@ -74,8 +74,8 @@
         "showCapsule": true,
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
-        "useSeparateOpacity": true,
-        "widgetSpacing": 5,
+        "useSeparateOpacity": false,
+        "widgetSpacing": 8,
         "widgets": {
             "center": [
                 {
@@ -120,7 +120,7 @@
                     "colorizeIcons": false,
                     "emptyColor": "none",
                     "enableScrollWheel": true,
-                    "focusedColor": "secondary",
+                    "focusedColor": "tertiary",
                     "followFocusedScreen": false,
                     "fontWeight": "bold",
                     "groupedBorderOpacity": 1,
@@ -129,7 +129,7 @@
                     "id": "Workspace",
                     "labelMode": "index",
                     "occupiedColor": "primary",
-                    "pillSize": 0.6000000000000001,
+                    "pillSize": 0.6,
                     "showApplications": false,
                     "showApplicationsHover": false,
                     "showBadge": true,
@@ -236,14 +236,6 @@
                     "textColor": "none"
                 },
                 {
-                    "defaultSettings": {
-                        "density": "comfortable",
-                        "maxHistorySize": 100,
-                        "showImagePreviews": true
-                    },
-                    "id": "plugin:clipboard"
-                },
-                {
                     "blacklist": [
                     ],
                     "chevronColor": "secondary",
@@ -255,7 +247,8 @@
                         "steam",
                         "Microsoft Teams",
                         "WhatsDesk",
-                        "Microsoft Teams (2)"
+                        "Microsoft Teams (2)",
+                        "remmina-icon"
                     ]
                 },
                 {
@@ -397,8 +390,72 @@
         "gridSnap": false,
         "gridSnapScale": false,
         "monitorWidgets": [
+            {
+                "name": "eDP-1",
+                "widgets": [
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "CPU",
+                        "x": 1667,
+                        "y": 411
+                    },
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "Memory",
+                        "x": 1667,
+                        "y": 544
+                    },
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "Disk",
+                        "x": 1667,
+                        "y": 678
+                    },
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "Network",
+                        "x": 1667,
+                        "y": 811
+                    },
+                    {
+                        "id": "Weather",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "x": 1619,
+                        "y": 969
+                    },
+                    {
+                        "clockColor": "none",
+                        "clockStyle": "digital",
+                        "customFont": "",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "useCustomFont": false,
+                        "x": 34,
+                        "y": 883
+                    }
+                ]
+            }
         ],
-        "overviewEnabled": true
+        "overviewEnabled": false
     },
     "dock": {
         "animationSpeed": 1,
@@ -453,11 +510,11 @@
         "clockFormat": "HH:mm:ss ",
         "clockStyle": "custom",
         "compactLockScreen": false,
-        "dimmerOpacity": 0.2,
+        "dimmerOpacity": 0.4,
         "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": true,
-        "enableShadows": false,
+        "enableShadows": true,
         "forceBlackScreenCorners": false,
         "iRadiusRatio": 1,
         "keybinds": {
@@ -497,8 +554,8 @@
         "reverseScroll": false,
         "scaleRatio": 1,
         "screenRadiusRatio": 1,
-        "shadowDirection": "bottom_right",
-        "shadowOffsetX": 2,
+        "shadowDirection": "bottom",
+        "shadowOffsetX": 0,
         "shadowOffsetY": 3,
         "showChangelogOnStartup": true,
         "showHibernateOnLockScreen": false,
@@ -752,11 +809,11 @@
     },
     "ui": {
         "boxBorderEnabled": false,
-        "fontDefault": "JetBrainsMono Nerd Font Propo",
+        "fontDefault": "JetBrainsMono NFP",
         "fontDefaultScale": 1,
         "fontFixed": "Hack Nerd Font Mono",
         "fontFixedScale": 1,
-        "panelBackgroundOpacity": 0.9,
+        "panelBackgroundOpacity": 0.7000000000000001,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",

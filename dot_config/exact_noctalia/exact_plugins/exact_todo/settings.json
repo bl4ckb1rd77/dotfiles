@@ -29,7 +29,7 @@
   "count": 2,
   "completedCount": 0,
   "showCompleted": true,
-  "showBackground": false,
+  "showBackground": true,
   "isExpanded": false,
   "useCustomColors": false,
   "priorityColors": {

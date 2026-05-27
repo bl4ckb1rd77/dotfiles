@@ -54,8 +54,7 @@ hl.window_rule({
 hl.window_rule({
 	name = "updater",
 	float = true,
-	size = { 800, "(monitor_h*0.94)" },
-	move = { "((monitor_w*1)-810)", 49 },
+	size = { 1520, "(monitor_h*0.70)" },
 	opacity = "0.9 0.7",
 	match = {
 		initial_title = "^update$",
@@ -68,5 +67,15 @@ hl.window_rule({
 	fullscreen = true,
 	match = {
 		class = "^steam_app_489830$",
+	},
+})
+
+hl.window_rule({
+	name = "GtS104",
+	float = true,
+	center = true,
+	size = { 1366, 768 },
+	match = {
+		class = "^steam_app_3927931978$",
 	},
 })
