@@ -80,11 +80,11 @@
             "center": [
                 {
                     "clockColor": "none",
-                    "customFont": "",
-                    "formatHorizontal": "HH:mm:ss -  ddd dd MMMM",
+                    "customFont": "Hack Nerd Font Propo",
+                    "formatHorizontal": "󰥔 HH:mm:ss  ddd dd. MMMM",
                     "formatVertical": "",
                     "id": "Clock",
-                    "tooltipFormat": "dddd dd. MMM yy",
+                    "tooltipFormat": "dddd dd. MMM yyyy",
                     "useCustomFont": false
                 },
                 {
@@ -248,7 +248,8 @@
                         "Microsoft Teams",
                         "WhatsDesk",
                         "Microsoft Teams (2)",
-                        "remmina-icon"
+                        "remmina-icon",
+                        "Vesktop"
                     ]
                 },
                 {
@@ -614,7 +615,7 @@
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
         "networkPanelView": "wifi",
-        "wifiDetailsViewMode": "grid"
+        "wifiDetailsViewMode": "list"
     },
     "nightLight": {
         "autoSchedule": true,
