@@ -72,10 +72,18 @@ hl.window_rule({
 
 hl.window_rule({
 	name = "GtS104",
-	float = true,
-	center = true,
-	size = { 1366, 768 },
+	float = false,
+	workspace = 9,
 	match = {
 		class = "^steam_app_3927931978$",
+	},
+})
+
+hl.window_rule({
+	name = "Steam Big Picture",
+	float = false,
+	fullscreen = true,
+	match = {
+		title = "^Steam Big Picture Mode$",
 	},
 })

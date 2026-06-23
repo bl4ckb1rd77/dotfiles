@@ -46,7 +46,7 @@
         "barType": "floating",
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
-        "contentPadding": 4,
+        "contentPadding": 2,
         "density": "spacious",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
@@ -54,8 +54,8 @@
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
-        "marginHorizontal": 12,
-        "marginVertical": 8,
+        "marginHorizontal": 8,
+        "marginVertical": 6,
         "middleClickAction": "none",
         "middleClickCommand": "",
         "middleClickFollowMouse": false,
@@ -75,7 +75,7 @@
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": false,
-        "widgetSpacing": 8,
+        "widgetSpacing": 6,
         "widgets": {
             "center": [
                 {
@@ -135,17 +135,6 @@
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": false,
                     "unfocusedIconsOpacity": 1
-                },
-                {
-                    "colorizeIcons": false,
-                    "hideMode": "hidden",
-                    "id": "ActiveWindow",
-                    "maxWidth": 145,
-                    "scrollingMode": "hover",
-                    "showIcon": true,
-                    "showText": true,
-                    "textColor": "none",
-                    "useFixedWidth": false
                 },
                 {
                     "defaultSettings": {
@@ -236,6 +225,12 @@
                     "textColor": "none"
                 },
                 {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Bluetooth",
+                    "textColor": "none"
+                },
+                {
                     "blacklist": [
                     ],
                     "chevronColor": "secondary",
@@ -249,7 +244,8 @@
                         "WhatsDesk",
                         "Microsoft Teams (2)",
                         "remmina-icon",
-                        "Vesktop"
+                        "Vesktop",
+                        "Microsoft Teams (1)"
                     ]
                 },
                 {
@@ -462,7 +458,7 @@
         "animationSpeed": 1,
         "backgroundOpacity": 1,
         "colorizeIcons": false,
-        "deadOpacity": 1,
+        "deadOpacity": 0.5,
         "displayMode": "auto_hide",
         "dockType": "attached",
         "enabled": true,
