@@ -195,6 +195,9 @@
                     "textColor": "none"
                 },
                 {
+                    "id": "plugin:network-manager-vpn"
+                },
+                {
                     "deviceNativePath": "__default__",
                     "displayMode": "graphic-clean",
                     "hideIfIdle": false,
