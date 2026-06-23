@@ -1,0 +1,8 @@
+alias ls='eza --icons'
+alias ll='ls -al'
+alias rr='reboot-required'
+alias grep='grep --color=auto'
+alias ct='while true; do clear; todo; sleep 5; done'
+alias enable-ansible216='source /home/ahoefer/ansible_216/bin/activate'
+alias paccleanup='sudo pacman -Rns (pacman -Qdtq)'
+alias reloadsway='swaync-client --reload-css'
