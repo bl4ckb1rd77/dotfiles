@@ -1,17 +1,23 @@
 local monitors = hl.get_monitors()
 local tareget_monitor = "eDP-1"
+local split_workspace = false
 for _, m in ipairs(monitors) do
 	if m.name ~= "eDP-1" then
 		tareget_monitor = m.name
+		split_workspace = true
 		break
 	end
 end
 
 for wsn = 1, 9, 1 do
+	local current_monitor = tareget_monitor
+	if split_workspace and wsn >= 7 then
+		current_monitor = "eDP-1"
+	end
 	hl.workspace_rule({
 		workspace = tostring(wsn),
 		persistent = true,
-		monitor = tareget_monitor,
+		monitor = current_monitor,
 	})
 end
 
