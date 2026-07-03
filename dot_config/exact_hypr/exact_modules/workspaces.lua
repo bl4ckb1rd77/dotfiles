@@ -1,5 +1,18 @@
+local monitors = hl.get_monitors()
+local tareget_monitor = "eDP-1"
+for _, m in ipairs(monitors) do
+	if m.name ~= "eDP-1" then
+		tareget_monitor = m.name
+		break
+	end
+end
+
 for wsn = 1, 9, 1 do
-	hl.workspace_rule({ workspace = tostring(wsn), persistent = true })
+	hl.workspace_rule({
+		workspace = tostring(wsn),
+		persistent = true,
+		monitor = tareget_monitor,
+	})
 end
 
 hl.config({

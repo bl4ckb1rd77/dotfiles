@@ -10,7 +10,7 @@ require("modules.keybindings")
 require("modules.window-rules")
 
 -- hyprbars
-require("modules.hyprbars")
+-- require("modules.hyprbars")
 
 local suppressMaximizeRule = hl.window_rule({
 	-- Ignore maximize requests from all apps. You'll probably like this.
