@@ -1,0 +1,43 @@
+[bastion_settings]
+ssh_key = '~/.ssh/id_ed25519'
+ssh_pub_key = '~/.ssh/id_ed25519.pub'
+session_timeout = 90
+tunnel_timeout = 15
+
+[bastions]
+[bastions.argo]
+name = 'ArgoCD & K8s Bastion'
+id = 'ocid1.bastion.oc19.eu-frankfurt-2.amaaaaaaatrirsaalwg32xpie4fr7ypsjosjxuz7hpipikmekhg6ibet6mpa'
+
+[bastions.tools]
+name = 'Tools & DevOps Bastion'
+id = 'ocid1.bastion.oc19.eu-frankfurt-2.amaaaaaaatrirsaapy5mbr2vnxjcx6d7uiilrujjtg4yv2wgnstlykrfexlq'
+
+[[tunnels]]
+name = 'deploy-server-ssh'
+bastion_ref = 'tools'
+target_ip = '10.3.0.55'
+target_port = 22
+local_port = 2222
+hint = 'ssh -i ~/.ssh/id_ed25519 -p 2222 phan@localhost'
+
+[[tunnels]]
+name = 'tunnel-gitlab'
+bastion_ref = 'tools'
+target_ip = '10.3.0.50'
+target_port = 443
+local_port = 9433
+
+[[tunnels]]
+name = 'tunnel-argocd'
+bastion_ref = 'argo'
+target_ip = '10.1.2.7'
+target_port = 443
+local_port = 8443
+
+[[tunnels]]
+name = 'Nexus'
+bastion_ref = 'argo'
+target_ip = '10.3.0.54'
+target_port = 443
+local_port = 8453
