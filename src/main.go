@@ -52,7 +52,7 @@ type AppConfig struct {
 	Tunnels         []TunnelConfig         `toml:"tunnels"`
 }
 
-const AppVersion = "v0.4.0"
+const AppVersion = "v0.4.1"
 
 var (
 	app        *tview.Application
@@ -227,7 +227,8 @@ func buildSSHCommand(rawCmd string, sshKeyPath string, localPort int) string {
 	cmd = strings.ReplaceAll(cmd, "<localPort>", strconv.Itoa(localPort))
 
 	extraOpts := []string{
-		"-o ServerAliveInterval=30",
+		"-o ServerAliveInterval=10", // Alle 10s Ping senden
+		"-o ServerAliveCountMax=3",  // Nach 3 verpassten Pings (30s) abbrechen
 		"-o ExitOnForwardFailure=yes",
 		"-o StrictHostKeyChecking=accept-new",
 	}
@@ -374,6 +375,7 @@ func connectAllTunnels() {
 			"--target-private-ip", t.TargetIP,
 			"--target-port", strconv.Itoa(t.TargetPort),
 			"--ssh-public-key-file", pubKeyPath,
+			"--session-ttl", "10800", // Max 3 Stunden TTL
 			"--query", "data.id",
 			"--raw-output",
 		)
@@ -478,19 +480,58 @@ func openSSHTunnel(t *TunnelConfig, fullCmd string) bool {
 	timeout := time.Duration(config.BastionSettings.TunnelTimeout) * time.Second
 	deadline := time.Now().Add(timeout)
 
+	tunnelReady := false
 	for time.Now().Before(deadline) {
 		conn, err := net.DialTimeout("tcp", fmt.Sprintf("127.0.0.1:%d", t.LocalPort), 500*time.Millisecond)
 		if err == nil {
 			conn.Close()
-			return true
+			tunnelReady = true
+			break
 		}
 		time.Sleep(1 * time.Second)
 	}
 
-	if sshCmd.Process != nil {
-		_ = sshCmd.Process.Kill()
+	if !tunnelReady {
+		if sshCmd.Process != nil {
+			_ = sshCmd.Process.Kill()
+		}
+		return false
 	}
-	return false
+
+	// Health-Monitoring starten, um Abbrüche im laufenden Betrieb zu erkennen
+	go monitorTunnel(t)
+
+	return true
+}
+
+func monitorTunnel(t *TunnelConfig) {
+	for {
+		time.Sleep(5 * time.Second)
+
+		// Stoppen, wenn der Tunnel nicht mehr ACTIVE sein soll
+		if t.Status != "ACTIVE" {
+			return
+		}
+
+		// 1. Prüfen ob SSH-Prozess noch existiert
+		if t.Cmd == nil || t.Cmd.Process == nil {
+			t.Status = "FAILED"
+			refreshUI()
+			return
+		}
+
+		// 2. Port-Rechabarkeits-Check
+		conn, err := net.DialTimeout("tcp", fmt.Sprintf("127.0.0.1:%d", t.LocalPort), 1*time.Second)
+		if err != nil {
+			t.Status = "FAILED"
+			if t.Cmd.Process != nil {
+				_ = t.Cmd.Process.Kill()
+			}
+			refreshUI()
+			return
+		}
+		conn.Close()
+	}
 }
 
 func cleanupTunnels() {
