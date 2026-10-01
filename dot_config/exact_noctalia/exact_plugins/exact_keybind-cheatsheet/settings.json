@@ -40,6 +40,15 @@
           "_verb": ""
         },
         {
+          "keys": "Super + O",
+          "desc": "Toggle opaque",
+          "bindId": "|64|O|000|__lua",
+          "undescribed": false,
+          "_mainKey": "O",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
           "keys": "Super + R",
           "desc": "Start Menu",
           "bindId": "|64|R|000|__lua",
@@ -164,6 +173,15 @@
           "_mainKey": "B",
           "_mods": "Alt",
           "_verb": ""
+        },
+        {
+          "keys": "Super + U",
+          "desc": "System Updater",
+          "bindId": "|64|U|000|__lua",
+          "undescribed": false,
+          "_mainKey": "U",
+          "_mods": "Super",
+          "_verb": ""
         }
       ]
     },
@@ -200,7 +218,7 @@
       ]
     },
     {
-      "title": "Fenster",
+      "title": "Windows",
       "binds": [
         {
           "keys": "Super + Alt + LEFT",
@@ -474,30 +492,30 @@
       "title": "Spotify",
       "binds": [
         {
-          "keys": "Super + Shift + RIGHT",
+          "keys": "Super + Ctrl + RIGHT",
           "desc": "Next Track",
-          "bindId": "|65|right|000|__lua",
+          "bindId": "|68|right|000|__lua",
           "undescribed": false,
           "_mainKey": "right",
-          "_mods": "Super+Shift",
+          "_mods": "Super+Ctrl",
           "_verb": ""
         },
         {
-          "keys": "Super + Shift + LEFT",
+          "keys": "Super + Ctrl + LEFT",
           "desc": "Previous Track",
-          "bindId": "|65|left|000|__lua",
+          "bindId": "|68|left|000|__lua",
           "undescribed": false,
           "_mainKey": "left",
-          "_mods": "Super+Shift",
+          "_mods": "Super+Ctrl",
           "_verb": ""
         },
         {
-          "keys": "Super + Shift + RETURN",
+          "keys": "Super + Ctrl + RETURN",
           "desc": "Play / Pause",
-          "bindId": "|65|RETURN|000|__lua",
+          "bindId": "|68|RETURN|000|__lua",
           "undescribed": false,
           "_mainKey": "RETURN",
-          "_mods": "Super+Shift",
+          "_mods": "Super+Ctrl",
           "_verb": ""
         }
       ]

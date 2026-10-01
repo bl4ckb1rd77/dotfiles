@@ -33,6 +33,16 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name = "Prism Launcher",
+	float = true,
+	size = { "(monitor_w*0.5)", "(monitor_h*0.5)" },
+	match = {
+		class = "^org.prismlauncher.PrismLauncher$",
+	},
+	opacity = "0.8 0.4",
+})
+
+hl.window_rule({
 	name = "Brave",
 	match = {
 		class = "^brave-browser$",
@@ -65,6 +75,7 @@ hl.window_rule({
 	name = "Skyrim SE",
 	float = false,
 	fullscreen = true,
+	immediate = true,
 	match = {
 		class = "^steam_app_489830$",
 	},

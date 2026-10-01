@@ -50,3 +50,33 @@ hl.config({
 		enabled = true,
 	},
 })
+
+if hl.plugin.hyprglass ~= nil then
+	hl.plugin.hyprglass.config({
+		enabled = true,
+
+		blur_strength = 0.7, -- default 2.0
+
+		-- Edge effects, all raised so the pane still reads at 0.90 opacity.
+		refraction_strength = 1.0,
+		chromatic_aberration = 0.6,
+		fresnel_strength = 1.0,
+		specular_strength = 1.0,
+		edge_thickness = 0.10,
+
+		-- Less magnification; it smears at this blur level.
+		lens_distortion = 0.3,
+
+		-- Default tint at half alpha.
+		tint_color = 0x8899aa11,
+
+		-- Tone mapping off: the dark preset dims and flattens an already
+		-- dark wallpaper.
+		dark = {
+			brightness = 1.0,
+			contrast = 1.0,
+			saturation = 0.9,
+			adaptive_dim = 0.0,
+		},
+	})
+end

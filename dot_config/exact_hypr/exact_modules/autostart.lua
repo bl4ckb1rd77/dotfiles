@@ -1,5 +1,17 @@
 local scriptsDir = "/home/ahoefer/.config/hypr/scripts/"
 hl.on("hyprland.start", function()
+	hl.exec_cmd("qs -c noctalia-shell")
+end)
+hl.on("hyprland.start", function()
+	hl.exec_cmd(
+		's="${XDG_STATE_HOME:-$HOME/.local/state}/impasto"; '
+			.. 'if test -f "$s/plugins-pending"; then r=$(cat "$s/plugins-pending"); '
+			.. 'elif test -d "/var/cache/hyprpm/$USER" && { hyprpm reload; '
+			.. 'hyprctl plugin list | grep -q "^no plugins loaded" && hyprpm list | grep -q true; }; then r=$(sed -n 3p "$s/version"); '
+			.. "else exit 0; fi; "
+	)
+end)
+hl.on("hyprland.start", function()
 	hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 	hl.exec_cmd("/home/ahoefer/.config/hypr/scripts/xauthority")
 	hl.exec_cmd(
@@ -7,7 +19,6 @@ hl.on("hyprland.start", function()
 	)
 	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP QT_QPA_PLATFORMTHEME")
 	hl.exec_cmd("systemctl --user start xdg-desktop-portal-hyprland")
-	hl.exec_cmd("qs -c noctalia-shell")
 	hl.exec_cmd(scriptsDir .. "touchpad -init")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")

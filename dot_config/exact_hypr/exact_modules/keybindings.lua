@@ -45,6 +45,11 @@ hl.bind("ALT + D", hl.dsp.exec_raw("vesktop"), { description = "Discord" })
 hl.bind("ALT + M", hl.dsp.exec_raw(player), { description = "Music Player" })
 hl.bind("ALT + E", hl.dsp.exec_raw(fileManager), { description = "File manager" })
 hl.bind("ALT + B", hl.dsp.exec_raw(browser), { description = "Browser" })
+hl.bind(
+	mainMod .. " + U",
+	hl.dsp.exec_raw(terminal .. " --title='update' -e paru -Suy"),
+	{ description = "System Updater" }
+)
 -- 2. Screenshots
 hl.bind(mainMod .. "+ S", hl.dsp.exec_cmd("hyprshot --freeze -m output"), { description = "Screenshot Full Screen" })
 hl.bind(
