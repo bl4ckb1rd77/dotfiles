@@ -45,9 +45,9 @@ hl.window_rule({
 	match = {
 		title = "^sysinfo$",
 	},
-	opacity = "0.8 0.6",
+	opacity = "0.6 0.4",
 	float = true,
-	size = { 900, 430 },
+	size = { 1060, 430 },
 	center = true,
 })
 
@@ -67,6 +67,14 @@ hl.window_rule({
 	fullscreen = true,
 	match = {
 		class = "^steam_app_489830$",
+	},
+})
+
+hl.window_rule({
+	name = "Bethini Pie",
+	float = true,
+	match = {
+		title = "^Bethini Pie$",
 	},
 })
 

@@ -1,6 +1,6 @@
 ZSH_THEME=""
 # HISTORY
-HISTFILE="$XDG_STATE_HOME/zsh/history"
+HISTFILE="$XDG_STATE_DIR/zsh/history"
 HIST_STAMPS="mm/dd/yyyy"
 HISTSIZE=100000
 SAVEHIST=100000
@@ -68,6 +68,9 @@ source "$ZDOTDIR/keybind.zsh"
 source <(fzf --zsh)
 
 eval "$(starship init zsh)"
+# In $ZDOTDIR/.zshrc
+[[ -f "$ZDOTDIR/claude_code.zsh" ]] && source "$ZDOTDIR/claude_code.zsh"
+
 [ -s "/home/ahoefer/.bun/_bun" ] && source "/home/ahoefer/.bun/_bun"
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(chezmoi completion zsh)"

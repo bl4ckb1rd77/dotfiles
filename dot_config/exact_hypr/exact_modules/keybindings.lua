@@ -14,6 +14,14 @@ hl.bind(
 )
 hl.bind(mainMod .. " + Q", hl.dsp.window.close(), { description = "Close Active Window" })
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle Floating Window" })
+hl.bind(
+	mainMod .. " + O",
+	hl.dsp.window.set_prop({
+		prop = "opaque",
+		value = "toggle",
+	}),
+	{ description = "Toggle opaque" }
+)
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(ipc .. " launcher toggle"), { description = "Start Menu" })
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"), { description = "Toggle Split Direction (only dwindle)" })
 hl.bind(
@@ -45,7 +53,7 @@ hl.bind(
 	{ description = "Screenshot active Window" }
 )
 hl.bind(mainMod .. " + CTRL + S", hl.dsp.exec_cmd("hyprshot --freeze -m region"), { description = "Screenshot Area" })
--- 3. Fenster
+-- 3. Windows
 hl.bind(mainMod .. " + ALT + left", hl.dsp.focus({ direction = "left" }), { description = "Move Window Left" })
 hl.bind(mainMod .. " + ALT + right", hl.dsp.focus({ direction = "right" }), { description = "Move Window Right" })
 hl.bind(mainMod .. " + ALT + up", hl.dsp.focus({ direction = "up" }), { description = "Move Window Up" })
@@ -83,6 +91,19 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ workspace = "e+1" }), { descriptio
 -- 5. Move Windows
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true }, { description = "Move Window" })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true }, { description = "Resize Window" })
+
+-- 6. Spotify
+hl.bind(mainMod .. " + CTRL + right", hl.dsp.exec_cmd("playerctl -p spotify next"), { description = "Next Track" })
+hl.bind(
+	mainMod .. " + CTRL + left",
+	hl.dsp.exec_cmd("playerctl -p spotify previous"),
+	{ description = "Previous Track" }
+)
+hl.bind(
+	mainMod .. " + CTRL + RETURN",
+	hl.dsp.exec_cmd("playerctl -p spotify play-pause"),
+	{ description = "Play / Pause" }
+)
 
 hl.bind(
 	"XF86AudioRaiseVolume",

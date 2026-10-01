@@ -5,7 +5,7 @@ hl.config({
 		gaps_out = 15,
 		border_size = 2,
 		col = {
-			active_border = colors.activeborder1,
+			active_border = colors.activeborder2,
 			inactive_border = colors.crust,
 		},
 

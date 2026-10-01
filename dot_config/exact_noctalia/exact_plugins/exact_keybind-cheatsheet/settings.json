@@ -4,76 +4,166 @@
       "title": "Applications",
       "binds": [
         {
-          "keys": "mainMod + RETURN",
-          "desc": "Terminal"
+          "keys": "Super + RETURN",
+          "desc": "Terminal",
+          "bindId": "|64|RETURN|000|__lua",
+          "undescribed": false,
+          "_mainKey": "RETURN",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + SHIFT + RETURN",
-          "desc": "Floating Terminal"
+          "keys": "Super + Shift + RETURN",
+          "desc": "Floating Terminal",
+          "bindId": "|65|RETURN|000|__lua",
+          "undescribed": false,
+          "_mainKey": "RETURN",
+          "_mods": "Super+Shift",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + Q",
-          "desc": "Close Active Window"
+          "keys": "Super + Q",
+          "desc": "Close Active Window",
+          "bindId": "|64|Q|000|__lua",
+          "undescribed": false,
+          "_mainKey": "Q",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + F",
-          "desc": "Toggle Floating Window"
+          "keys": "Super + F",
+          "desc": "Toggle Floating Window",
+          "bindId": "|64|F|000|__lua",
+          "undescribed": false,
+          "_mainKey": "F",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + R",
-          "desc": "Startmenü"
+          "keys": "Super + R",
+          "desc": "Start Menu",
+          "bindId": "|64|R|000|__lua",
+          "undescribed": false,
+          "_mainKey": "R",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + J",
-          "desc": "Splitt Wechseln"
+          "keys": "Super + J",
+          "desc": "Toggle Split Direction (only dwindle)",
+          "bindId": "|64|J|000|__lua",
+          "undescribed": false,
+          "_mainKey": "J",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + H",
-          "desc": "Diese Hilfe"
+          "keys": "Super + H",
+          "desc": "Show this Help",
+          "bindId": "|64|H|000|__lua",
+          "undescribed": false,
+          "_mainKey": "H",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + W",
-          "desc": "Wallpaper Menü"
+          "keys": "Super + W",
+          "desc": "Wallpaper Menu",
+          "bindId": "|64|W|000|__lua",
+          "undescribed": false,
+          "_mainKey": "W",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + L",
-          "desc": "Lock Screen"
+          "keys": "Super + L",
+          "desc": "Lock Screen",
+          "bindId": "|64|L|000|__lua",
+          "undescribed": false,
+          "_mainKey": "L",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + V",
-          "desc": "Clipboard Menü"
+          "keys": "Super + V",
+          "desc": "Clipboard History",
+          "bindId": "|64|V|000|__lua",
+          "undescribed": false,
+          "_mainKey": "V",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + P",
-          "desc": "Power Menü"
+          "keys": "Super + P",
+          "desc": "Power Menu",
+          "bindId": "|64|P|000|__lua",
+          "undescribed": false,
+          "_mainKey": "P",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + A",
-          "desc": "Google Gemini"
+          "keys": "Super + A",
+          "desc": "Google Gemini",
+          "bindId": "|64|A|000|__lua",
+          "undescribed": false,
+          "_mainKey": "A",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + I",
-          "desc": "System Info"
+          "keys": "Super + I",
+          "desc": "System Info",
+          "bindId": "|64|I|000|__lua",
+          "undescribed": false,
+          "_mainKey": "I",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + N",
-          "desc": "NeoVim"
+          "keys": "Super + N",
+          "desc": "NeoVim",
+          "bindId": "|64|N|000|__lua",
+          "undescribed": false,
+          "_mainKey": "N",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "ALT + D",
-          "desc": "Discord"
+          "keys": "Alt + D",
+          "desc": "Discord",
+          "bindId": "|8|D|000|__lua",
+          "undescribed": false,
+          "_mainKey": "D",
+          "_mods": "Alt",
+          "_verb": ""
         },
         {
-          "keys": "ALT + M",
-          "desc": "Music Player"
+          "keys": "Alt + M",
+          "desc": "Music Player",
+          "bindId": "|8|M|000|__lua",
+          "undescribed": false,
+          "_mainKey": "M",
+          "_mods": "Alt",
+          "_verb": ""
         },
         {
-          "keys": "ALT + E",
-          "desc": "Dateimanager"
+          "keys": "Alt + E",
+          "desc": "File manager",
+          "bindId": "|8|E|000|__lua",
+          "undescribed": false,
+          "_mainKey": "E",
+          "_mods": "Alt",
+          "_verb": ""
         },
         {
-          "keys": "ALT + B",
-          "desc": "Brave"
+          "keys": "Alt + B",
+          "desc": "Browser",
+          "bindId": "|8|B|000|__lua",
+          "undescribed": false,
+          "_mainKey": "B",
+          "_mods": "Alt",
+          "_verb": ""
         }
       ]
     },
@@ -81,16 +171,31 @@
       "title": "Screenshots",
       "binds": [
         {
-          "keys": "mainMod + S",
-          "desc": "Ganzer Bildschirm"
+          "keys": "Super + S",
+          "desc": "Screenshot Full Screen",
+          "bindId": "|64|S|000|__lua",
+          "undescribed": false,
+          "_mainKey": "S",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + SHIFT + S",
-          "desc": "Aktuelles Fenster"
+          "keys": "Super + Shift + S",
+          "desc": "Screenshot active Window",
+          "bindId": "|65|S|000|__lua",
+          "undescribed": false,
+          "_mainKey": "S",
+          "_mods": "Super+Shift",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + CTRL + S",
-          "desc": "Ausgewähler Bereich"
+          "keys": "Super + Ctrl + S",
+          "desc": "Screenshot Area",
+          "bindId": "|68|S|000|__lua",
+          "undescribed": false,
+          "_mainKey": "S",
+          "_mods": "Super+Ctrl",
+          "_verb": ""
         }
       ]
     },
@@ -98,20 +203,49 @@
       "title": "Fenster",
       "binds": [
         {
-          "keys": "mainMod + ALT + left",
-          "desc": "Bewege Fenster nach Links"
+          "keys": "Super + Alt + LEFT",
+          "desc": "Move Window Left",
+          "bindId": "|72|left|000|__lua",
+          "undescribed": false,
+          "_mainKey": "left",
+          "_mods": "Super+Alt",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + ALT + right",
-          "desc": "Bewege Fenster nach rechts"
+          "keys": "Super + Alt + RIGHT",
+          "desc": "Move Window Right",
+          "bindId": "|72|right|000|__lua",
+          "undescribed": false,
+          "_mainKey": "right",
+          "_mods": "Super+Alt",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + ALT + up",
-          "desc": "Bewege Fenster nach oben"
+          "keys": "Super + Alt + UP",
+          "desc": "Move Window Up",
+          "bindId": "|72|up|000|__lua",
+          "undescribed": false,
+          "_mainKey": "up",
+          "_mods": "Super+Alt",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + ALT + down",
-          "desc": "Bewege Fenster nach unten"
+          "keys": "Super + Alt + DOWN",
+          "desc": "Move Window Down",
+          "bindId": "|72|down|000|__lua",
+          "undescribed": false,
+          "_mainKey": "down",
+          "_mods": "Super+Alt",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + F11",
+          "desc": "Toggle Fullscreen",
+          "bindId": "|64|F11|000|__lua",
+          "undescribed": false,
+          "_mainKey": "F11",
+          "_mods": "Super",
+          "_verb": ""
         }
       ]
     },
@@ -119,41 +253,365 @@
       "title": "Workspace",
       "binds": [
         {
-          "keys": "mainMod + key",
-          "desc": "Workspace Fokusieren"
+          "keys": "Super + 1",
+          "desc": "Focus Workspace NUM",
+          "bindId": "|64|1|000|__lua",
+          "undescribed": false,
+          "_mainKey": "1",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "+ ALT + key",
-          "desc": "Aktives Fenster auf Workspace verschieben"
+          "keys": "Alt + 1",
+          "desc": "Move Active Window to Workspace NUM",
+          "bindId": "|8|1|000|__lua",
+          "undescribed": false,
+          "_mainKey": "1",
+          "_mods": "Alt",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + mouse_down",
-          "desc": "Workspace Scroll with Mouse"
+          "keys": "Super + 2",
+          "desc": "Focus Workspace NUM",
+          "bindId": "|64|2|000|__lua",
+          "undescribed": false,
+          "_mainKey": "2",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + mouse_up",
-          "desc": "Workspace Scroll with Mouse"
+          "keys": "Alt + 2",
+          "desc": "Move Active Window to Workspace NUM",
+          "bindId": "|8|2|000|__lua",
+          "undescribed": false,
+          "_mainKey": "2",
+          "_mods": "Alt",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + left",
-          "desc": "Workspace Scroll Left"
+          "keys": "Super + 3",
+          "desc": "Focus Workspace NUM",
+          "bindId": "|64|3|000|__lua",
+          "undescribed": false,
+          "_mainKey": "3",
+          "_mods": "Super",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + right",
-          "desc": "Workspace Scroll Right"
+          "keys": "Alt + 3",
+          "desc": "Move Active Window to Workspace NUM",
+          "bindId": "|8|3|000|__lua",
+          "undescribed": false,
+          "_mainKey": "3",
+          "_mods": "Alt",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + 4",
+          "desc": "Focus Workspace NUM",
+          "bindId": "|64|4|000|__lua",
+          "undescribed": false,
+          "_mainKey": "4",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Alt + 4",
+          "desc": "Move Active Window to Workspace NUM",
+          "bindId": "|8|4|000|__lua",
+          "undescribed": false,
+          "_mainKey": "4",
+          "_mods": "Alt",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + 5",
+          "desc": "Focus Workspace NUM",
+          "bindId": "|64|5|000|__lua",
+          "undescribed": false,
+          "_mainKey": "5",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Alt + 5",
+          "desc": "Move Active Window to Workspace NUM",
+          "bindId": "|8|5|000|__lua",
+          "undescribed": false,
+          "_mainKey": "5",
+          "_mods": "Alt",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + 6",
+          "desc": "Focus Workspace NUM",
+          "bindId": "|64|6|000|__lua",
+          "undescribed": false,
+          "_mainKey": "6",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Alt + 6",
+          "desc": "Move Active Window to Workspace NUM",
+          "bindId": "|8|6|000|__lua",
+          "undescribed": false,
+          "_mainKey": "6",
+          "_mods": "Alt",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + 7",
+          "desc": "Focus Workspace NUM",
+          "bindId": "|64|7|000|__lua",
+          "undescribed": false,
+          "_mainKey": "7",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Alt + 7",
+          "desc": "Move Active Window to Workspace NUM",
+          "bindId": "|8|7|000|__lua",
+          "undescribed": false,
+          "_mainKey": "7",
+          "_mods": "Alt",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + 8",
+          "desc": "Focus Workspace NUM",
+          "bindId": "|64|8|000|__lua",
+          "undescribed": false,
+          "_mainKey": "8",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Alt + 8",
+          "desc": "Move Active Window to Workspace NUM",
+          "bindId": "|8|8|000|__lua",
+          "undescribed": false,
+          "_mainKey": "8",
+          "_mods": "Alt",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + 9",
+          "desc": "Focus Workspace NUM",
+          "bindId": "|64|9|000|__lua",
+          "undescribed": false,
+          "_mainKey": "9",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Alt + 9",
+          "desc": "Move Active Window to Workspace NUM",
+          "bindId": "|8|9|000|__lua",
+          "undescribed": false,
+          "_mainKey": "9",
+          "_mods": "Alt",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + 0",
+          "desc": "Focus Workspace NUM",
+          "bindId": "|64|0|000|__lua",
+          "undescribed": false,
+          "_mainKey": "0",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Alt + 0",
+          "desc": "Move Active Window to Workspace NUM",
+          "bindId": "|8|0|000|__lua",
+          "undescribed": false,
+          "_mainKey": "0",
+          "_mods": "Alt",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Scroll Down",
+          "desc": "Scroll Workspaces with Mouse",
+          "bindId": "|64|mouse_down|000|__lua",
+          "undescribed": false,
+          "_mainKey": "mouse_down",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Scroll Up",
+          "desc": "Scroll Workspaces with Mouse",
+          "bindId": "|64|mouse_up|000|__lua",
+          "undescribed": false,
+          "_mainKey": "mouse_up",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + LEFT",
+          "desc": "Scroll Workspace Left",
+          "bindId": "|64|left|000|__lua",
+          "undescribed": false,
+          "_mainKey": "left",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + RIGHT",
+          "desc": "Scroll Workspace Right",
+          "bindId": "|64|right|000|__lua",
+          "undescribed": false,
+          "_mainKey": "right",
+          "_mods": "Super",
+          "_verb": ""
         }
       ]
     },
     {
-      "title": "Fenster Verändern",
+      "title": "Spotify",
       "binds": [
         {
-          "keys": "mainMod + mouse:272",
-          "desc": "Fenster Bewege"
+          "keys": "Super + Shift + RIGHT",
+          "desc": "Next Track",
+          "bindId": "|65|right|000|__lua",
+          "undescribed": false,
+          "_mainKey": "right",
+          "_mods": "Super+Shift",
+          "_verb": ""
         },
         {
-          "keys": "mainMod + mouse:273",
-          "desc": "Fenster Größe ändern"
+          "keys": "Super + Shift + LEFT",
+          "desc": "Previous Track",
+          "bindId": "|65|left|000|__lua",
+          "undescribed": false,
+          "_mainKey": "left",
+          "_mods": "Super+Shift",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Shift + RETURN",
+          "desc": "Play / Pause",
+          "bindId": "|65|RETURN|000|__lua",
+          "undescribed": false,
+          "_mainKey": "RETURN",
+          "_mods": "Super+Shift",
+          "_verb": ""
+        }
+      ]
+    },
+    {
+      "title": "Without Description",
+      "binds": [
+        {
+          "keys": "SWITCH:[LID SWITCH]",
+          "desc": "",
+          "bindId": "|0|switch:[Lid Switch]|000|__lua",
+          "undescribed": true,
+          "_mainKey": "switch:[Lid Switch]",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + S",
+          "desc": "",
+          "bindId": "|64|S|000|__lua",
+          "undescribed": true,
+          "_mainKey": "S",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Shift + S",
+          "desc": "",
+          "bindId": "|65|S|000|__lua",
+          "undescribed": true,
+          "_mainKey": "S",
+          "_mods": "Super+Shift",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Left Click",
+          "desc": "",
+          "bindId": "|64|mouse:272|000|__lua",
+          "undescribed": true,
+          "_mainKey": "mouse:272",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Super + Right Click",
+          "desc": "",
+          "bindId": "|64|mouse:273|000|__lua",
+          "undescribed": true,
+          "_mainKey": "mouse:273",
+          "_mods": "Super",
+          "_verb": ""
+        },
+        {
+          "keys": "Vol Up",
+          "desc": "",
+          "bindId": "|0|XF86AudioRaiseVolume|000|__lua",
+          "undescribed": true,
+          "_mainKey": "XF86AudioRaiseVolume",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Vol Down",
+          "desc": "",
+          "bindId": "|0|XF86AudioLowerVolume|000|__lua",
+          "undescribed": true,
+          "_mainKey": "XF86AudioLowerVolume",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Mute",
+          "desc": "",
+          "bindId": "|0|XF86AudioMute|000|__lua",
+          "undescribed": true,
+          "_mainKey": "XF86AudioMute",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Mic Mute",
+          "desc": "",
+          "bindId": "|0|XF86AudioMicMute|000|__lua",
+          "undescribed": true,
+          "_mainKey": "XF86AudioMicMute",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Bright Up",
+          "desc": "",
+          "bindId": "|0|XF86MonBrightnessUp|000|__lua",
+          "undescribed": true,
+          "_mainKey": "XF86MonBrightnessUp",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "Bright Down",
+          "desc": "",
+          "bindId": "|0|XF86MonBrightnessDown|000|__lua",
+          "undescribed": true,
+          "_mainKey": "XF86MonBrightnessDown",
+          "_mods": "",
+          "_verb": ""
+        },
+        {
+          "keys": "XF86TOUCHPADTOGGLE",
+          "desc": "",
+          "bindId": "|0|XF86TouchpadToggle|000|__lua",
+          "undescribed": true,
+          "_mainKey": "XF86TouchpadToggle",
+          "_mods": "",
+          "_verb": ""
         }
       ]
     }
@@ -165,5 +623,42 @@
   "columnCount": 3,
   "modKeyVariable": "mainMod",
   "hyprlandConfigPath": "~/.config/hypr/modules/keybindings.lua",
-  "niriConfigPath": "~/.config/niri/config.kdl"
+  "hyprlandLuaConfigPath": "~/.config/hypr/hyprland.lua",
+  "hyprlandParserMode": "auto",
+  "niriConfigPath": "~/.config/niri/config.kdl",
+  "mangoConfigPath": "~/.config/mango/config.conf",
+  "mergeSequentialBinds": true,
+  "showUndescribedBinds": true,
+  "splitLargeWorkspaceCategory": true,
+  "workspaceSplitThreshold": 12,
+  "keyColorAlt": "#FF6B6B",
+  "keyColorXF86": "#4ECDC4",
+  "keyColorPrint": "#95E1D3",
+  "keyColorNumeric": "#A8DADC",
+  "keyColorMouse": "#F38181",
+  "keyColorSuper": "",
+  "keyColorCtrl": "",
+  "keyColorShift": "",
+  "keyColorDefault": "#6C757D",
+  "keyLabelColor": "#FFFFFF",
+  "keyTextSuper": "",
+  "keyTextCtrl": "",
+  "keyTextShift": "",
+  "keyTextAlt": "",
+  "keyTextXF86": "",
+  "keyTextPrint": "",
+  "keyTextNumeric": "",
+  "keyTextMouse": "",
+  "keyTextDefault": "",
+  "keyColorMod2": "",
+  "keyColorMod3": "",
+  "keyColorMod5": "",
+  "keyTextMod2": "",
+  "keyTextMod3": "",
+  "keyTextMod5": "",
+  "keyLabelMod2": "",
+  "keyLabelMod3": "",
+  "keyLabelMod5": "",
+  "descriptionTextColor": "",
+  "bindOverrides": {}
 }
