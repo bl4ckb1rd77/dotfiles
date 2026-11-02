@@ -1,10 +1,10 @@
 local terminal = "kitty"
-local fileManager = "caja"
+local fileManager = "thunar"
 local browser = "brave"
-local player = "spotify"
+local player = "spotifast"
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-local ipc = "qs -c noctalia-shell ipc call"
+local ipc = "noctalia msg"
 -- 1. Applications
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal), { description = "Terminal" })
 hl.bind(
@@ -22,18 +22,28 @@ hl.bind(
 	}),
 	{ description = "Toggle opaque" }
 )
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(ipc .. " launcher toggle"), { description = "Start Menu" })
+hl.bind("ALT + TAB", hl.dsp.exec_cmd("noctalia msg window-switcher hold"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher"), { description = "Start Menu" })
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"), { description = "Toggle Split Direction (only dwindle)" })
+hl.bind("ALT + N", hl.dsp.exec_cmd("noctalia msg panel-toggle noctalia/notes:panel"))
 hl.bind(
 	mainMod .. " + H",
-	hl.dsp.exec_cmd(ipc .. " plugin:keybind-cheatsheet toggle"),
+	hl.dsp.exec_cmd(ipc .. " panel-toggle kenn/keybind-cheatsheet:cheatsheet"),
 	{ description = "Show this Help" }
 )
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(ipc .. " plugin:wallcards toggle"), { description = "Wallpaper Menu" })
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. " lockScreen lock"), { description = "Lock Screen" })
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. " plugin:clipboard toggle"), { description = "Clipboard History" })
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(ipc .. " sessionMenu toggle"), { description = "Power Menu" })
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(ipc .. " plugin:assistant-panel toggle"), { description = "Google Gemini" })
+hl.bind(
+	mainMod .. " + T",
+	hl.dsp.exec_cmd(ipc .. " plugin local/timetracker:service all toggle"),
+	{ description = "Start Stop TimeTracking" }
+)
+hl.bind(
+	mainMod .. " + W",
+	hl.dsp.exec_cmd(ipc .. " panel-toggle ashur-d/wallpaper-widget:hub all toggle"),
+	{ description = "Wallpaper Hub" }
+)
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. " session lock"), { description = "Lock Screen" })
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. " panel-toggle clipboard"), { description = "Clipboard History" })
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(ipc .. " panel-toggle session"), { description = "Power Menu" })
 hl.bind(
 	mainMod .. " + I",
 	hl.dsp.exec_raw(terminal .. " --title='sysinfo' -e ~/.config/hypr/scripts/sysinfo"),
@@ -51,10 +61,10 @@ hl.bind(
 	{ description = "System Updater" }
 )
 -- 2. Screenshots
-hl.bind(mainMod .. "+ S", hl.dsp.exec_cmd("hyprshot --freeze -m output"), { description = "Screenshot Full Screen" })
+hl.bind(mainMod .. "+ S", hl.dsp.exec_cmd(ipc .. "screenshot-fullscreen"), { description = "Screenshot Full Screen" })
 hl.bind(
 	mainMod .. " + SHIFT + S",
-	hl.dsp.exec_cmd("hyprshot --freeze -m window"),
+	hl.dsp.exec_cmd(ipc .. "screenshot-region"),
 	{ description = "Screenshot active Window" }
 )
 hl.bind(mainMod .. " + CTRL + S", hl.dsp.exec_cmd("hyprshot --freeze -m region"), { description = "Screenshot Area" })
@@ -98,15 +108,19 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true }, { des
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true }, { description = "Resize Window" })
 
 -- 6. Spotify
-hl.bind(mainMod .. " + CTRL + right", hl.dsp.exec_cmd("playerctl -p spotify next"), { description = "Next Track" })
+hl.bind(
+	mainMod .. " + CTRL + right",
+	hl.dsp.exec_cmd("playerctl -p " .. player .. " next"),
+	{ description = "Next Track" }
+)
 hl.bind(
 	mainMod .. " + CTRL + left",
-	hl.dsp.exec_cmd("playerctl -p spotify previous"),
+	hl.dsp.exec_cmd("playerctl -p " .. player .. " previous"),
 	{ description = "Previous Track" }
 )
 hl.bind(
 	mainMod .. " + CTRL + RETURN",
-	hl.dsp.exec_cmd("playerctl -p spotify play-pause"),
+	hl.dsp.exec_cmd("playerctl -p " .. player .. " play-pause"),
 	{ description = "Play / Pause" }
 )
 

@@ -1,1 +1,160 @@
+/* Written by theme_manager.py on every palette push. */
+/* Anything put here by hand is lost on the next one. */
+
+@define-color theme_bg_color #2b334b;
+@define-color theme_fg_color #c0caf5;
+@define-color theme_base_color #2b334b;
+@define-color theme_text_color #c0caf5;
+@define-color theme_selected_bg_color #7aa2f7;
+@define-color theme_selected_fg_color #15161e;
+@define-color insensitive_bg_color #2b334b;
+@define-color insensitive_fg_color #7982a9;
+@define-color insensitive_base_color #2b334b;
+@define-color theme_unfocused_bg_color #293148;
+@define-color theme_unfocused_fg_color #7982a9;
+@define-color theme_unfocused_base_color #293148;
+@define-color theme_unfocused_text_color #c0caf5;
+@define-color theme_unfocused_selected_bg_color #7aa2f7;
+@define-color theme_unfocused_selected_fg_color #15161e;
+@define-color borders #374262;
+@define-color unfocused_borders #374262;
+@define-color warning_color #e0af68;
+@define-color error_color #f7768e;
+@define-color success_color #9ece6a;
+
+
+/* ── THE GROUND ──────────────────────────────────────────────────────── */
+
+window, dialog, messagedialog, assistant, .background {
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+}
+
+
+/* ── WHAT IS RAISED OFF IT ───────────────────────────────────────────── */
+
+headerbar, .titlebar, menubar, toolbar, .toolbar, .primary-toolbar,
+searchbar, actionbar, infobar, statusbar, notebook > header,
+popover, popover.background, menu, .menu, .context-menu,
+tooltip, tooltip.background {
+  background-color: #282f45;
+  background-image: none;
+  color: @theme_fg_color;
+  border-color: @borders;
+}
+
+
+/* ── THE VIEWS ───────────────────────────────────────────────────────── */
+
+.view, iconview, treeview.view, textview text, list, flowbox,
+.standard-view, .preview-pane {
+  background-color: @theme_base_color;
+  color: @theme_text_color;
+}
+
+
+/* ── AND THE SIDE PANE, WHICH IS A VIEW THAT IS RAISED ───────────────── */
+/* · after the views on purpose: a side pane holds one, and the later rule */
+/*   of equal weight is the one that wins */
+
+.sidebar, placessidebar, .shortcuts-pane, .tree-pane,
+.sidebar .view, .sidebar list, placessidebar list, placessidebar .view,
+.shortcuts-pane .view, .tree-pane .view {
+  background-color: #282f45;
+  color: @theme_fg_color;
+}
+
+.sidebar, .shortcuts-pane, .tree-pane {
+  border-right: 1px solid @borders;
+}
+
+
+/* ── THE ACCENT, WHICH IS WHAT CARRIES MEANING ───────────────────────── */
+
+*:selected, *:selected:focus, .view:selected, treeview.view:selected,
+iconview:selected, list row:selected, menuitem:hover, selection {
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+}
+
+check:checked, radio:checked, switch:checked {
+  background-color: @theme_selected_bg_color;
+  background-image: none;
+  border-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+}
+
+progressbar progress, levelbar block.filled, scale highlight, scale fill {
+  background-color: @theme_selected_bg_color;
+}
+
+link, *:link { color: #7aa2f7; }
+
+
+/* ── FIELDS AND BUTTONS ──────────────────────────────────────────────── */
+
+entry, spinbutton, entry.search {
+  background-color: @theme_base_color;
+  background-image: none;
+  color: @theme_text_color;
+  border-color: @borders;
+}
+
+entry:focus { border-color: @theme_selected_bg_color; }
+
+button, combobox button {
+  background-color: #333d5c;
+  background-image: none;
+  color: @theme_fg_color;
+  border-color: @borders;
+  text-shadow: none;
+}
+
+button:hover { background-color: #282f45; }
+button:disabled { color: @insensitive_fg_color; }
+
+button:checked, button:active {
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+}
+
+/* · flat buttons get an explicit foreground as well as a background, or
+     symbolic icons on toolbars (satty's, for one) render invisible */
+button.flat, button.titlebutton, toolbar button, headerbar button,
+.toolbar button, .path-bar-button, .location-button, statusbar button {
+  background-color: transparent;
+  background-image: none;
+  border-color: transparent;
+  color: @theme_fg_color;
+}
+
+toolbar button:hover, headerbar button:hover, .toolbar button:hover,
+.path-bar-button:hover, .location-button:hover,
+.path-bar-button:checked, .location-button:checked {
+  background-color: #333d5c;
+  color: @theme_fg_color;
+}
+
+
+/* ── SEPARATORS AND SCROLLBARS ───────────────────────────────────────── */
+
+separator, paned > separator { background-color: @borders; }
+
+scrollbar { background-color: transparent; border-color: transparent; }
+scrollbar slider { background-color: @insensitive_fg_color; }
+scrollbar slider:hover { background-color: @theme_fg_color; }
+
+statusbar { border-top: 1px solid @borders; }
+
+/* ── THUNAR ──────────────────────────────────────────────────────────── */
+/* · Thunar's location bar is not a GtkToolbar and has no class to style, so
+     the view and the side pane draw the dividing line under it instead */
+.standard-view, .shortcuts-pane, .tree-pane {
+  border-top: 1px solid @borders;
+}
+
+/* · this one Thunar paints itself, from a named colour, so all it needs is
+     for the name to mean something */
+.split-view-inactive-pane .view { background-color: #293148; }
+
 @import url("noctalia.css");

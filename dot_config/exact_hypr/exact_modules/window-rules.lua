@@ -33,13 +33,23 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name = "ollama",
+	float = true,
+	size = { "(monitor_w*0.5)", "(monitor_h*0.5)" },
+	opacity = "0.9 0.5",
+	center = true,
+	match = {
+		initial_title = "^ollama$",
+	},
+})
+
+hl.window_rule({
 	name = "Prism Launcher",
 	float = true,
 	size = { "(monitor_w*0.5)", "(monitor_h*0.5)" },
 	match = {
 		class = "^org.prismlauncher.PrismLauncher$",
 	},
-	opacity = "0.8 0.4",
 })
 
 hl.window_rule({
@@ -68,6 +78,16 @@ hl.window_rule({
 	opacity = "0.9 0.7",
 	match = {
 		initial_title = "^update$",
+	},
+})
+
+hl.window_rule({
+	name = "arch-updater",
+	float = true,
+	size = { 1520, "(monitor_h*0.70)" },
+	opacity = "0.9 0.7",
+	match = {
+		class = "^arch-updater$",
 	},
 })
 

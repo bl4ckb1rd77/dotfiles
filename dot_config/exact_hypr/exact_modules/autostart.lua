@@ -1,6 +1,6 @@
 local scriptsDir = "/home/ahoefer/.config/hypr/scripts/"
 hl.on("hyprland.start", function()
-	hl.exec_cmd("qs -c noctalia-shell")
+	hl.exec_cmd("bash -c 'export QT_QPA_PLATFORMTHEME=gtk3; noctalia --daemon'")
 end)
 hl.on("hyprland.start", function()
 	hl.exec_cmd(
@@ -23,5 +23,8 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 	hl.exec_cmd("hyprpm reload")
-	--	hl.exec_cmd("hyprpm enable hyprbars")
+	hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+	hl.on("hyprland.start", function()
+		hl.exec_cmd("env QT_QPA_PLATFORMTHEME=gtk3 noctalia")
+	end)
 end)
